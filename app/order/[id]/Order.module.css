@@ -1,0 +1,227 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  justify-items: center;
+  gap: 56px;
+  padding: calc(var(--header-h) + var(--safe-t) + 32px) var(--gutter) 100px;
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgb(222 188 104 / 0.18), transparent 70%),
+    var(--ivory);
+  color: var(--ink);
+}
+
+/* echoes the printed thank-you card: paper, double gold rule */
+.card {
+  position: relative;
+  width: min(640px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: clamp(36px, 6vw, 64px) clamp(22px, 5vw, 56px);
+  text-align: center;
+  background: var(--paper);
+  border: 1.5px solid var(--gold);
+  outline: 1px solid color-mix(in srgb, var(--gold) 60%, transparent);
+  outline-offset: -10px;
+  box-shadow: 0 40px 80px -50px rgb(80 55 15 / 0.45);
+  animation: rise 1.2s var(--ease-out) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+.emblem {
+  width: min(300px, 70%);
+}
+.lock {
+  color: var(--umber-2);
+  font-size: 0.5625rem;
+}
+.thanks {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3rem, 12vw, 5.6rem);
+  line-height: 1;
+  margin-top: 8px;
+}
+.sub {
+  max-width: 40ch;
+  font-size: 0.9375rem;
+}
+.div {
+  width: 200px;
+  justify-content: center;
+}
+.div::before,
+.div::after {
+  flex: 1;
+}
+.meta {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 12px;
+  text-align: left;
+}
+.meta dt {
+  font-size: 0.5625rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.meta dd {
+  font-size: 0.875rem;
+}
+.items {
+  width: 100%;
+  display: grid;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.items li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  padding-block: 12px;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  text-align: left;
+}
+.balance {
+  font-size: 0.8125rem;
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gift {
+  display: grid;
+  gap: 6px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+.gift :global(.t-eyebrow) {
+  font-family: var(--font-sans);
+  font-style: normal;
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.mail {
+  font-size: 0.75rem;
+  color: var(--umber-2);
+}
+
+.next {
+  width: min(640px, 100%);
+  display: grid;
+  gap: 24px;
+  justify-items: start;
+}
+.next > :global(.t-eyebrow) {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.next ol {
+  width: 100%;
+  display: grid;
+}
+.next li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 2px 12px;
+  padding-block: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.next li span {
+  grid-row: span 2;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.next li b {
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.next li p {
+  font-size: 0.8125rem;
+  color: var(--umber-2);
+}
+.share {
+  font-size: 0.875rem;
+}
+.share a {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+/* the order's journey: confirmed → dispatched → delivered */
+.journey {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 26px 0 6px;
+  position: relative;
+}
+.journey::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 16.6%;
+  right: 16.6%;
+  height: 1px;
+  background: color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.journey li {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--umber-2);
+}
+.journey i {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--paper);
+}
+.journey b {
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+.journey small {
+  font-size: 0.6875rem;
+}
+.done {
+  color: var(--ink) !important;
+}
+.done i {
+  background: var(--foil-diag);
+}
+.track {
+  margin-top: 18px;
+}

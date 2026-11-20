@@ -1,0 +1,207 @@
+.section {
+  background: var(--paper);
+  color: var(--ink);
+  padding-block: clamp(80px, 9vw, 140px);
+}
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+.eyebrow {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+/* ---- engraved tabs ---- */
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 760px;
+  margin-inline: auto;
+  border-top: 1px solid rgb(172 128 40 / 0.35);
+  border-bottom: 1px solid rgb(172 128 40 / 0.35);
+}
+.tab {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 16px 8px 18px;
+  color: var(--umber-2);
+  transition: color 0.5s var(--ease-out);
+}
+.tab + .tab {
+  border-left: 1px solid rgb(172 128 40 / 0.18);
+}
+.tab::after {
+  content: '';
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  bottom: -1px;
+  height: 2px;
+  background: var(--gold-grad);
+  transform: scaleX(0);
+  transition: transform 0.7s var(--ease-out);
+}
+.tab:hover,
+.on {
+  color: var(--ink);
+}
+.on::after {
+  transform: scaleX(1);
+}
+.tabNo {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  color: var(--gold-deep);
+}
+.tabLabel {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.2;
+}
+
+/* ---- the chosen hour ---- all panels share one cell so the height never jumps */
+.panels {
+  display: grid;
+  margin-top: clamp(36px, 5vw, 64px);
+}
+.panel {
+  grid-area: 1 / 1;
+  display: grid;
+  gap: 32px;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s var(--ease-out),
+    visibility 0s linear 0.5s;
+}
+.shown {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.6s var(--ease-out),
+    visibility 0s;
+}
+.mat {
+  justify-self: center;
+  width: min(100%, 440px);
+  box-shadow: 0 30px 60px -36px rgb(39 29 12 / 0.5);
+}
+.photo {
+  aspect-ratio: 4 / 5;
+}
+.copy {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.name {
+  font-size: 0.8125rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-deep);
+}
+.mood {
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  line-height: 1.08;
+  max-width: 14ch;
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 140px;
+  color: var(--gold);
+}
+.ornament span {
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.ornament i {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.facts {
+  width: min(100%, 440px);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.facts div {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding-block: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  text-align: left;
+}
+.facts dt {
+  font-size: 0.5625rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+.facts dd {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px 28px;
+  margin-top: 8px;
+}
+.price {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+
+@media (max-width: 599px) {
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .reserve {
+    width: 100%;
+  }
+}
+
+/* desktop: the print on the left, the words beside it */
+@media (min-width: 900px) {
+  .panel {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+  .mat {
+    grid-column: 2 / span 4;
+    width: 100%;
+  }
+  .copy {
+    grid-column: 7 / span 5;
+    justify-items: start;
+    text-align: left;
+  }
+  .actions {
+    justify-content: flex-start;
+  }
+}

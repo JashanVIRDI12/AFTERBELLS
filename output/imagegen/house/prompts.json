@@ -1,0 +1,79 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "name": "house-cap",
+      "prompt": "Use case: product-mockup.\nAsset type: portrait editorial detail photograph for \"The cap\" chapter of the After Bells House page. Portrait 2:3.\nInput image 1 is a PRODUCT DESIGN REFERENCE sheet only. The detached gold cap in its bottom-right panel is the exact cap design to preserve. Never reproduce the collage.\nPhotograph one detached cap as a small sculptural object resting on a honed warm-grey limestone block. Front face nearly square to the camera with only a very narrow right edge visible, centred in the middle of the portrait, occupying about 62% of image width. Leave breathable stone above and below. Exact reference geometry: square solid gold-coloured cap with a thin raised outer frame, symmetrical four-way curling raised leaf/scroll motif on a finely stippled recessed field, polished cylindrical collar at its base. The cap is the same object as the reference, not a different crown, monogram or ornamental lid.\nSoft raking studio light from the upper left reveals the engraved relief; a large diffused white reflector produces a soft clean side reflection, black flags create depth in the metal. Gold is satin with selectively polished raised edges, very subtle machining texture and tiny believable surface variation. Natural soft contact shadow on the stone. Espresso background, warm neutral limestone, restrained champagne gold.\nPhotorealistic 100mm product photograph, focus stacked so the cap face and engraved relief are sharp. Natural metal, not liquid gold, not an embossed illustration, no glitter, no dramatic glow, no blur across the main subject. No second cap or bottle, no text, no watermark, no graphic frame.",
+      "references": [
+        "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+      ],
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-74a5f544-c5c5-49e5-89f4-183cb97290e5.png",
+      "original": "output/imagegen/house/house-cap.png",
+      "web": "public/media/house-cap.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "house-composition",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: portrait editorial photograph for \"The composition\" chapter of a perfume house website. Portrait 2:3.\nScene: a quietly used perfumer's bench on honed brown-grey limestone, shot from an elevated 35 degree angle in a real studio. A small unlabelled clear glass beaker holds a little amber concentrate near the back; two unlabelled tiny glass sample vials; three slender ivory paper scent blotters laid with natural imperfect spacing. A restrained arrangement of frankincense resin tears, one split bourbon vanilla pod, one short cedarwood shaving and a small curl of fresh citron peel are gathered at the lower centre. These are material studies, not food styling; few objects with breathing room. No finished bottle, no packaging, no writing or labels.\nLighting and palette: soft warm side light from the left, warm grey stone, espresso shadows, amber glass refraction, ivory paper, muted natural citron yellow. Fine realistic stone pores, minute glass imperfections and naturally irregular raw ingredients. Main objects within the middle 70% of the image, generous calm top and bottom.\nPhotorealistic medium-format still-life photography; focus-stacked sharpness on the materials and blotters, controlled reflections, tactile understated luxury, believable contact shadows. No dramatic smoke, no extra botanicals, no flowers, no candles, no hands, no text, no branding, no border, no watermark, no exaggerated shiny liquid or CG look.",
+      "references": [],
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-55632f06-7212-4e66-a9ac-e84347adf640.png",
+      "original": "output/imagegen/house/house-composition.png",
+      "web": "public/media/house-composition.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "house-edition",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: wide photographic backdrop behind the closing promise panel of a perfume-house page, landscape 3:2.\nCreate a quiet photographic material study of amber glass light, honed warm-grey limestone and a small trace of delicate gold leaf. Soft evening light passing through a perfume flacon just OUTSIDE the frame casts a faint warm amber caustic and the slender faceted edge shadow of the glass onto stone near the right edge. A few TINY gold leaf flecks rest near the bottom-left corner. No actual perfume bottle or packaging is in the frame.\nComposition supports an overlaid centred panel: the central 60% is dark espresso-grey stone with a very subtle believable grain, spacious and calm; warm reflected light and gold details are confined to the outer thirds. Natural material variation and a gentle diagonal shadow add depth. Deep coffee neutrals and restrained bronze light, distinct from a silk background.\nA real editorial studio photograph, tactile minute stone pores, physically plausible restrained caustics, no computer-rendered glossy waves, no large bright orange streaks, no speckled star field, no floating particles, no huge gold fragments, no decorative text, no marks, no watermark, no frame. No artificial blur; darkness and negative space come from the lighting.",
+      "references": [],
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-02d02c96-a9af-41f8-a41e-4537ab74597d.png",
+      "original": "output/imagegen/house/house-edition.png",
+      "web": "public/media/house-edition.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "name": "house-gold-editorial",
+      "prompt": "Use case: product-mockup.\nAsset type: portrait macro photograph for \"The gold\" chapter of the After Bells House page, portrait 2:3.\nInput image 1 is a PRODUCT DESIGN REFERENCE only. Use its front-view lower bottle geometry, amber perfume and original tiny gold flakes. Do not reproduce the reference collage.\nCreate a close photographic study of the bottom third of this exact rectangular faceted glass perfume bottle. The upper cap and front label are OUTSIDE the crop. A straight-on low macro camera sees the thick transparent glass base, the bottom of the amber liquid chamber, both bevelled glass edges and the small gold flakes gently resting inside. A few fine flakes are suspended just above the settled layer; the majority rest on the inner bottom. Scale is CRITICAL: the same very small irregular flakes as the reference, fine delicate flecks, never large confetti, sheets or chunks. The gold must clearly be inside the amber liquid above the thick clear base, never outside or embedded in solid glass.\nThe glass base occupies the lower third of the photograph; the amber chamber fills the middle. Restrained warm-grey stone behind, natural espresso shadows, one narrow diffused highlight along a bevel, plausible optical refraction and subtle liquid meniscus. Main details kept within the central 65% width and 70% height for flexible portrait framing.\nReal focus-stacked macro photography, crisp microtexture, controlled warm glints, quiet luxury, no artificial bloom or blur filter, no bubbles, no sparkles, no magical particles, no enormous flakes, no sticker, no letters, no border, no watermark.",
+      "references": [
+        "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+      ],
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-fbcb15af-7d83-46ae-91d5-cffb89bba7fd.png",
+      "original": "output/imagegen/house/house-gold-editorial.png",
+      "web": "public/media/house-gold-editorial.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "house-hero",
+      "prompt": "Use case: product-mockup.\nAsset type: editorial opening photograph for the After Bells House page, landscape 3:2.\nInput image 1 is a PRODUCT DESIGN REFERENCE sheet only, not a layout to reproduce. Use its FRONT VIEW bottle and cap as the identity source. Make one unified photograph, never a sheet or collage.\nScene: an intimate perfumery atelier at dusk. One finished Amber Hour perfume bottle stands on a low honed warm-grey limestone block against a deep espresso plaster wall. A narrow architectural shaft of warm natural light falls from upper right across its engraved cap and the edge of the glass. Beautiful real stone grain and soft gradients in the wall.\nComposition: the complete bottle stands in the RIGHT third, centred at 76% of the width, with cap at 20% of the frame height and base at 80%. Leave the LEFT 52% quiet and dark for live website typography. Keep all important product details within the central 60% vertically so a landscape crop retains the whole bottle. No extra props.\nProduct invariants: exact ornate square gold cap with the four-part raised scroll engraving from the reference; cylindrical gold neck ring; substantial faceted clear rectangular glass and thick clear base; amber liquid; a small amount of the ORIGINAL very small gold flakes, mostly settled. Front-facing bottle only. Front gold metal label with two fine dark rectangular border rules and exactly the black words \"AFTER BELLS\", a tiny diamond between two rules, and \"AMBER HOUR\". No other text. Label is thin brushed gold metal attached flush to glass, real ink and subtle specular response. No label on narrow side surfaces.\nPhotorealistic luxury editorial still life, real studio materials, sharp cap and label, restrained highlights, gentle microtexture, plausible glass refraction, true verticals. A lens photograph with a large diffused light and black flags, no CGI gloss, no excessive bloom, no hazy filter, no lens flare, no huge gold fragments, no floating magical dust. No headline, logo overlay, border, watermark or interface.",
+      "references": [
+        "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+      ],
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-0271e1c6-440f-4a96-95a8-209e00b30361.png",
+      "original": "output/imagegen/house/house-hero.png",
+      "web": "public/media/house-hero.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "name": "house-label-editorial",
+      "prompt": "Use case: product-mockup.\nAsset type: portrait macro photograph for \"The label\" chapter of the After Bells House page. Portrait 2:3.\nInput image 1 is the product design reference: use the square brushed gold FRONT label and front glass from its Amber Hour bottle. Do not reproduce the collage or any side view.\nPhotograph a close detail of the real front face of the bottle, focused on the thin 2 x 2 cm square gold metal label, attached flush to the flat glass. The square label is centred in the image and occupies about 60% of the image width. Some amber liquid and vertical clear faceted glass edges are visible around it. The neck, cap and base are outside this close crop. Camera square to the label, true parallel edges, very subtle real glass reflections. Thin metal, physical fine edge, no raised thick plaque, no vinyl sticker or soft paper.\nExact design and text: two delicate black inset rectangular border rules with slightly rounded corners, a brushed gold metal background, two lines of elegant clean BLACK UPPERCASE lettering reading exactly \"AFTER BELLS\" above and \"AMBER HOUR\" below, separated by two short horizontal rules with one tiny diamond between them. Match the reference letter proportions and spacing. Do not add any other letters, numbers, claims, symbols or branding. Text must be legible, straight and accurately spelled, with realistic printed ink texture rather than thick engraved or melted lettering.\nLight: a broad soft studio reflection skims the gold from left to right without obscuring the text; amber glass has warm depth, surrounding stone background is deep neutral brown. A few of the original very small gold flecks are faintly visible in liquid away from the label. Photorealistic focus-stacked macro, fine brushed metal grain, restrained tactile detail, no glowing outline, no glitter, no artificial blur, no border or watermark.",
+      "references": [
+        "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+      ],
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-efe0a2d9-ecb9-4810-877f-4da8bbb3a69a.png",
+      "original": "output/imagegen/house/house-label-editorial.png",
+      "web": "public/media/house-label-editorial.webp",
+      "width": 1024,
+      "height": 1536
+    }
+  ]
+}

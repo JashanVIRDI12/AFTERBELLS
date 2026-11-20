@@ -1,0 +1,220 @@
+.making {
+  position: relative;
+  background:
+    radial-gradient(50% 40% at 20% 10%, rgb(222 188 104 / 0.09), transparent 70%),
+    radial-gradient(40% 40% at 90% 90%, rgb(222 188 104 / 0.06), transparent 70%),
+    #140e09;
+  color: var(--ivory);
+  padding-block: clamp(96px, 11vw, 170px);
+}
+
+/* ---- the opening ---- */
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: clamp(56px, 8vw, 120px);
+}
+.kicker {
+  color: var(--gold-a);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  line-height: 1.02;
+  max-width: 13ch;
+}
+.lede {
+  max-width: 40ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.65;
+  color: rgb(246 238 228 / 0.74);
+}
+
+/* ---- phone: one chapter after another, each with its photograph ---- */
+.stage {
+  display: grid;
+}
+.plate {
+  display: none;
+}
+.chaptersWrap {
+  position: relative;
+}
+.progress {
+  display: none;
+}
+.chapters {
+  list-style: none;
+  display: grid;
+  gap: clamp(64px, 12vw, 96px);
+}
+.chapter {
+  position: relative;
+  display: grid;
+  gap: 14px;
+}
+.inline {
+  position: relative;
+  width: 100%;
+  max-width: 512px;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+.img {
+  object-fit: cover;
+}
+.node {
+  display: none;
+}
+.numeral {
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 9vw, 5.6rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+.chapterTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.05;
+}
+.rule {
+  width: 56px;
+  height: 1px;
+  margin-block: 4px;
+  background: linear-gradient(90deg, var(--gold-a), transparent);
+}
+.body {
+  max-width: 36ch;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgb(246 238 228 / 0.76);
+}
+
+/* ---- desktop: the photograph holds, the chapters pass ---- */
+@media (min-width: 1000px) {
+  .stage {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(28px, 3vw, 56px);
+    align-items: start;
+  }
+  .plate {
+    display: block;
+    grid-column: 1 / span 6;
+    position: sticky;
+    top: calc(var(--header-h) + 5vh);
+    width: min(100%, 512px, calc((90svh - var(--header-h)) * 2 / 3));
+    aspect-ratio: 2 / 3;
+    justify-self: center;
+  }
+  .frame {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 60px 120px -60px rgb(0 0 0 / 0.9);
+  }
+  .shot {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1.25s cubic-bezier(0.77, 0, 0.18, 1);
+  }
+  .shot .img {
+    transform: scale(1.14);
+    transition: transform 2.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .shown {
+    clip-path: inset(0 0 0 0);
+  }
+  .shown .img {
+    transform: scale(1);
+  }
+
+  .chaptersWrap {
+    grid-column: 8 / span 5;
+    padding-left: 44px;
+  }
+  .progress {
+    display: block;
+    position: absolute;
+    left: 6px;
+    top: 39svh;
+    bottom: 39svh;
+    width: 1px;
+    background: rgb(246 238 228 / 0.12);
+  }
+  .progressFill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--gold-a), var(--gold-b));
+    transform-origin: top center;
+  }
+  .chapters {
+    gap: 0;
+  }
+  .chapter {
+    min-height: 78svh;
+    align-content: center;
+    opacity: 0.32;
+    transition: opacity 0.9s var(--ease-out);
+  }
+  .current {
+    opacity: 1;
+  }
+  .inline {
+    display: none;
+  }
+  .node {
+    display: block;
+    position: absolute;
+    left: -44px;
+    top: 50%;
+    width: 13px;
+    height: 13px;
+    margin-top: -6px;
+    border: 1px solid var(--gold-a);
+    background: #140e09;
+    transform: rotate(45deg);
+    transition:
+      background 0.6s var(--ease-out),
+      box-shadow 0.6s var(--ease-out);
+  }
+  .current .node {
+    background: var(--gold-a);
+    box-shadow: 0 0 18px rgb(222 188 104 / 0.6);
+  }
+  .current .rule {
+    width: 96px;
+  }
+  .rule {
+    transition: width 1s var(--ease-out);
+  }
+}
+
+@media (max-width: 999px) {
+  .chapter {
+    width: 100%;
+    max-width: 512px;
+    margin-inline: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot,
+  .shot .img,
+  .chapter {
+    transition: none;
+  }
+}
+:global(html:not(.no-js):not(.ab-reduced)) .progressFill {
+  transform: scaleY(0);
+}

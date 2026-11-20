@@ -1,0 +1,59 @@
+.compact {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+.compact small {
+  font-size: 0.7em;
+  opacity: 0.6;
+  margin-left: 1px;
+}
+.sep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0 0.6em 0.22em;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+}
+.cell {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 18px 4px 16px;
+}
+.cell + .cell {
+  border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+}
+.value {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.large .value {
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+}
+.unit {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.closed {
+  font-family: var(--font-display);
+}

@@ -1,0 +1,11 @@
+{
+  "name": "house-composition",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: portrait editorial photograph for \"The composition\" chapter of a perfume house website. Portrait 2:3.\nScene: a quietly used perfumer's bench on honed brown-grey limestone, shot from an elevated 35 degree angle in a real studio. A small unlabelled clear glass beaker holds a little amber concentrate near the back; two unlabelled tiny glass sample vials; three slender ivory paper scent blotters laid with natural imperfect spacing. A restrained arrangement of frankincense resin tears, one split bourbon vanilla pod, one short cedarwood shaving and a small curl of fresh citron peel are gathered at the lower centre. These are material studies, not food styling; few objects with breathing room. No finished bottle, no packaging, no writing or labels.\nLighting and palette: soft warm side light from the left, warm grey stone, espresso shadows, amber glass refraction, ivory paper, muted natural citron yellow. Fine realistic stone pores, minute glass imperfections and naturally irregular raw ingredients. Main objects within the middle 70% of the image, generous calm top and bottom.\nPhotorealistic medium-format still-life photography; focus-stacked sharpness on the materials and blotters, controlled reflections, tactile understated luxury, believable contact shadows. No dramatic smoke, no extra botanicals, no flowers, no candles, no hands, no text, no branding, no border, no watermark, no exaggerated shiny liquid or CG look.",
+  "references": [],
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-55632f06-7212-4e66-a9ac-e84347adf640.png",
+  "original": "output/imagegen/house/house-composition.png",
+  "web": "public/media/house-composition.webp",
+  "width": 1024,
+  "height": 1536
+}

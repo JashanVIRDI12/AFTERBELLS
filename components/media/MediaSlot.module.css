@@ -1,0 +1,238 @@
+.frame {
+  --m-bg: #2a211a;
+  --m-bg2: #4a3a2a;
+  --m-accent: #d7b25e;
+  position: relative;
+  overflow: hidden;
+  background: var(--m-bg);
+  isolation: isolate;
+  contain: paint;
+}
+
+.reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.6s var(--ease-out);
+}
+.reveal .zoom {
+  transform: scale(1.18);
+  transition: transform 2.2s var(--ease-out);
+}
+.reveal.in {
+  clip-path: inset(0 0 0 0);
+}
+.reveal.in .zoom {
+  transform: none;
+}
+:global(html.no-js) .reveal {
+  clip-path: none;
+}
+:global(html.no-js) .reveal .zoom {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { clip-path: none; }
+  .reveal .zoom { transform: none; }
+}
+.zoom {
+  position: absolute;
+  inset: 0;
+}
+
+/* soft rise: the photograph rises from below behind a wide feathered edge (no hard line),
+   and comes into focus as it settles — like a lens finding it.
+   The mask is three frames tall: opaque at the bottom, a long fade, clear at the top.
+   Sliding it from top-aligned to bottom-aligned lifts the fade up through the frame. */
+.focus .zoom {
+  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 34%, transparent 66%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 0%, #000 34%, transparent 66%, transparent 100%);
+  -webkit-mask-size: 100% 300%;
+  mask-size: 100% 300%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0%;
+  mask-position: 0 0%;
+  filter: blur(16px);
+  transform: scale(1.06);
+  transition:
+    /* a gentle, even lift so the soft edge is seen travelling up the frame */
+    -webkit-mask-position 1.7s cubic-bezier(0.3, 0.1, 0.2, 1),
+    mask-position 1.7s cubic-bezier(0.3, 0.1, 0.2, 1),
+    filter 2s var(--ease-out),
+    transform 2.6s var(--ease-out);
+}
+.focus.in .zoom,
+:global(html.no-js) .focus .zoom {
+  -webkit-mask-position: 0 100%;
+  mask-position: 0 100%;
+  filter: none;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .focus .zoom {
+    -webkit-mask-image: none;
+    mask-image: none;
+    filter: none;
+    transform: none;
+  }
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+}
+.parallax {
+  inset: -7% 0;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.transparent { background: transparent; }
+.transparent .img {
+  object-fit: contain;
+  filter: drop-shadow(0 22px 18px rgb(0 0 0 / 0.22));
+}
+
+/* ---------- empty slot: art-directed placeholder ---------- */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(120% 80% at 50% 38%, color-mix(in srgb, var(--m-bg2) 92%, white 8%) 0%, transparent 62%),
+    linear-gradient(170deg, var(--m-bg2) 0%, var(--m-bg) 78%);
+}
+.glow {
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  left: 15%;
+  top: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--m-accent) 32%, transparent) 0%, transparent 65%);
+  filter: blur(20px);
+  opacity: 0.7;
+  animation: breathe 9s var(--ease-soft) infinite;
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.12) translateY(-3%);
+    opacity: 0.85;
+  }
+}
+/* double gold frame, borrowed from the thank-you cards */
+.frameLines,
+.frameLines::after {
+  position: absolute;
+  inset: clamp(10px, 2.2vw, 18px);
+  border: 1px solid color-mix(in srgb, var(--m-accent) 45%, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.frameLines::after {
+  content: '';
+  inset: 5px;
+  border-width: 0.5px;
+  opacity: 0.6;
+}
+
+.plaque {
+  position: relative;
+  width: clamp(76px, 26%, 160px);
+  aspect-ratio: 1;
+  border-radius: 5%;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.25) inset,
+    0 22px 50px -18px rgb(0 0 0 / 0.65),
+    0 6px 14px -6px rgb(0 0 0 / 0.4);
+  transform: translateY(-4%);
+}
+.plaque img {
+  width: 100%;
+  height: 100%;
+}
+.sheen {
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(115deg, transparent 40%, rgb(255 255 255 / 0.55) 50%, transparent 60%);
+  animation: sheen 5.5s var(--ease-in-out) infinite;
+  mix-blend-mode: soft-light;
+}
+@keyframes sheen {
+  0% {
+    transform: translateX(-60%);
+  }
+  55%,
+  100% {
+    transform: translateX(60%);
+  }
+}
+
+.peacock {
+  height: 34%;
+  max-height: 190px;
+  color: var(--m-accent);
+  opacity: 0.38;
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--m-accent) 60%, transparent);
+  color: var(--m-accent);
+}
+.play svg {
+  transform: translateX(2px);
+}
+
+.hint {
+  position: absolute;
+  left: clamp(18px, 3vw, 30px);
+  right: clamp(18px, 3vw, 30px);
+  bottom: clamp(18px, 3vw, 30px);
+  display: grid;
+  gap: 4px;
+  font-family: var(--font-sans);
+  color: color-mix(in srgb, var(--m-accent) 85%, white 15%);
+  pointer-events: none;
+  z-index: 2;
+}
+.hintTop {
+  bottom: auto;
+  top: clamp(18px, 3vw, 30px);
+}
+.light .hint {
+  color: color-mix(in srgb, var(--m-accent) 90%, black 10%);
+}
+.hintKind {
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.hintBrief {
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 300;
+  opacity: 0.85;
+}
+.hintFile {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.02em;
+  opacity: 0.5;
+}

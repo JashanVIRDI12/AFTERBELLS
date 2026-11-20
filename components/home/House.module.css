@@ -1,0 +1,116 @@
+.house {
+  position: relative;
+  background: var(--ivory);
+  color: var(--ink);
+  padding-block: clamp(80px, 9vw, 140px);
+}
+.grid {
+  display: grid;
+  gap: 56px;
+  align-items: center;
+}
+
+/* ---- the letterhead ---- */
+.text {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
+}
+.crest {
+  width: clamp(76px, 7vw, 100px);
+  margin-bottom: 4px;
+}
+.kicker {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.5rem, 4.6vw, 4.4rem);
+  line-height: 1.04;
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 150px;
+  color: var(--gold);
+}
+.ornament span {
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.ornament i {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.lede {
+  max-width: 30ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  line-height: 1.5;
+}
+.sign {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 0;
+  font-size: 0.625rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+.sign span + span::before {
+  content: '◆';
+  margin: 0 12px;
+  font-size: 0.5rem;
+  color: var(--gold);
+  vertical-align: 1px;
+}
+
+@media (max-width: 599px) {
+  .sign {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sign span + span::before {
+    display: none;
+  }
+}
+
+/* ---- two photographs, hung as an offset pair ---- */
+.plates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 2vw, 28px);
+  align-items: start;
+}
+.plate {
+  box-shadow: 0 30px 60px -34px rgb(39 29 12 / 0.45);
+}
+.plate:nth-child(2) {
+  margin-top: 18%;
+}
+.photo {
+  aspect-ratio: 3 / 4;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+  .text {
+    grid-column: 1 / span 5;
+  }
+  .plates {
+    grid-column: 7 / span 6;
+    padding-bottom: 6%;
+  }
+}

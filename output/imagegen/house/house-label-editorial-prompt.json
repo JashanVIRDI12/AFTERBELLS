@@ -1,0 +1,13 @@
+{
+  "name": "house-label-editorial",
+  "prompt": "Use case: product-mockup.\nAsset type: portrait macro photograph for \"The label\" chapter of the After Bells House page. Portrait 2:3.\nInput image 1 is the product design reference: use the square brushed gold FRONT label and front glass from its Amber Hour bottle. Do not reproduce the collage or any side view.\nPhotograph a close detail of the real front face of the bottle, focused on the thin 2 x 2 cm square gold metal label, attached flush to the flat glass. The square label is centred in the image and occupies about 60% of the image width. Some amber liquid and vertical clear faceted glass edges are visible around it. The neck, cap and base are outside this close crop. Camera square to the label, true parallel edges, very subtle real glass reflections. Thin metal, physical fine edge, no raised thick plaque, no vinyl sticker or soft paper.\nExact design and text: two delicate black inset rectangular border rules with slightly rounded corners, a brushed gold metal background, two lines of elegant clean BLACK UPPERCASE lettering reading exactly \"AFTER BELLS\" above and \"AMBER HOUR\" below, separated by two short horizontal rules with one tiny diamond between them. Match the reference letter proportions and spacing. Do not add any other letters, numbers, claims, symbols or branding. Text must be legible, straight and accurately spelled, with realistic printed ink texture rather than thick engraved or melted lettering.\nLight: a broad soft studio reflection skims the gold from left to right without obscuring the text; amber glass has warm depth, surrounding stone background is deep neutral brown. A few of the original very small gold flecks are faintly visible in liquid away from the label. Photorealistic focus-stacked macro, fine brushed metal grain, restrained tactile detail, no glowing outline, no glitter, no artificial blur, no border or watermark.",
+  "references": [
+    "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+  ],
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-efe0a2d9-ecb9-4810-877f-4da8bbb3a69a.png",
+  "original": "output/imagegen/house/house-label-editorial.png",
+  "web": "public/media/house-label-editorial.webp",
+  "width": 1024,
+  "height": 1536
+}

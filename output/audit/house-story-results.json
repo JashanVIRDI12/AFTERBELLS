@@ -1,0 +1,234 @@
+[
+  {
+    "width": 1920,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "hero": {
+      "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-ritual-v1.webp%3Fv%3Dmwjnarjz&w=1080&q=92",
+      "width": 512,
+      "height": 768,
+      "overlaps": false,
+      "retinaSufficient": true,
+      "quality": "92",
+      "alt": "A woman with blonde hair applying Amber Hour to her neck, holding the uncapped bottle in soft window light"
+    },
+    "noDimensions": true,
+    "noLabelChapter": true,
+    "chapterCount": 3,
+    "headings": [
+      "Some hours stay with you."
+    ],
+    "storyAnchorWorks": true,
+    "chapters": [
+      {
+        "title": "The composition",
+        "loaded": true
+      },
+      {
+        "title": "The gold",
+        "loaded": true
+      },
+      {
+        "title": "The cap",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "hero": {
+      "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-ritual-v1.webp%3Fv%3Dmwjnarjz&w=1080&q=92",
+      "width": 512,
+      "height": 768,
+      "overlaps": false,
+      "retinaSufficient": true,
+      "quality": "92",
+      "alt": "A woman with blonde hair applying Amber Hour to her neck, holding the uncapped bottle in soft window light"
+    },
+    "noDimensions": true,
+    "noLabelChapter": true,
+    "chapterCount": 3,
+    "headings": [
+      "Some hours stay with you."
+    ],
+    "storyAnchorWorks": true,
+    "chapters": [
+      {
+        "title": "The composition",
+        "loaded": true
+      },
+      {
+        "title": "The gold",
+        "loaded": true
+      },
+      {
+        "title": "The cap",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "width": 900,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "hero": {
+      "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-ritual-v1.webp%3Fv%3Dmwjnarjz&w=828&q=92",
+      "width": 380.703125,
+      "height": 571.046875,
+      "overlaps": false,
+      "retinaSufficient": true,
+      "quality": "92",
+      "alt": "A woman with blonde hair applying Amber Hour to her neck, holding the uncapped bottle in soft window light"
+    },
+    "noDimensions": true,
+    "noLabelChapter": true,
+    "chapterCount": 3,
+    "headings": [
+      "Some hours stay with you."
+    ],
+    "storyAnchorWorks": true,
+    "chapters": [
+      {
+        "title": "The composition",
+        "loaded": true
+      },
+      {
+        "title": "The gold",
+        "loaded": true
+      },
+      {
+        "title": "The cap",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "hero": {
+      "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-ritual-v1.webp%3Fv%3Dmwjnarjz&w=1080&q=92",
+      "width": 512,
+      "height": 640,
+      "overlaps": false,
+      "retinaSufficient": true,
+      "quality": "92",
+      "alt": "A woman with blonde hair applying Amber Hour to her neck, holding the uncapped bottle in soft window light"
+    },
+    "noDimensions": true,
+    "noLabelChapter": true,
+    "chapterCount": 3,
+    "headings": [
+      "Some hours stay with you."
+    ],
+    "storyAnchorWorks": true,
+    "chapters": [
+      {
+        "title": "The composition",
+        "loaded": true
+      },
+      {
+        "title": "The gold",
+        "loaded": true
+      },
+      {
+        "title": "The cap",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "hero": {
+      "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-ritual-v1.webp%3Fv%3Dmwjnarjz&w=750&q=92",
+      "width": 357.25,
+      "height": 446.5625,
+      "overlaps": false,
+      "retinaSufficient": true,
+      "quality": "92",
+      "alt": "A woman with blonde hair applying Amber Hour to her neck, holding the uncapped bottle in soft window light"
+    },
+    "noDimensions": true,
+    "noLabelChapter": true,
+    "chapterCount": 3,
+    "headings": [
+      "Some hours stay with you."
+    ],
+    "storyAnchorWorks": true,
+    "chapters": [
+      {
+        "title": "The composition",
+        "loaded": true
+      },
+      {
+        "title": "The gold",
+        "loaded": true
+      },
+      {
+        "title": "The cap",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "hero": {
+      "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-ritual-v1.webp%3Fv%3Dmwjnarjz&w=640&q=92",
+      "width": 288,
+      "height": 360,
+      "overlaps": false,
+      "retinaSufficient": true,
+      "quality": "92",
+      "alt": "A woman with blonde hair applying Amber Hour to her neck, holding the uncapped bottle in soft window light"
+    },
+    "noDimensions": true,
+    "noLabelChapter": true,
+    "chapterCount": 3,
+    "headings": [
+      "Some hours stay with you."
+    ],
+    "storyAnchorWorks": true,
+    "chapters": [
+      {
+        "title": "The composition",
+        "loaded": true
+      },
+      {
+        "title": "The gold",
+        "loaded": true
+      },
+      {
+        "title": "The cap",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "normalMotionStoryVisible": true,
+    "storyLinkKeyboardFocusable": true,
+    "amber-hour": {
+      "noDimensions": true,
+      "engravedCapCopy": false
+    },
+    "open-sky": {
+      "noDimensions": true,
+      "engravedCapCopy": false
+    },
+    "iron-crown": {
+      "noDimensions": true,
+      "engravedCapCopy": false
+    }
+  }
+]

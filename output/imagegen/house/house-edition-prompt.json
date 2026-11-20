@@ -1,0 +1,11 @@
+{
+  "name": "house-edition",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: wide photographic backdrop behind the closing promise panel of a perfume-house page, landscape 3:2.\nCreate a quiet photographic material study of amber glass light, honed warm-grey limestone and a small trace of delicate gold leaf. Soft evening light passing through a perfume flacon just OUTSIDE the frame casts a faint warm amber caustic and the slender faceted edge shadow of the glass onto stone near the right edge. A few TINY gold leaf flecks rest near the bottom-left corner. No actual perfume bottle or packaging is in the frame.\nComposition supports an overlaid centred panel: the central 60% is dark espresso-grey stone with a very subtle believable grain, spacious and calm; warm reflected light and gold details are confined to the outer thirds. Natural material variation and a gentle diagonal shadow add depth. Deep coffee neutrals and restrained bronze light, distinct from a silk background.\nA real editorial studio photograph, tactile minute stone pores, physically plausible restrained caustics, no computer-rendered glossy waves, no large bright orange streaks, no speckled star field, no floating particles, no huge gold fragments, no decorative text, no marks, no watermark, no frame. No artificial blur; darkness and negative space come from the lighting.",
+  "references": [],
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-02d02c96-a9af-41f8-a41e-4537ab74597d.png",
+  "original": "output/imagegen/house/house-edition.png",
+  "web": "public/media/house-edition.webp",
+  "width": 1536,
+  "height": 1024
+}

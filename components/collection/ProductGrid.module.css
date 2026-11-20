@@ -1,0 +1,105 @@
+.section {
+  background: var(--ivory);
+  color: var(--ink);
+  padding-top: clamp(56px, 8vw, 110px);
+}
+.grid {
+  display: grid;
+  gap: 72px;
+  list-style: none;
+}
+.tile {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+.visual {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.photo {
+  position: absolute !important;
+  inset: 0;
+}
+.alt {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-out);
+}
+@media (hover: hover) {
+  .visual:hover .alt {
+    opacity: 1;
+  }
+}
+.info {
+  display: grid;
+  gap: 8px;
+}
+.meta {
+  font-size: 0.625rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+.name {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  letter-spacing: 0.2em;
+}
+.tagline {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--gold-deep);
+}
+.keys {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--umber-2);
+}
+.priceRow {
+  display: grid;
+  gap: 14px;
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+.price small {
+  font-size: 0.5625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+.meter {
+  color: var(--ink);
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+.reserve {
+  flex: 1 1 auto;
+  max-width: 260px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+}
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px clamp(24px, 2.6vw, 44px);
+  }
+}

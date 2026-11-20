@@ -1,0 +1,9 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: a dedicated photographic background behind an elegant perfume-house newsletter invitation, landscape 3:2.\nCreate a real editorial still-life photograph of dark espresso-brown silk draped in broad gentle folds over honed brown-black stone. Place the silk folds mainly along the outer LEFT and RIGHT thirds, with one quiet diagonal fold near the bottom left and tactile fine-grained stone visible near the lower right. Leave the central 55 percent spacious, consistently dark and calm so a framed invitation and white lettering will be readable over it.\nLighting: a soft warm grazing light from the upper right catches the silk's natural champagne-bronze sheen and the minute stone grain. Deep coffee-brown shadows, restrained gold-brown reflected light, subtle natural material variation. Enough tonal separation at the outer edges to see the photograph without distracting from the form. The silk is real textile with fine fibre detail and believable folds, not molten metal, plastic, abstract CGI liquid or shiny gold foil. The stone has only subtle natural veins, not exaggerated marble swirls.\nA beautiful, quiet, luxurious material study photographed on a medium-format camera, crisp natural texture, controlled highlights, polished perfumery art direction. No artificial blur or bokeh; the central darkness is produced by lighting and negative space. No bottle, no peacock, no people, no flowers, no candles, no jewellery, no furniture, no props, no letters, no logos, no text, no borders, no watermark. One unified photograph without a collage or grid.",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-f82e643e-9d78-4fbc-b81c-30b07369653b.png",
+  "original": "output/imagegen/salon-backdrop.png",
+  "web": "public/media/salon-backdrop.webp",
+  "width": 1536,
+  "height": 1024
+}

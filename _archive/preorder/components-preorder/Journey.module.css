@@ -1,0 +1,144 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(88px, 10vw, 150px);
+  background:
+    radial-gradient(60% 60% at 80% 0%, rgb(222 188 104 / 0.08), transparent 70%),
+    #1b140e;
+  color: var(--ivory);
+}
+.head {
+  display: grid;
+  gap: 14px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+.kicker {
+  color: var(--gold-a);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.04;
+  max-width: 13ch;
+}
+
+/* phone: a vertical line on the left */
+.track {
+  position: relative;
+  padding-left: 44px;
+}
+.line {
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: rgb(246 238 228 / 0.14);
+}
+.fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--gold-a), var(--gold-b));
+  transform-origin: top center;
+}
+.list {
+  list-style: none;
+  display: grid;
+  gap: 44px;
+}
+.step {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  opacity: 0.45;
+  transition: opacity 0.9s var(--ease-out);
+}
+.lit {
+  opacity: 1;
+}
+.node {
+  position: absolute;
+  left: -44px;
+  top: 2px;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-a);
+  background: #1b140e;
+}
+.node i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold-a);
+  transform: scale(0);
+  transition: transform 0.7s var(--ease-out);
+}
+.lit .node i {
+  transform: scale(1);
+}
+.no {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  color: var(--gold-a);
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  line-height: 1.1;
+}
+.body {
+  max-width: 34ch;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgb(246 238 228 / 0.72);
+}
+
+/* desktop: a horizontal line across four columns */
+@media (min-width: 1000px) {
+  .track {
+    padding-left: 0;
+    padding-top: 44px;
+  }
+  .line {
+    left: 0;
+    right: 0;
+    top: 9px;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+  }
+  .fill {
+    transform-origin: left center;
+    background: linear-gradient(90deg, var(--gold-b), var(--gold-a));
+  }
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(24px, 3vw, 48px);
+  }
+  .node {
+    left: 0;
+    top: -44px;
+  }
+}
+
+/* without JS or with reduced motion, everything is lit */
+:global(html.no-js) .step,
+:global(html.ab-reduced) .step {
+  opacity: 1;
+}
+:global(html.no-js) .node i,
+:global(html.ab-reduced) .node i {
+  transform: scale(1);
+}
+:global(html:not(.no-js):not(.ab-reduced)) .fill {
+  transform: scale(0);
+}

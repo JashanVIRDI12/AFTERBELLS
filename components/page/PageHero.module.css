@@ -1,0 +1,154 @@
+.hero {
+  position: relative;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+}
+.paper {
+  background: var(--ivory);
+  color: var(--ink);
+  padding-top: calc(var(--header-h) + var(--safe-t) + clamp(64px, 10vw, 150px));
+  padding-bottom: clamp(48px, 7vw, 100px);
+}
+.dark {
+  min-height: max(78svh, 560px);
+  background: var(--espresso);
+  color: var(--ivory);
+  padding-top: calc(var(--header-h) + var(--safe-t) + 48px);
+  padding-bottom: clamp(40px, 7vh, 88px);
+}
+.dark.short {
+  min-height: max(62svh, 460px);
+}
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.img {
+  object-fit: cover;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(14 10 7 / 0.5) 0%, transparent 24%, rgb(14 10 7 / 0.34) 46%, rgb(14 10 7 / 0.9) 100%),
+    linear-gradient(90deg, rgb(14 10 7 / 0.6), rgb(14 10 7 / 0.15) 55%, transparent 80%);
+}
+.content {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+.eyebrow {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(3rem, 11vw, 8rem);
+  line-height: 1;
+}
+.title :global(.mask) {
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.lede {
+  max-width: 38ch;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  opacity: 0.86;
+}
+
+/* The collection campaign reserves its left side for copy and its right side for the trio. */
+.hero[data-media-slot='collection-hero'] .img {
+  object-position: 72% top;
+}
+.hero[data-media-slot='collection-hero'] .title {
+  font-size: clamp(3.1rem, 6.8vw, 6.5rem);
+}
+.hero[data-media-slot='collection-hero'] .shade {
+  background:
+    linear-gradient(90deg, rgb(14 10 7 / 0.3), transparent 60%),
+    linear-gradient(180deg, rgb(14 10 7 / 0.15), transparent 40%, rgb(14 10 7 / 0.25));
+}
+
+@media (max-width: 700px) {
+  .hero[data-media-slot='collection-hero'].dark.short {
+    min-height: 0;
+    padding-top: calc(var(--header-h) + var(--safe-t) + 74vw + 24px);
+    padding-bottom: 40px;
+    background: #1b1310;
+  }
+  .hero[data-media-slot='collection-hero'] .media {
+    top: calc(var(--header-h) + var(--safe-t));
+    bottom: auto;
+    height: 74vw;
+  }
+  .hero[data-media-slot='collection-hero'] .img {
+    object-position: right center;
+  }
+  .hero[data-media-slot='collection-hero'] .shade {
+    background: linear-gradient(180deg, transparent 72%, #1b1310);
+  }
+  .hero[data-media-slot='collection-hero'] .title {
+    font-size: clamp(3rem, 11vw, 4.5rem);
+  }
+}
+
+/* House photography: keep the bottle clear of the opening words and show it whole. */
+.hero[data-media-slot='house-hero'].dark {
+  min-height: max(78svh, 50vw);
+  align-items: center;
+}
+.hero[data-media-slot='house-hero'] .img {
+  object-position: 72% 28%;
+}
+.hero[data-media-slot='house-hero'] .title {
+  max-width: 10.5ch;
+  font-size: clamp(3rem, 6.2vw, 6rem);
+  line-height: 1.03;
+}
+.hero[data-media-slot='house-hero'] .lede {
+  max-width: 34ch;
+}
+.hero[data-media-slot='house-hero'] .shade {
+  background:
+    linear-gradient(90deg, rgb(14 10 7 / 0.3), transparent 65%),
+    linear-gradient(180deg, rgb(14 10 7 / 0.22), transparent 35%, rgb(14 10 7 / 0.12));
+}
+@media (max-width: 700px) {
+  .hero[data-media-slot='house-hero'].dark {
+    min-height: 0;
+    padding-top: calc(var(--header-h) + var(--safe-t) + 84vw + 24px);
+    padding-bottom: 48px;
+    background: #20150f;
+  }
+  .hero[data-media-slot='house-hero'] .media {
+    top: calc(var(--header-h) + var(--safe-t));
+    bottom: auto;
+    height: 84vw;
+  }
+  .hero[data-media-slot='house-hero'] .img {
+    object-position: right center;
+  }
+  .hero[data-media-slot='house-hero'] .shade {
+    background: linear-gradient(180deg, transparent 78%, #20150f);
+  }
+  .hero[data-media-slot='house-hero'] .title {
+    max-width: 12ch;
+    font-size: clamp(3rem, 10.8vw, 4.5rem);
+  }
+}
+
+/* pre-animation states (JS only, not for reduced motion) */
+:global(html:not(.no-js):not(.ab-reduced)) .hero [data-ph-line] {
+  transform: translateY(110%);
+}
+:global(html:not(.no-js):not(.ab-reduced)) .hero [data-ph-fade] {
+  opacity: 0;
+}

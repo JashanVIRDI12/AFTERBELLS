@@ -1,0 +1,46 @@
+.tilt {
+  --rx: 0deg;
+  --ry: 0deg;
+  --sx: 50%;
+  --sy: 30%;
+  perspective: 900px;
+}
+.body {
+  position: relative;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform 0.9s var(--ease-out);
+}
+.tilt[data-active='true'] .body {
+  transition: transform 0.15s linear;
+}
+.sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--sx) var(--sy), rgb(255 248 222 / 0.55), transparent 45%);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.tilt[data-active='true'] .sheen {
+  opacity: 1;
+}
+@media (hover: none) {
+  .sheen {
+    opacity: 1;
+    background: linear-gradient(115deg, transparent 35%, rgb(255 248 222 / 0.5) 50%, transparent 65%);
+    background-size: 250% 100%;
+    animation: auto-sheen 5s var(--ease-in-out) infinite;
+  }
+}
+@keyframes auto-sheen {
+  0% {
+    background-position: 120% 0;
+  }
+  60%,
+  100% {
+    background-position: -20% 0;
+  }
+}

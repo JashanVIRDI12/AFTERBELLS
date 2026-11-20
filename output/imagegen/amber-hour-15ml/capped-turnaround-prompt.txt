@@ -1,0 +1,13 @@
+Use case: precise-object-edit.
+Correct the supplied nine-panel product reference sheet to reflect a user-confirmed physical detail: THE BOTTLE HAS A VERY SMALL REMOVABLE GOLD CAP. We previously mistook that cap for an exposed spray actuator.
+
+Image 1 is the original real bottle photo and is the PRIMARY authority for the fitted cap silhouette. Look carefully: the slim, smooth, narrow gold cylinder at the very top is a tiny closed removable protective cap. Beneath it is the slightly wider gold cylindrical pump collar. The exterior top cylinder in the real photo has NO VISIBLE SPRAY OPENING because it is a cap.
+Image 2 is the generated reference sheet to correct. Preserve its 3x3 layout, small 15 ml vial identity, clear cylindrical glass, slender proportions, honey-amber liquid, gold leaf flakes, dip tube, background and lighting.
+
+CORRECTIONS:
+1. In all six full-bottle views (FRONT, RIGHT SIDE, BACK, LEFT SIDE, FRONT THREE-QUARTER, REAR THREE-QUARTER), show the tiny smooth satin-polished gold cap FITTED and closed. Keep the exact existing stepped external silhouette: narrow short cap sitting above the slightly wider gold collar. Remove every circular spray hole from the cap exterior. Smooth plain cylindrical cap with gently rounded closed top and a fine visible separation seam at its bottom. No tall extra cover, no extra ring, no oversized lid, no new decorative shapes.
+2. TOP VIEW should show the circular CLOSED gold cap top, consistent with the same small cap.
+3. BASE VIEW stays unchanged.
+4. Replace the lower-right macro currently captioned SPRAY PUMP DETAIL with a clean photoreal CAP REMOVED detail. Show a close-up of the bottle neck and the fixed wider gold collar with a SHORT realistic gold spray actuator exposed above it, a tiny pale circular nozzle visible on that actual actuator. Show the removed hollow small cylindrical gold cap upright beside the neck in the same panel, slightly angled so its thin inner rim can be seen. The loose cap matches exactly the narrow cylinder seen fitted in all other panels. It must be small and plausible and fit over the shorter atomizer. Do not show the entire capped upper cylinder again as the uncovered atomizer; that cylinder is the removed cap. Caption this panel precisely "CAP REMOVED".
+
+Preserve the first eight captions and all other content. No label or branding on bottle, no dimensions, no additional text. The main six views must unambiguously be the same CAPPED product from the real photograph, not a nozzle with its hole erased. Tiny cap, fixed collar, cap seam, clear vial, honey-amber liquid and gold flakes must remain consistent across all views. Final image is a reusable high-resolution product identity reference sheet.

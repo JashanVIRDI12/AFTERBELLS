@@ -1,0 +1,53 @@
+.mask {
+  display: block;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.emblem {
+  aspect-ratio: 392.48 / 227.91;
+  -webkit-mask-image: url('/brand/emblem.svg');
+  mask-image: url('/brand/emblem.svg');
+}
+.peacock {
+  aspect-ratio: 69 / 168;
+  -webkit-mask-image: url('/brand/peacock.svg');
+  mask-image: url('/brand/peacock.svg');
+}
+.gold {
+  background-image: var(--foil-sheen), var(--foil-brush), var(--foil-diag);
+  background-size:
+    340% 100%,
+    360px 140px,
+    100% 100%;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position:
+    140% 0,
+    0 0,
+    0 0;
+  background-blend-mode: screen, soft-light, normal;
+}
+.current {
+  background: currentColor;
+}
+.shine {
+  animation: emblemShine 9s var(--ease-in-out) infinite;
+}
+@keyframes emblemShine {
+  0%,
+  55% {
+    background-position:
+      140% 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      -40% 0,
+      0 0,
+      0 0;
+  }
+}

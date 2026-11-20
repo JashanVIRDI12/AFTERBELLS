@@ -1,0 +1,47 @@
+.faq {
+  background: var(--ivory);
+  color: var(--ink);
+}
+.grid {
+  display: grid;
+  gap: 48px;
+}
+.head {
+  display: grid;
+  justify-items: start;
+  gap: 20px;
+  align-content: start;
+}
+.title {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1;
+}
+.head :global(.t-eyebrow) {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.help {
+  font-size: 0.875rem;
+  color: var(--umber-2);
+  max-width: 34ch;
+}
+.help a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
+  word-break: break-word;
+}
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: clamp(60px, 8vw, 140px);
+  }
+  .head {
+    position: sticky;
+    top: calc(var(--header-h) + 40px);
+  }
+}

@@ -1,0 +1,15 @@
+.note {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  opacity: 0.74;
+  text-wrap: balance;
+}
+.pay {
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}

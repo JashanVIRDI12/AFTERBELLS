@@ -1,0 +1,235 @@
+[
+  {
+    "width": 1920,
+    "status": 200,
+    "overflow": false,
+    "errors": [],
+    "trio": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-trio-v2.webp%3Fv%3Dmwiej99x&w=1920&q=92",
+      "width": 720,
+      "height": 480,
+      "fit": "contain",
+      "ancestors": [
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        }
+      ],
+      "retinaSufficient": true,
+      "uncropped": true,
+      "cta": "/collection"
+    },
+    "salon": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fsalon-backdrop.webp%3Fv%3Dmwifir1h&w=3840&q=85",
+      "filter": "none",
+      "transform": "none",
+      "inputFits": true,
+      "buttonFits": true,
+      "inputType": "email",
+      "required": true
+    }
+  },
+  {
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "errors": [],
+    "trio": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-trio-v2.webp%3Fv%3Dmwiej99x&w=1920&q=92",
+      "width": 680.203125,
+      "height": 453.46875,
+      "fit": "contain",
+      "ancestors": [
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        }
+      ],
+      "retinaSufficient": true,
+      "uncropped": true,
+      "cta": "/collection"
+    },
+    "salon": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fsalon-backdrop.webp%3Fv%3Dmwifir1h&w=3840&q=85",
+      "filter": "none",
+      "transform": "none",
+      "inputFits": true,
+      "buttonFits": true,
+      "inputType": "email",
+      "required": true
+    }
+  },
+  {
+    "width": 900,
+    "status": 200,
+    "overflow": false,
+    "errors": [],
+    "trio": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-trio-v2.webp%3Fv%3Dmwiej99x&w=1080&q=92",
+      "width": 425.140625,
+      "height": 283.421875,
+      "fit": "contain",
+      "ancestors": [
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        }
+      ],
+      "retinaSufficient": true,
+      "uncropped": true,
+      "cta": "/collection"
+    },
+    "salon": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fsalon-backdrop.webp%3Fv%3Dmwifir1h&w=1920&q=85",
+      "filter": "none",
+      "transform": "none",
+      "inputFits": true,
+      "buttonFits": true,
+      "inputType": "email",
+      "required": true
+    }
+  },
+  {
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "errors": [],
+    "trio": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-trio-v2.webp%3Fv%3Dmwiej99x&w=1920&q=92",
+      "width": 703.5,
+      "height": 469,
+      "fit": "contain",
+      "ancestors": [
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        }
+      ],
+      "retinaSufficient": true,
+      "uncropped": true,
+      "cta": "/collection"
+    },
+    "salon": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fsalon-backdrop.webp%3Fv%3Dmwifir1h&w=1920&q=85",
+      "filter": "none",
+      "transform": "none",
+      "inputFits": true,
+      "buttonFits": true,
+      "inputType": "email",
+      "required": true
+    }
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "errors": [],
+    "trio": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-trio-v2.webp%3Fv%3Dmwiej99x&w=750&q=92",
+      "width": 357.25,
+      "height": 238.15625,
+      "fit": "contain",
+      "ancestors": [
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        }
+      ],
+      "retinaSufficient": true,
+      "uncropped": true,
+      "cta": "/collection"
+    },
+    "salon": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fsalon-backdrop.webp%3Fv%3Dmwifir1h&w=828&q=85",
+      "filter": "none",
+      "transform": "none",
+      "inputFits": true,
+      "buttonFits": true,
+      "inputType": "email",
+      "required": true
+    }
+  },
+  {
+    "width": 320,
+    "status": 200,
+    "overflow": false,
+    "errors": [],
+    "trio": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-trio-v2.webp%3Fv%3Dmwiej99x&w=640&q=92",
+      "width": 288,
+      "height": 192,
+      "fit": "contain",
+      "ancestors": [
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        },
+        {
+          "transform": "none",
+          "filter": "none"
+        }
+      ],
+      "retinaSufficient": true,
+      "uncropped": true,
+      "cta": "/collection"
+    },
+    "salon": {
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fsalon-backdrop.webp%3Fv%3Dmwifir1h&w=640&q=85",
+      "filter": "none",
+      "transform": "none",
+      "inputFits": true,
+      "buttonFits": true,
+      "inputType": "email",
+      "required": true
+    }
+  },
+  {
+    "route": "/collection",
+    "sharedSalonBackdrop": true,
+    "productPhotoPills": 0
+  }
+]

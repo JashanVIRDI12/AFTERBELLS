@@ -1,0 +1,26 @@
+{
+  "normalMotionCrafts": [
+    {
+      "name": "The composition",
+      "fullyRevealed": true,
+      "unscaled": true
+    },
+    {
+      "name": "The gold",
+      "fullyRevealed": true,
+      "unscaled": true
+    },
+    {
+      "name": "The cap",
+      "fullyRevealed": true,
+      "unscaled": true
+    },
+    {
+      "name": "The label",
+      "fullyRevealed": true,
+      "unscaled": true
+    }
+  ],
+  "closingPromiseVisible": true,
+  "errors": []
+}

@@ -1,0 +1,63 @@
+.meter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.dot {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-a);
+}
+.dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-a);
+  opacity: 0;
+  animation: meter-ping 2.8s var(--ease-out) infinite;
+}
+@keyframes meter-ping {
+  from {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+.label {
+  opacity: 0.72;
+}
+.sep {
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+.low .status {
+  color: var(--gold-a);
+}
+.out .dot {
+  background: currentColor;
+  opacity: 0.4;
+}
+.out .dot::after {
+  display: none;
+}
+.out .status {
+  opacity: 0.7;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dot::after {
+    animation: none;
+  }
+}

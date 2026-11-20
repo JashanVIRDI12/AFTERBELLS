@@ -1,0 +1,274 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(88px, 10vw, 150px);
+  background: #160f0a;
+  color: var(--ivory);
+}
+
+/* the gold, softened behind the glass */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+.backdropImg {
+  object-fit: cover;
+  filter: blur(26px) brightness(0.5) saturate(1.15);
+}
+.veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 70% at 72% 50%, transparent 10%, rgb(22 15 10 / 0.7) 80%),
+    linear-gradient(90deg, rgb(22 15 10 / 0.88), rgb(22 15 10 / 0.35) 45%, rgb(22 15 10 / 0.25)),
+    linear-gradient(180deg, rgb(22 15 10 / 0.6), transparent 25%, transparent 75%, rgb(22 15 10 / 0.7));
+}
+.flakes {
+  z-index: -1;
+  opacity: 0.55;
+}
+
+.layout {
+  display: grid;
+  gap: 44px;
+}
+
+/* ---- the words ---- */
+.head {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 18px;
+}
+.kicker {
+  color: var(--gold-a);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+  line-height: 1.06;
+}
+.lede {
+  max-width: 30ch;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: rgb(246 238 228 / 0.72);
+}
+.close {
+  margin-top: 6px;
+  padding-left: 14px;
+  border-left: 1px solid rgb(222 188 104 / 0.5);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  color: rgb(246 238 228 / 0.72);
+}
+.cta {
+  margin-top: 10px;
+}
+
+/* ---- the glass wall ---- */
+.bento {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+.tile {
+  --mx: 50%;
+  --my: 0%;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 190px;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid rgb(222 188 104 / 0.26);
+  border-radius: 3px;
+  background: linear-gradient(150deg, rgb(255 238 206 / 0.1), rgb(255 238 206 / 0.025) 55%, rgb(255 238 206 / 0.05));
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow:
+    inset 0 1px 0 rgb(255 240 210 / 0.14),
+    inset 0 -1px 0 rgb(0 0 0 / 0.25),
+    0 30px 60px -40px rgb(0 0 0 / 0.8);
+  /* hover lift uses `translate`, so it never fights GSAP's transform */
+  transition:
+    border-color 0.6s var(--ease-out),
+    translate 0.8s var(--ease-out);
+}
+/* a fine inner rule, like a bevelled pane */
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgb(222 188 104 / 0.1);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 2;
+}
+/* the glint that follows the pointer */
+.tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx) var(--my), rgb(255 236 190 / 0.14), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+@media (hover: hover) {
+  .tile:hover {
+    border-color: rgb(222 188 104 / 0.55);
+    translate: 0 -4px;
+  }
+  .tile:hover::after {
+    opacity: 1;
+  }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .tile {
+    background: rgb(40 30 20 / 0.92);
+  }
+}
+
+.tileBody {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 8px;
+  padding: clamp(22px, 2.4vw, 32px);
+}
+
+/* the 24K tile shows the gold itself, clear as through a window */
+.tileImg {
+  object-fit: cover;
+  z-index: -1;
+  transition: transform 1.6s var(--ease-out);
+}
+@media (hover: hover) {
+  .gold:hover .tileImg {
+    transform: scale(1.05);
+  }
+}
+.tileShade {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgb(18 12 8 / 0.05) 30%, rgb(18 12 8 / 0.85));
+}
+.gold {
+  min-height: 420px;
+}
+
+.figure {
+  justify-self: start;
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: clamp(4.6rem, 8vw, 7.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.figureSm {
+  font-size: clamp(3.6rem, 5vw, 5rem);
+}
+.label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.6875rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+  color: var(--gold-a);
+}
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 1.7vw, 1.55rem);
+  line-height: 1.2;
+}
+.desc {
+  max-width: 34ch;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgb(246 238 228 / 0.72);
+}
+
+/* phone: the two figures side by side, the compliments beneath */
+@media (min-width: 560px) and (max-width: 999px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gold {
+    grid-column: 1 / -1;
+    min-height: 360px;
+  }
+  .concierge {
+    grid-column: 1 / -1;
+  }
+}
+
+/* desktop: words on the left, a bento of glass on the right */
+@media (min-width: 1000px) {
+  .layout {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(24px, 3vw, 48px);
+    align-items: center;
+  }
+  .head {
+    grid-column: 1 / span 4;
+  }
+  .bento {
+    grid-column: 5 / span 8;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 16px;
+  }
+  .gold {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+    min-height: 0;
+  }
+  .oil {
+    grid-column: 4 / span 3;
+    grid-row: 1;
+  }
+  .vials {
+    grid-column: 4 / span 3;
+    grid-row: 2;
+  }
+  .delivery {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+  }
+  .concierge {
+    grid-column: 4 / span 3;
+    grid-row: 3;
+  }
+}
+
+/* start states for the reveal (JS only) */
+:global(html:not(.no-js):not(.ab-reduced)) .tile,
+:global(html:not(.no-js):not(.ab-reduced)) .head > * {
+  opacity: 0;
+}

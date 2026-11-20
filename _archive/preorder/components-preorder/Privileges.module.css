@@ -1,0 +1,107 @@
+.section {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgb(222 188 104 / 0.12), transparent 70%),
+    var(--paper);
+  color: var(--ink);
+  padding-block: clamp(88px, 10vw, 150px);
+}
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+  margin-bottom: clamp(44px, 6vw, 76px);
+}
+.kicker {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.04;
+  max-width: 14ch;
+}
+.lede {
+  max-width: 40ch;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--umber-2);
+}
+.grid {
+  list-style: none;
+  display: grid;
+  gap: 22px;
+  perspective: 1200px;
+}
+/* a certificate: ivory card, gilt double rule, diamond corners */
+.card {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 14px;
+  padding: clamp(40px, 4vw, 56px) clamp(24px, 3vw, 40px) clamp(36px, 4vw, 48px);
+  text-align: center;
+  background: linear-gradient(180deg, #fffdf8, var(--ivory));
+  border-color: rgb(172 128 40 / 0.5) !important;
+  box-shadow: 0 30px 60px -40px rgb(39 29 12 / 0.45);
+  transform-origin: 50% 100%;
+}
+.card::before {
+  border-color: rgb(172 128 40 / 0.22) !important;
+}
+.no {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-deep);
+}
+.mark {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 1px solid rgb(172 128 40 / 0.45);
+  background: radial-gradient(circle at 50% 35%, #fff8e6, #f1e3c6);
+  color: var(--gold-deep);
+}
+.mark svg {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.name {
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.3vw, 2.1rem);
+  line-height: 1.15;
+}
+.rule {
+  width: 44px;
+  height: 1px;
+  background: var(--gold);
+}
+.body {
+  max-width: 28ch;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--umber-2);
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 2.4vw, 36px);
+  }
+}
+:global(html:not(.no-js):not(.ab-reduced)) .card {
+  opacity: 0;
+}

@@ -1,0 +1,46 @@
+.icon {
+  flex: 0 0 auto;
+}
+.wrap {
+  display: inline-grid;
+  justify-items: center;
+  gap: 8px;
+}
+.block {
+  display: grid;
+  width: 100%;
+}
+.btn {
+  gap: 10px;
+}
+.caption {
+  margin: 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  opacity: 0.72;
+}
+.caption a {
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.3s;
+}
+.caption a:hover {
+  text-decoration-color: currentColor;
+}
+.link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  min-height: 44px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.86;
+  transition: opacity 0.3s;
+}
+.link:hover {
+  opacity: 1;
+}

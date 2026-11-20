@@ -1,0 +1,13 @@
+{
+  "name": "house-hero",
+  "prompt": "Use case: product-mockup.\nAsset type: editorial opening photograph for the After Bells House page, landscape 3:2.\nInput image 1 is a PRODUCT DESIGN REFERENCE sheet only, not a layout to reproduce. Use its FRONT VIEW bottle and cap as the identity source. Make one unified photograph, never a sheet or collage.\nScene: an intimate perfumery atelier at dusk. One finished Amber Hour perfume bottle stands on a low honed warm-grey limestone block against a deep espresso plaster wall. A narrow architectural shaft of warm natural light falls from upper right across its engraved cap and the edge of the glass. Beautiful real stone grain and soft gradients in the wall.\nComposition: the complete bottle stands in the RIGHT third, centred at 76% of the width, with cap at 20% of the frame height and base at 80%. Leave the LEFT 52% quiet and dark for live website typography. Keep all important product details within the central 60% vertically so a landscape crop retains the whole bottle. No extra props.\nProduct invariants: exact ornate square gold cap with the four-part raised scroll engraving from the reference; cylindrical gold neck ring; substantial faceted clear rectangular glass and thick clear base; amber liquid; a small amount of the ORIGINAL very small gold flakes, mostly settled. Front-facing bottle only. Front gold metal label with two fine dark rectangular border rules and exactly the black words \"AFTER BELLS\", a tiny diamond between two rules, and \"AMBER HOUR\". No other text. Label is thin brushed gold metal attached flush to glass, real ink and subtle specular response. No label on narrow side surfaces.\nPhotorealistic luxury editorial still life, real studio materials, sharp cap and label, restrained highlights, gentle microtexture, plausible glass refraction, true verticals. A lens photograph with a large diffused light and black flags, no CGI gloss, no excessive bloom, no hazy filter, no lens flare, no huge gold fragments, no floating magical dust. No headline, logo overlay, border, watermark or interface.",
+  "references": [
+    "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+  ],
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-0271e1c6-440f-4a96-95a8-209e00b30361.png",
+  "original": "output/imagegen/house/house-hero.png",
+  "web": "public/media/house-hero.webp",
+  "width": 1536,
+  "height": 1024
+}

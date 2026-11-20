@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "loaded": true,
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwidl685&w=1920&q=85",
+      "fit": "cover",
+      "position": "72% 0%",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "loaded": true,
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwidl685&w=1080&q=85",
+      "fit": "cover",
+      "position": "72% 0%",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "loaded": true,
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwidl685&w=640&q=85",
+      "fit": "cover",
+      "position": "100% 50%",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "loaded": true,
+      "src": "http://localhost:3100/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwidl685&w=640&q=85",
+      "fit": "cover",
+      "position": "100% 50%",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

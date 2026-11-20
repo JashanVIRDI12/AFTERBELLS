@@ -1,0 +1,543 @@
+.comp {
+  /* glass on dark themes: a pale, barely-there pane */
+  --glass-hi: rgb(255 255 255 / 0.085);
+  --glass-lo: rgb(255 255 255 / 0.02);
+  --glass-edge: rgb(255 255 255 / 0.13);
+  --glass-top: rgb(255 255 255 / 0.22);
+  --glass-shade: rgb(0 0 0 / 0.6);
+  --aura-o: 0.15;
+  --artwork-filter: none;
+  --wear-gold: #E2C58D;
+  --glass-fill:
+    linear-gradient(118deg, color-mix(in srgb, var(--glass-top) 40%, transparent) 0%, transparent 24%),
+    linear-gradient(150deg, var(--glass-hi), var(--glass-lo) 55%, color-mix(in srgb, var(--glass-hi) 70%, transparent));
+
+  position: relative;
+  /* the aura sits between the background and the glass */
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(88px, 10vw, 150px);
+  color: var(--ink);
+  background:
+    radial-gradient(55% 45% at 85% 10%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%),
+    radial-gradient(50% 50% at 0% 100%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%),
+    linear-gradient(190deg, var(--bg2) 0%, var(--bg) 72%);
+}
+/* glass on light themes: frosted white */
+.light {
+  --glass-hi: rgb(255 255 255 / 0.62);
+  --glass-lo: rgb(255 255 255 / 0.26);
+  --glass-edge: rgb(255 255 255 / 0.78);
+  --glass-top: rgb(255 255 255 / 0.95);
+  --glass-shade: rgb(28 39 45 / 0.3);
+  --aura-o: 0.3;
+  --artwork-filter: brightness(0.43) sepia(0.9) saturate(0.85);
+  --wear-gold: #684B22;
+}
+
+/* three soft lights in the scent's top accord colours */
+.aura {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.aura i {
+  position: absolute;
+  width: min(62vw, 820px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: var(--aura-o);
+  background: radial-gradient(closest-side, var(--c), transparent);
+  animation: drift 24s ease-in-out infinite alternate;
+}
+.aura i:nth-child(1) {
+  --c: var(--a1);
+  top: 22%;
+  left: -16%;
+}
+.aura i:nth-child(2) {
+  --c: var(--a2);
+  top: 46%;
+  right: -18%;
+  animation-delay: -8s;
+}
+.aura i:nth-child(3) {
+  --c: var(--a3);
+  bottom: -14%;
+  left: 24%;
+  animation-delay: -16s;
+}
+@keyframes drift {
+  to {
+    transform: translate3d(5%, -5%, 0) scale(1.1);
+  }
+}
+
+/* the pane itself: frosted, lit along the top edge, one streak of light across */
+.glass {
+  position: relative;
+  border: 1px solid var(--glass-edge);
+  border-radius: 8px;
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: blur(26px) saturate(1.5);
+  backdrop-filter: blur(26px) saturate(1.5);
+  box-shadow:
+    inset 0 1px 0 var(--glass-top),
+    inset 0 -1px 0 rgb(0 0 0 / 0.06),
+    0 1px 2px rgb(0 0 0 / 0.08),
+    0 36px 70px -40px var(--glass-shade);
+}
+
+/* ---- head: centred, like the title page of a book ---- */
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  text-align: center;
+}
+.kicker {
+  color: var(--accent);
+}
+.title {
+  max-width: 22ch;
+  font-size: clamp(2.3rem, 5.2vw, 4.6rem);
+  line-height: 1.04;
+}
+
+/* Three botanical plates, each followed by its family and complete note list. */
+.drydown {
+  position: relative;
+  padding-block: 12px;
+}
+.stages {
+  list-style: none;
+  display: grid;
+  gap: 48px;
+}
+.stage {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 22px;
+  text-align: center;
+}
+.stageIllustration {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: var(--artwork-filter);
+}
+.stageHead {
+  display: grid;
+  gap: 10px;
+}
+.stageName {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 2.4vw, 2.2rem);
+  line-height: 1.15;
+}
+.when {
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.notes {
+  list-style: none;
+  max-width: 31ch;
+  font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+.notes li {
+  display: inline;
+}
+.key {
+  color: var(--wear-gold);
+}
+.separator {
+  color: var(--ink);
+}
+.legend {
+  margin-top: 40px;
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+@media (min-width: 760px) {
+  .stages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(24px, 5vw, 80px);
+  }
+  .stageIllustration {
+    width: 144px;
+    height: 144px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ---- is it yours: three glass cards — when to wear, character, mood ---- */
+.profile {
+  display: grid;
+  gap: 16px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.block {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  padding: clamp(24px, 3vw, 36px);
+}
+@media (min-width: 760px) {
+  .profile {
+    grid-template-columns: 1fr 1fr;
+  }
+  .wear {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 1200px) {
+  .profile {
+    grid-template-columns: 1.25fr 1fr 0.8fr;
+  }
+  .wear {
+    grid-column: auto;
+  }
+}
+
+/* Matching seasonal and celestial engravings. */
+.seasons,
+.times {
+  list-style: none;
+  display: grid;
+}
+.seasons {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.times {
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+}
+.seasons li {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding-block: 4px;
+  text-align: center;
+}
+.times li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 8px;
+}
+.wearImage {
+  width: 56px;
+  max-width: 100%;
+  height: 56px;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: var(--artwork-filter);
+  transition: opacity 0.8s var(--ease-out);
+}
+.times .wearImage {
+  grid-row: span 2;
+  width: 44px;
+  height: 44px;
+}
+.on .wearImage {
+  opacity: 1;
+}
+.seasons b,
+.times b {
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.times b {
+  align-self: end;
+}
+.on b {
+  opacity: 1;
+}
+.meter {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.seasons .meter {
+  width: 64%;
+}
+.times .meter {
+  align-self: start;
+}
+.meter i {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--wear-gold);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1.5s var(--ease-out);
+  transition-delay: calc(0.25s + var(--i) * 0.08s);
+}
+
+/* character: each scale shaded from one end's colour to the other's, spread to fill its card */
+.character {
+  grid-template-rows: auto 1fr;
+  align-content: stretch;
+}
+.character ul {
+  list-style: none;
+  display: grid;
+  align-content: space-around;
+  gap: 26px;
+}
+.character li {
+  display: grid;
+  grid-template-columns: 70px 1fr 70px;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.character li > span:first-child,
+.character li > span:last-child {
+  opacity: 0.64;
+}
+.character li > span:last-child {
+  text-align: right;
+}
+.character li > span.lead {
+  opacity: 1;
+  font-weight: 500;
+}
+.track {
+  position: relative;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--l) 55%, transparent), color-mix(in srgb, var(--r) 55%, transparent));
+}
+.knob {
+  --k: color-mix(in oklab, var(--l), var(--r) var(--p));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  border-radius: 1px;
+  background: var(--k);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--bg) 80%, transparent),
+    0 2px 5px rgb(0 0 0 / 0.25);
+  transform: rotate(45deg);
+  transition: left 1.8s var(--ease-out);
+  transition-delay: calc(0.35s + var(--i) * 0.1s);
+}
+
+/* mood and moment as pills, spread to fill their card */
+.feel {
+  align-content: space-around;
+  gap: 24px;
+}
+.feel > div {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+.feel > div + div {
+  padding-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.phrase {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.8vw, 1.6rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.phrase span {
+  white-space: nowrap;
+}
+
+.profile:global(.is-in) .meter i,
+:global(html.no-js) .profile .meter i,
+:global(html.ab-reduced) .profile .meter i {
+  transform: scaleX(var(--v));
+}
+.profile:global(.is-in) .knob,
+:global(html.no-js) .profile .knob,
+:global(html.ab-reduced) .profile .knob {
+  left: calc(var(--v) * 100%);
+}
+
+/* ---- decide: reserve while the scent is still in mind ---- */
+.decide {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  grid-template-areas:
+    'bottle info'
+    'perks perks'
+    'buy buy';
+  align-items: center;
+  gap: 22px 20px;
+  margin-top: 16px;
+  padding: clamp(24px, 3vw, 36px);
+  border-color: rgb(222 188 104 / 0.55);
+  background:
+    radial-gradient(60% 120% at 0% 50%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+    var(--glass-fill);
+}
+.decide::before {
+  border-radius: 5px;
+}
+.bottle {
+  grid-area: bottle;
+  position: relative;
+  aspect-ratio: 3 / 4;
+}
+.bottle::after {
+  content: '';
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: -3%;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(0 0 0 / 0.32), transparent);
+}
+/* a warm halo of gold behind the glass */
+.glow {
+  position: absolute;
+  inset: 4% -18% 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(232 205 133 / 0.5), rgb(232 205 133 / 0) 100%);
+  filter: blur(6px);
+}
+.cut {
+  z-index: 1;
+  object-fit: contain;
+}
+.decideInfo {
+  grid-area: info;
+  display: grid;
+  gap: 6px;
+}
+.edition {
+  margin-bottom: 4px;
+}
+.decideName {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+.decideSub {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  opacity: 0.72;
+}
+.perks {
+  grid-area: perks;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.perks li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.perks li::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--gold-a);
+  transform: translateY(-1px) rotate(45deg);
+}
+.decideBuy {
+  grid-area: buy;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+.price small {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  opacity: 0.62;
+}
+.ask {
+  justify-content: center;
+  text-align: center;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .aura i {
+    width: 110vw;
+    animation: none;
+  }
+}
+@media (max-width: 420px) {
+  .seasons b {
+    letter-spacing: 0.12em;
+  }
+  .character li {
+    grid-template-columns: 64px 1fr 64px;
+    gap: 12px;
+    letter-spacing: 0.14em;
+  }
+}
+@media (min-width: 1000px) {
+  .decide {
+    grid-template-columns: 112px 1fr minmax(260px, 320px);
+    grid-template-areas:
+      'bottle info buy'
+      'bottle perks buy';
+    column-gap: clamp(24px, 3vw, 48px);
+    row-gap: 14px;
+    padding-block: 28px;
+  }
+  .decideInfo {
+    align-self: end;
+  }
+  .perks {
+    align-self: start;
+  }
+  .price {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .decideBuy {
+    justify-items: stretch;
+  }
+  .ask {
+    justify-self: center;
+  }
+}

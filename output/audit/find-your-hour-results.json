@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Keyboard Tab reaches the next hour with a visible focus outline",
+    "Pointer hover animates the hour panel",
+    "Amber Hour panel opens its matching fragrance",
+    "Open Sky panel opens its matching fragrance",
+    "Iron Crown panel opens its matching fragrance",
+    "Layout and reduced motion pass at 1440px",
+    "Layout and reduced motion pass at 768px",
+    "Layout and reduced motion pass at 390px",
+    "Layout and reduced motion pass at 320px"
+  ],
+  "errors": []
+}

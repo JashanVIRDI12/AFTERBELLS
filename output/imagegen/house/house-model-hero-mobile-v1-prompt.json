@@ -1,0 +1,25 @@
+{
+  "name": "house-model-hero-mobile-v1",
+  "references": [
+    "/Users/jashan/Documents/afterbells/output/imagegen/house/house-model-ritual-v1.png"
+  ],
+  "prompt": "Use case: compositing.\nAsset type: full-bleed PHONE background for a luxury fragrance website, VERTICAL 9:16 photograph.\nInput image 1 is the approved perfume-application photograph and EDIT TARGET. Preserve the same fictional adult blonde woman, facial identity, loose bun, closed eyes, black tailored blazer, ivory silk blouse, natural right-hand grip on the UNCAPPED Amber Hour bottle, gold spray nozzle, small gold flakes inside amber perfume and the delicate mist aimed at her neck. Preserve the correct existing front label, with no side sticker and no attached cap. Keep the quiet stone-window interior and soft natural light.\nRecompose it for an actual 9:16 mobile website hero, with live copy over the BOTTOM third. This framing is essential: place the woman's full head in the UPPER RIGHT of the frame, eyes centred at about 65% of width and 23% of height, hair begins at 7% height. Keep the raised perfume bottle centred at about 34% width and 43% height. The COMPLETE head, hand, bottle, atomizer and mist must fit within the TOP 58% of the image. The lower portion of her black jacket may continue to the bottom of the frame, but the LOWER 38% must be very dark, quiet, photographic negative space so ivory lettering will be legible there. Use the naturally shadowed black tailoring and deep espresso plaster behind it to provide the space. No solid painted panel or artificial rectangle.\nPull the camera back enough to keep this complete action inside the upper part of the composition. Keep realistic human proportions; never stretch the neck, enlarge the hand or shrink the bottle. Frame with enough breathing room at left/right so a taller phone crop still retains the hand and face. The model remains unmistakably applying perfume to her neck.\nReal editorial fashion photograph, natural skin pores, fine hair, believable fabric and glass, warm-neutral stone and espresso shadows. Soft natural window light from left, no artificial flare, bloom, magical particles or obvious blur. One continuous full-frame photographic scene with no vertical or horizontal divisions, no borders, no collage, no letterbox bars, no UI and no text overlay. Only the bottle's existing front-label text is visible.",
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-2442d216-eb44-453f-a4fd-c71e50a8cdba.png",
+  "raw": "output/imagegen/house/house-model-hero-mobile-v1-raw.png",
+  "original": "output/imagegen/house/house-model-hero-mobile-v1.png",
+  "web": "public/media/house-model-hero-mobile-v1.webp",
+  "rawWidth": 941,
+  "rawHeight": 1672,
+  "width": 941,
+  "height": 1672,
+  "preparation": {
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 941,
+      "height": 1672
+    },
+    "resize": false
+  }
+}

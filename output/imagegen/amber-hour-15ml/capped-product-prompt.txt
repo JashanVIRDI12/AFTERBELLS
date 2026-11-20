@@ -1,0 +1,8 @@
+Use case: precise-object-edit.
+Image 1 is a generated standalone perfume product image to correct. Image 2 is the original real bottle photograph, authority for its small removable protective gold cap. Image 3 is the corrected approved reference sheet with the cap fitted.
+
+The user confirms there is a VERY SMALL GOLD CAP on the actual bottle. In Image 1 we mistakenly represented the narrow uppermost gold cylinder as an exposed spray actuator with a white circular nozzle. Correct that upper gold cylinder to the small CLOSED REMOVABLE GOLD CAP seen in Image 2 and all main views of Image 3.
+
+Make a narrowly targeted edit to Image 1: remove the white circular nozzle and all spray holes from the uppermost narrow gold cylinder; make its exterior smooth unbroken satin-polished gold with a gently rounded CLOSED top; show a subtle fine cap separation seam where the small cap meets the slightly wider fixed gold pump collar. Keep this exact small stepped gold silhouette and total bottle height. The fitted cap covers the actual shorter atomizer, so no nozzle can be visible. Do NOT add an extra larger cap over the assembly. No loose cap or additional objects in this standalone image.
+
+Preserve everything else in Image 1: one whole unlabelled very slender 15 ml clear round cylindrical bottle, same exact framing, straight sides, diameter, long height, glass base, amber perfume color, fill level, transparent dip tube, irregular gold leaf flakes, near-white studio background, soft contact shadow, high-resolution photoreal materials. Match the fitted gold cap in Image 3. No cap openings, branding, labels, text, decorative lid, rectangle bottle or added accessories. Output the complete corrected single-bottle portrait, sharply detailed and uncropped.

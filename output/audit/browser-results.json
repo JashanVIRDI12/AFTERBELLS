@@ -1,0 +1,22 @@
+{
+  "base": "http://localhost:3100",
+  "checks": [
+    "Public routes, protected admin, and missing routes return expected statuses",
+    "No horizontal overflow across six routes at 320, 390, 768, and 1440px",
+    "Mobile menu traps keyboard focus and restores its opener on Escape",
+    "Mobile gallery changes images; reserve opens a bag with product photography and contained focus",
+    "Checkout retains the bag and shows the matching bottle photo",
+    "Film dialog uses the supplied video, has playback controls, and closes with Escape",
+    "FAQ open state and hidden answer semantics stay synchronized",
+    "Reduced motion leaves the hero still; explicit play and pause work",
+    "Desktop and mobile collection screenshots contain no broken loaded media",
+    "No uncaught browser errors during the audited flows"
+  ],
+  "errors": [],
+  "screenshots": [
+    "home-1440.png",
+    "collection-1440.png",
+    "home-390.png",
+    "collection-390.png"
+  ]
+}

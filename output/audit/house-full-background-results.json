@@ -1,0 +1,254 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-wide-v1.webp%3Fv%3Dmwjnkwah&w=3840&q=92",
+    "hero": {
+      "width": 1920,
+      "height": 1080
+    },
+    "image": {
+      "width": 1920,
+      "height": 1079,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "72% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-wide-v1.webp%3Fv%3Dmwjnkwah&w=3840&q=92",
+    "hero": {
+      "width": 1440,
+      "height": 900
+    },
+    "image": {
+      "width": 1440,
+      "height": 899,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "72% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-wide-v1.webp%3Fv%3Dmwjnkwah&w=3840&q=92",
+    "hero": {
+      "width": 1440,
+      "height": 1000
+    },
+    "image": {
+      "width": 1440,
+      "height": 999,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "72% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 900,
+    "height": 900,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-wide-v1.webp%3Fv%3Dmwjnkwah&w=1920&q=92",
+    "hero": {
+      "width": 900,
+      "height": 900
+    },
+    "image": {
+      "width": 900,
+      "height": 899,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "72% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-wide-v1.webp%3Fv%3Dmwjnkwah&w=1920&q=92",
+    "hero": {
+      "width": 768,
+      "height": 1024
+    },
+    "image": {
+      "width": 768,
+      "height": 1023,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "72% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-mobile-v2.webp%3Fv%3Dmwjnr4ta&w=828&q=92",
+    "hero": {
+      "width": 390,
+      "height": 844
+    },
+    "image": {
+      "width": 390,
+      "height": 843,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "55% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 320,
+    "height": 700,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-mobile-v2.webp%3Fv%3Dmwjnr4ta&w=640&q=92",
+    "hero": {
+      "width": 320,
+      "height": 780
+    },
+    "image": {
+      "width": 320,
+      "height": 779,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "55% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "width": 390,
+    "height": 667,
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "src": "http://localhost:3000/_next/image?url=%2Fmedia%2Fhouse-model-hero-mobile-v2.webp%3Fv%3Dmwjnr4ta&w=828&q=92",
+    "hero": {
+      "width": 390,
+      "height": 780
+    },
+    "image": {
+      "width": 390,
+      "height": 779,
+      "left": 0,
+      "top": 0
+    },
+    "fillsHero": true,
+    "faceVisible": true,
+    "bottleVisible": true,
+    "phoneTextBelowGesture": true,
+    "filter": "none",
+    "transform": "none",
+    "objectPosition": "55% 0%",
+    "figureCount": 0,
+    "heading": "Some hours stay with you.",
+    "usesCorrectCrop": true,
+    "noLabelDimensions": true,
+    "storyVisible": true,
+    "chapters": 3
+  },
+  {
+    "normalMotionStoryLinkWorks": true,
+    "keyboardFocusable": true
+  }
+]

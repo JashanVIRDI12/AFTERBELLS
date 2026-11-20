@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "links": [
+        {
+          "href": "/fragrances/amber-hour",
+          "label": "Discover Amber Hour"
+        },
+        {
+          "href": "/fragrances/open-sky",
+          "label": "Discover Open Sky"
+        },
+        {
+          "href": "/fragrances/iron-crown",
+          "label": "Discover Iron Crown"
+        }
+      ],
+      "illustrations": 3
+    },
+    {
+      "width": 768,
+      "links": [
+        {
+          "href": "/fragrances/amber-hour",
+          "label": "Discover Amber Hour"
+        },
+        {
+          "href": "/fragrances/open-sky",
+          "label": "Discover Open Sky"
+        },
+        {
+          "href": "/fragrances/iron-crown",
+          "label": "Discover Iron Crown"
+        }
+      ],
+      "illustrations": 3
+    },
+    {
+      "width": 390,
+      "links": [
+        {
+          "href": "/fragrances/amber-hour",
+          "label": "Discover Amber Hour"
+        },
+        {
+          "href": "/fragrances/open-sky",
+          "label": "Discover Open Sky"
+        },
+        {
+          "href": "/fragrances/iron-crown",
+          "label": "Discover Iron Crown"
+        }
+      ],
+      "illustrations": 3
+    },
+    {
+      "width": 320,
+      "links": [
+        {
+          "href": "/fragrances/amber-hour",
+          "label": "Discover Amber Hour"
+        },
+        {
+          "href": "/fragrances/open-sky",
+          "label": "Discover Open Sky"
+        },
+        {
+          "href": "/fragrances/iron-crown",
+          "label": "Discover Iron Crown"
+        }
+      ],
+      "illustrations": 3
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,13 @@
+.page {
+  padding: calc(var(--header-h) + var(--safe-t) + 40px) 0 clamp(64px, 8vw, 120px);
+  background: var(--paper);
+  color: var(--umber);
+  min-height: 100svh;
+}
+.back {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

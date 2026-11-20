@@ -1,0 +1,66 @@
+.other {
+  background: var(--ivory);
+  color: var(--ink);
+}
+.head {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.head :global(.t-eyebrow) {
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.grid {
+  display: grid;
+  gap: 40px 24px;
+}
+.card {
+  display: grid;
+  gap: 18px;
+}
+.frame {
+  aspect-ratio: 4 / 5;
+  transition: transform 1.2s var(--ease-out);
+}
+@media (hover: hover) {
+  .card:hover .frame {
+    transform: scale(0.985);
+  }
+}
+.meta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 4px 14px;
+}
+.no {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold-deep);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.name {
+  font-size: 1rem;
+}
+.price {
+  font-size: 0.9375rem;
+}
+.tag {
+  grid-column: 2 / -1;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--umber-2);
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

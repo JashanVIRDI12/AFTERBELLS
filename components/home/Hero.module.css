@@ -1,0 +1,210 @@
+.hero {
+  position: relative;
+  min-height: max(100svh, 620px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  background: var(--espresso);
+  color: var(--ivory);
+  isolation: isolate;
+}
+
+.parallax {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  transform-origin: 50% 100%;
+}
+.media {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 40%;
+}
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(14 10 7 / 0.72), rgb(14 10 7 / 0.2) 55%, transparent 80%),
+    linear-gradient(180deg, rgb(14 10 7 / 0.5) 0%, transparent 20%, transparent 50%, rgb(14 10 7 / 0.82) 100%);
+}
+/* darkens as the hero scrolls away, so the next chapter arrives on a quiet ground */
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--espresso);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  display: grid;
+  justify-items: start;
+  padding-top: calc(var(--header-h) + var(--safe-t) + 48px);
+  padding-bottom: clamp(30px, 5.5vh, 64px);
+}
+.kicker {
+  margin-bottom: clamp(14px, 2.2vh, 24px);
+  color: var(--gold-a);
+  -webkit-text-fill-color: transparent;
+  background-image: var(--foil-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.title {
+  font-size: clamp(2.9rem, 12.6vw, 7rem);
+  line-height: 1.02;
+  letter-spacing: -0.012em;
+  text-shadow: 0 2px 36px rgb(0 0 0 / 0.28);
+}
+.title :global(.mask) {
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.title :global(.gold-text) {
+  text-shadow: none;
+}
+.rule {
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin-block: clamp(20px, 3vh, 30px) clamp(14px, 2vh, 20px);
+  background: linear-gradient(90deg, var(--gold-a), rgb(222 188 104 / 0));
+  transform-origin: 0 50%;
+}
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(246 238 228 / 0.86);
+}
+.facts span + span::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0 14px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: var(--gold-a);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 30px;
+  margin-top: clamp(22px, 3.4vh, 34px);
+  width: 100%;
+}
+.cta {
+  min-width: 220px;
+}
+
+.bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  padding-top: 14px;
+  padding-bottom: calc(18px + var(--safe-b));
+  border-top: 1px solid rgb(246 238 228 / 0.14);
+}
+.sig {
+  display: none;
+  font-size: 0.625rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  opacity: 0.66;
+}
+.playback {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(246 238 228 / 0.32);
+  border-radius: 50%;
+  color: var(--ivory);
+  background: rgb(20 15 11 / 0.25);
+  transition: border-color 0.4s var(--ease-out);
+}
+.playback:hover {
+  border-color: var(--gold-a);
+}
+
+@media (max-width: 599px) {
+  .hero {
+    min-height: max(100svh, 640px);
+  }
+  .video {
+    object-position: 60% center;
+  }
+  .shade {
+    background: linear-gradient(
+      180deg,
+      rgb(14 10 7 / 0.42) 0%,
+      transparent 24%,
+      transparent 38%,
+      rgb(14 10 7 / 0.78) 66%,
+      rgb(14 10 7 / 0.94) 100%
+    );
+  }
+  .ctas {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 18px;
+  }
+  .cta {
+    width: 100%;
+  }
+  /* one line on a phone: the edition name is already in the menu and the countdown */
+}
+
+@media (min-width: 900px) {
+  .title {
+    font-size: min(6.6vw, 12.5svh);
+  }
+  .sig {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  video.video:not([data-playing='true']) {
+    display: none;
+  }
+}
+
+/* pre-animation states (only when JS runs; skipped for reduced motion) */
+:global(html:not(.no-js):not(.ab-reduced)) .hero [data-line] {
+  transform: translateY(115%);
+}
+:global(html:not(.no-js):not(.ab-reduced)) .hero [data-fade] {
+  opacity: 0;
+}
+:global(html:not(.no-js):not(.ab-reduced)) .hero [data-rule] {
+  transform: scaleX(0);
+}
+
+/* portrait screens play the 9:16 reel: keep it centred */
+@media (max-aspect-ratio: 3/4) {
+  .video {
+    object-position: 50% 45%;
+  }
+}

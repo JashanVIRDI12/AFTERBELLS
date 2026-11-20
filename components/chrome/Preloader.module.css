@@ -1,0 +1,79 @@
+@property --fan {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(60% 50% at 50% 45%, #3a2d21 0%, transparent 70%),
+    var(--espresso);
+  color: var(--ivory);
+  clip-path: inset(0% 0% 0% 0%);
+  /* failsafe: never trap the page if scripts fail */
+  animation: failsafe 0.8s ease 7s forwards;
+}
+@keyframes failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+:global(.ab-skip-intro) .loader {
+  display: none;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: clamp(18px, 3vw, 28px);
+  width: min(560px, 78vw);
+}
+
+.glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 120%;
+  aspect-ratio: 1.6;
+  translate: -50% 0;
+  background: radial-gradient(closest-side, rgb(222 188 104 / 0.22), transparent 75%);
+  filter: blur(10px);
+  opacity: 0;
+}
+
+/* The peacock fans open: a conic sweep from the left horizon, pivoting at its base */
+.fan {
+  --fan: 0deg;
+  display: block;
+  width: 100%;
+  -webkit-mask-image: conic-gradient(from 270deg at 50% 88%, #000 var(--fan), transparent calc(var(--fan) + 0.5deg));
+  mask-image: conic-gradient(from 270deg at 50% 88%, #000 var(--fan), transparent calc(var(--fan) + 0.5deg));
+}
+.emblem {
+  width: 100%;
+}
+
+.word {
+  display: block;
+  width: 78%;
+  overflow: clip;
+  color: var(--ivory);
+}
+.word svg {
+  width: 100%;
+  height: auto;
+}
+
+.tag {
+  color: rgb(246 238 228 / 0.8);
+  font-size: clamp(0.5625rem, 1.6vw, 0.6875rem);
+  opacity: 0;
+  white-space: nowrap;
+}

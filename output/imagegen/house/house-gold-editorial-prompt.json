@@ -1,0 +1,13 @@
+{
+  "name": "house-gold-editorial",
+  "prompt": "Use case: product-mockup.\nAsset type: portrait macro photograph for \"The gold\" chapter of the After Bells House page, portrait 2:3.\nInput image 1 is a PRODUCT DESIGN REFERENCE only. Use its front-view lower bottle geometry, amber perfume and original tiny gold flakes. Do not reproduce the reference collage.\nCreate a close photographic study of the bottom third of this exact rectangular faceted glass perfume bottle. The upper cap and front label are OUTSIDE the crop. A straight-on low macro camera sees the thick transparent glass base, the bottom of the amber liquid chamber, both bevelled glass edges and the small gold flakes gently resting inside. A few fine flakes are suspended just above the settled layer; the majority rest on the inner bottom. Scale is CRITICAL: the same very small irregular flakes as the reference, fine delicate flecks, never large confetti, sheets or chunks. The gold must clearly be inside the amber liquid above the thick clear base, never outside or embedded in solid glass.\nThe glass base occupies the lower third of the photograph; the amber chamber fills the middle. Restrained warm-grey stone behind, natural espresso shadows, one narrow diffused highlight along a bevel, plausible optical refraction and subtle liquid meniscus. Main details kept within the central 65% width and 70% height for flexible portrait framing.\nReal focus-stacked macro photography, crisp microtexture, controlled warm glints, quiet luxury, no artificial bloom or blur filter, no bubbles, no sparkles, no magical particles, no enormous flakes, no sticker, no letters, no border, no watermark.",
+  "references": [
+    "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+  ],
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-fbcb15af-7d83-46ae-91d5-cffb89bba7fd.png",
+  "original": "output/imagegen/house/house-gold-editorial.png",
+  "web": "public/media/house-gold-editorial.webp",
+  "width": 1024,
+  "height": 1536
+}

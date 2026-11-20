@@ -1,0 +1,185 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  justify-items: center;
+  padding: calc(var(--header-h) + var(--safe-t) + 24px) 12px 80px;
+  background: var(--ivory);
+  color: var(--ink);
+}
+.card {
+  width: min(1040px, 100%);
+  min-width: 0;
+  display: grid;
+  background: var(--paper);
+  border: 1.5px solid var(--gold);
+  outline: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  outline-offset: -10px;
+}
+.brand {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: 44px 24px 8px;
+  text-align: center;
+}
+.brand :global(.t-eyebrow) {
+  font-size: 0.5rem;
+  white-space: normal;
+  color: var(--umber-2);
+}
+.emblem {
+  width: min(260px, 64%);
+}
+.form,
+.done {
+  display: grid;
+  gap: 22px;
+  padding: 24px clamp(20px, 5vw, 56px) 44px;
+}
+.form, .done { min-width: 0; }
+.done {
+  justify-items: center;
+  text-align: center;
+  align-content: center;
+}
+.script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  line-height: 1;
+  text-align: center;
+}
+.div {
+  justify-content: center;
+  color: var(--ink);
+}
+.div::before,
+.div::after {
+  flex: 0 1 90px;
+  opacity: 0.45;
+}
+.lead {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.group {
+  min-width: 0;
+  border: 0;
+  display: grid;
+  gap: 12px;
+}
+.group legend {
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  border-radius: 40px;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+.chip input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+.chipOn {
+  background: var(--foil-diag);
+  border-color: transparent;
+}
+.chip:has(input:focus-visible) {
+  outline: 1.5px solid var(--gold);
+  outline-offset: 3px;
+}
+.rateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 4px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+}
+.rateLabel {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+}
+.stars {
+  display: flex;
+}
+.stars button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--gold-deep);
+  fill: transparent;
+  transition: transform 0.3s var(--ease-out);
+}
+.stars button:active {
+  transform: scale(0.88);
+}
+.stars .starOn svg path {
+  fill: var(--gold-a);
+  stroke: var(--gold-b);
+}
+.lined {
+  background-image: repeating-linear-gradient(
+    transparent 0 31px,
+    color-mix(in srgb, var(--gold) 45%, transparent) 31px 32px
+  );
+  line-height: 32px !important;
+  padding-top: 6px !important;
+}
+.row {
+  display: grid;
+  gap: 16px;
+}
+.error {
+  font-size: 0.8125rem;
+  color: #7d2f1b;
+}
+@media (max-width: 420px) {
+  .rateRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding-block: 10px;
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+  .brand {
+    padding: 56px 32px;
+    border-right: 1px solid color-mix(in srgb, var(--gold) 50%, transparent);
+    margin-block: 40px;
+  }
+  .form,
+  .done {
+    padding: 56px 56px 56px;
+  }
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "name": "house-model-hero-wide-v1",
+      "references": [
+        "/Users/jashan/Documents/afterbells/output/imagegen/house/house-model-ritual-v1.png"
+      ],
+      "prompt": "Use case: compositing.\nAsset type: full-bleed luxury perfume website hero background, WIDE LANDSCAPE 16:9 composition.\nInput image 1 is the EDIT TARGET and the approved campaign photograph. Recompose and extend this photograph into ONE continuous WIDE LANDSCAPE editorial scene. This is not a new model casting.\nPreserve the SAME adult blonde woman, exact facial identity and natural skin texture, loose low bun, closed eyes and gentle upward head angle, black tailored blazer, ivory blouse, hand gesture, UNCAPPED Amber Hour perfume bottle, gold atomizer pointing to her neck and the delicate fine mist. Keep the hand natural and anatomically believable. The thin gold FRONT label reading \"AFTER BELLS\" and \"AMBER HOUR\", glass geometry, amber liquid and original small gold flakes must match. Do not add a cap to the spraying bottle or any sticker to the narrow side of the bottle.\nChange the composition for a full-screen background: place the woman and the complete perfume-applying gesture in the RIGHT 42% of the wide frame. Her face should be centred at about 79% of image width and 35% of height; the perfume bottle should sit at about 66% of width and 61% of height. Keep her hair safely below 14% from the TOP, and the complete bottle and hand safely above 84% from the TOP. All important face, atomizer, mist, hand and bottle details must fit within the MIDDLE 72% of image height, so a shallow 16:9 website crop never cuts them off. Frame from roughly the waist upwards, with the lower jacket allowed to extend below the frame.\nExtend the room naturally across the LEFT 52% of the image: a real deep espresso-brown plaster wall with subtle warm-grey stone architecture receding into shadow. This area is quiet, dark negative space for a large live website headline. Soft window light grazes the model from the left side of her face, while black flags leave the left wall dark. No bright window, pale pillar or high-contrast object in the left half. The room must continue seamlessly behind the model to the image edges: no panel, no rectangle, no inset photo, no cutout edge, no collage, no vertical division, no black bars.\nPalette: deep coffee browns, restrained amber highlights, black tailoring and ivory silk, balanced realistic skin. Preserve the original intimate photographic feeling, very fine hair, believable fabric and natural pores. A sharp, restrained fashion campaign photograph with controlled studio light, without plastic skin, CGI gloss, extra mist, lens flare, artificial bloom or beauty blur.\nOutput is one coherent 16:9 landscape background photograph with the left half dark and the approved model applying fragrance on the right. No heading, no text overlay, no logo overlay, no border, no watermark, no UI. Only the product's existing front-label text is present.",
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-106502d2-27b2-4072-a593-b237a3bf5a06.png",
+      "raw": "output/imagegen/house/house-model-hero-wide-v1-raw.png",
+      "original": "output/imagegen/house/house-model-hero-wide-v1.png",
+      "web": "public/media/house-model-hero-wide-v1.webp",
+      "rawWidth": 1672,
+      "rawHeight": 941,
+      "width": 1672,
+      "height": 941,
+      "preparation": {
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 1672,
+          "height": 941
+        },
+        "resize": false
+      }
+    },
+    {
+      "name": "house-model-hero-mobile-v2",
+      "references": [
+        "/Users/jashan/Documents/afterbells/output/imagegen/house/house-model-hero-mobile-v1.png"
+      ],
+      "prompt": "Use case: precise-object-edit.\nInput image 1 is the EDIT TARGET.\nChange ONLY the lower portion of this photograph: remove ALL superimposed typography and graphic interface elements. Erase the large \"AMBER HOUR\" headline, the smaller sentence beneath it, the complete outlined button, the button words and every graphic line associated with that button. Replace those text and line pixels with the naturally shadowed dark black blazer fabric and deep espresso photographic shadows behind them, seamlessly continuous with the surrounding photograph.\nThe result must be a CLEAN photographic background with ZERO superimposed lettering, ZERO button, ZERO graphic border and ZERO interface elements. It is a photo asset, not an advertisement layout. Do not generate any new title or caption. The tiny existing product label physically attached to the bottle should remain intact; it is the ONLY text permitted.\nKeep the exact same woman, expression, face, hair, neck, black blazer, ivory blouse, window, stone interior, hand, perfume bottle, atomizer and fine mist. Keep their positions, anatomy, crop, lighting and colours unchanged. Preserve the 9:16 portrait aspect ratio and current resolution. No other changes.",
+      "mode": "built-in image_gen",
+      "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-745d832e-de2b-4309-897e-60caff7ff7c1.png",
+      "original": "output/imagegen/house/house-model-hero-mobile-v2.png",
+      "web": "public/media/house-model-hero-mobile-v2.webp",
+      "width": 941,
+      "height": 1672
+    }
+  ]
+}

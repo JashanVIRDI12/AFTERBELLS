@@ -1,0 +1,13 @@
+{
+  "name": "house-model-hero-mobile-v2",
+  "references": [
+    "/Users/jashan/Documents/afterbells/output/imagegen/house/house-model-hero-mobile-v1.png"
+  ],
+  "prompt": "Use case: precise-object-edit.\nInput image 1 is the EDIT TARGET.\nChange ONLY the lower portion of this photograph: remove ALL superimposed typography and graphic interface elements. Erase the large \"AMBER HOUR\" headline, the smaller sentence beneath it, the complete outlined button, the button words and every graphic line associated with that button. Replace those text and line pixels with the naturally shadowed dark black blazer fabric and deep espresso photographic shadows behind them, seamlessly continuous with the surrounding photograph.\nThe result must be a CLEAN photographic background with ZERO superimposed lettering, ZERO button, ZERO graphic border and ZERO interface elements. It is a photo asset, not an advertisement layout. Do not generate any new title or caption. The tiny existing product label physically attached to the bottle should remain intact; it is the ONLY text permitted.\nKeep the exact same woman, expression, face, hair, neck, black blazer, ivory blouse, window, stone interior, hand, perfume bottle, atomizer and fine mist. Keep their positions, anatomy, crop, lighting and colours unchanged. Preserve the 9:16 portrait aspect ratio and current resolution. No other changes.",
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-745d832e-de2b-4309-897e-60caff7ff7c1.png",
+  "original": "output/imagegen/house/house-model-hero-mobile-v2.png",
+  "web": "public/media/house-model-hero-mobile-v2.webp",
+  "width": 941,
+  "height": 1672
+}

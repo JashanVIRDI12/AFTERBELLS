@@ -1,0 +1,13 @@
+{
+  "name": "house-cap",
+  "prompt": "Use case: product-mockup.\nAsset type: portrait editorial detail photograph for \"The cap\" chapter of the After Bells House page. Portrait 2:3.\nInput image 1 is a PRODUCT DESIGN REFERENCE sheet only. The detached gold cap in its bottom-right panel is the exact cap design to preserve. Never reproduce the collage.\nPhotograph one detached cap as a small sculptural object resting on a honed warm-grey limestone block. Front face nearly square to the camera with only a very narrow right edge visible, centred in the middle of the portrait, occupying about 62% of image width. Leave breathable stone above and below. Exact reference geometry: square solid gold-coloured cap with a thin raised outer frame, symmetrical four-way curling raised leaf/scroll motif on a finely stippled recessed field, polished cylindrical collar at its base. The cap is the same object as the reference, not a different crown, monogram or ornamental lid.\nSoft raking studio light from the upper left reveals the engraved relief; a large diffused white reflector produces a soft clean side reflection, black flags create depth in the metal. Gold is satin with selectively polished raised edges, very subtle machining texture and tiny believable surface variation. Natural soft contact shadow on the stone. Espresso background, warm neutral limestone, restrained champagne gold.\nPhotorealistic 100mm product photograph, focus stacked so the cap face and engraved relief are sharp. Natural metal, not liquid gold, not an embossed illustration, no glitter, no dramatic glow, no blur across the main subject. No second cap or bottle, no text, no watermark, no graphic frame.",
+  "references": [
+    "/Users/jashan/Documents/afterbells/PHOTO-2026-11-15-19-40-34.jpg"
+  ],
+  "mode": "built-in image_gen",
+  "source": "/Users/jashan/.codex/generated_images/01a1e0a6-cce9-7073-accc-60a220c66135/exec-74a5f544-c5c5-49e5-89f4-183cb97290e5.png",
+  "original": "output/imagegen/house/house-cap.png",
+  "web": "public/media/house-cap.webp",
+  "width": 1024,
+  "height": 1536
+}

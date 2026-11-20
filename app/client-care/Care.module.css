@@ -1,0 +1,97 @@
+.ways {
+  background: var(--ivory);
+  color: var(--ink);
+  padding-bottom: clamp(24px, 4vw, 48px);
+}
+.list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.card {
+  display: grid;
+  gap: 6px;
+  height: 100%;
+  padding: 26px 24px;
+  border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  transition:
+    border-color 0.5s var(--ease-out),
+    background-color 0.5s var(--ease-out);
+}
+.card:hover {
+  border-color: var(--gold);
+  background: var(--paper);
+}
+.k {
+  font-size: 0.625rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.v {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  word-break: break-word;
+}
+.note {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--umber-2);
+}
+.policies {
+  background: var(--ivory);
+  color: var(--ink);
+  padding-bottom: clamp(72px, 10vw, 140px);
+}
+.policyRow {
+  display: grid;
+  gap: 18px;
+  padding-top: 32px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+.policyRow :global(.t-eyebrow) {
+  color: var(--umber-2);
+}
+.policyLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+}
+@media (min-width: 800px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .policyRow {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 48px;
+  }
+}
+
+.track {
+  background: var(--ivory);
+  color: var(--ink);
+  padding-block: clamp(32px, 5vw, 64px) 0;
+}
+.trackInner {
+  display: grid;
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+.trackInner :global(.t-eyebrow) {
+  color: var(--gold-deep);
+}
+.trackTitle {
+  margin-top: 10px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+@media (min-width: 1000px) {
+  .trackInner {
+    grid-template-columns: 1fr 2fr;
+    align-items: end;
+    column-gap: 48px;
+  }
+}

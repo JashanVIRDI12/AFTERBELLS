@@ -1,0 +1,756 @@
+/* ==========================================================================
+   AFTER BELLS — design system
+   Ivory paper · gold #DEBC68 → #AC8028 · text #271D0C.
+   Rossanova (house display face) for titles, Poppins for names & body.
+   Rossanova has no italic and no numerals: accents are set upright in gold, figures in Poppins.
+   ========================================================================== */
+
+:root {
+  --ivory: #f6eee4;
+  --ivory-2: #efe4d5;
+  --paper: #fbf7f1;
+  --sand: #e3d4bf;
+  --espresso: #2a211a;
+  --espresso-2: #352b22;
+  --ink: #271d0c; /* brand text colour */
+  --umber: #271d0c;
+  --umber-2: #6a5c48;
+
+  /* Brand gold: #DEBC68 → #AC8028 (Pantone 871 C reference) */
+  --gold-hi: #e8cd85;
+  --gold-a: #debc68;
+  --gold: #c9a352;
+  --gold-mid: #b88b33;
+  --gold-b: #ac8028;
+  --gold-deep: #ac8028;
+  --gold-ink: #271d0c;
+  --gold-grad: linear-gradient(105deg, #debc68 0%, #cfa957 30%, #ac8028 55%, #d9b763 78%, #ac8028 100%);
+  --gold-grad-soft: linear-gradient(105deg, #debc68 0%, #ac8028 100%);
+
+  /* ---- Gold foil ----
+     Polished metal reflects a bright "sky" over a dark "horizon": vertical banding with a hard
+     mid-tone break reads as real gold. Bright variant for dark grounds, deep (stamped) for paper. */
+  --foil-bright: linear-gradient(
+    176deg,
+    #fff4cc 0%,
+    #f1d792 14%,
+    #debc68 28%,
+    #bb8d33 44%,
+    #8e6316 51%,
+    #a87a26 57%,
+    #dcbc6f 70%,
+    #f6e2a6 80%,
+    #cba152 90%,
+    #9c7020 100%
+  );
+  --foil-deep: linear-gradient(
+    176deg,
+    #d2b062 0%,
+    #bf9542 18%,
+    #a37a28 36%,
+    #78520f 50%,
+    #8e6418 57%,
+    #b38938 70%,
+    #c9a553 80%,
+    #a87c27 91%,
+    #7d570f 100%
+  );
+  /* diagonal foil for emblems & wide shapes (follows the logo's own gradient) */
+  --foil-diag: linear-gradient(
+    118deg,
+    #f4dc98 0%,
+    #debc68 18%,
+    #b3852c 38%,
+    #ecd087 52%,
+    #ac8028 70%,
+    #dab865 86%,
+    #96691b 100%
+  );
+  --foil-sheen: linear-gradient(
+    100deg,
+    transparent 40%,
+    rgb(255 250 228 / 0.7) 48.5%,
+    rgb(255 255 255 / 0.95) 50%,
+    rgb(255 250 228 / 0.7) 51.5%,
+    transparent 60%
+  );
+  /* hairline brushed-metal grain */
+  --foil-brush: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='140'><filter id='b'><feTurbulence type='fractalNoise' baseFrequency='.003 .85' numOctaves='2' seed='7'/><feColorMatrix values='.33 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 0 0 0 0 1'/></filter><rect width='100%' height='100%' filter='url(%23b)'/></svg>");
+  --foil: var(--foil-deep);
+  /* small gold type (labels, numerals): banding only — grain would muddy tiny glyphs */
+  --foil-ink: linear-gradient(180deg, #c7a04d 0%, #a27824 52%, #8a6416 60%, #b48a39 100%);
+  /* on paper: a hairline highlight under the letters, like a foil stamp pressed into card */
+  --foil-depth: drop-shadow(0 1px 0 rgb(255 255 255 / 0.7));
+
+  --font-sans: var(--f-sans), 'Poppins', system-ui, sans-serif;
+  /* figures and any missing glyph fall through to Poppins */
+  --font-display: var(--f-display), var(--font-sans);
+  --font-serif: var(--font-display);
+
+  --gutter: clamp(16px, 4.2vw, 64px);
+  --max: 1680px;
+  --header-h: 68px;
+  --radius: 2px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+
+  color-scheme: light;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 60px;
+  }
+}
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--espresso);
+}
+body {
+  min-height: 100svh;
+  background: var(--ivory);
+  color: var(--umber);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* never fake an italic: Rossanova accents stay upright */
+  font-synthesis: weight;
+  overflow-x: clip;
+}
+img,
+video,
+svg,
+picture,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ---------- lenis ---------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* ---------- a11y ---------- */
+:focus-visible {
+  outline: 1.5px solid var(--gold);
+  outline-offset: 3px;
+}
+.skip {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: translateY(-200%);
+}
+.skip:focus {
+  transform: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- layout ---------- */
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(104px, 15vw, 220px);
+}
+
+/* soft page arrival on every route */
+.page-in {
+  animation: page-in 1.1s var(--ease-out) both;
+}
+/* opacity only — a transform here would trap position:fixed children (sticky bars, modals) */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.on-dark {
+  background: var(--espresso);
+  color: var(--ivory);
+}
+
+/* ---------- typography ---------- */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+}
+/* Fragrance names — Poppins capitals, tracked like the gold labels */
+.t-name {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.05;
+}
+.t-h1 {
+  font-size: clamp(2.75rem, 9vw, 9.5rem);
+}
+.t-h2 {
+  font-size: clamp(2.25rem, 6.4vw, 6.25rem);
+}
+.t-h3 {
+  font-size: clamp(1.75rem, 3.4vw, 3.25rem);
+}
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.t-small {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+.t-italic {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.t-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+  line-height: 1.45;
+  font-weight: 400;
+}
+/* House titles — Rossanova in sentence case */
+.t-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+.t-num {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+}
+
+/* dark grounds get the bright foil and a warm glow */
+[data-header='dark'],
+.on-dark {
+  --foil: var(--foil-bright);
+  --foil-ink: linear-gradient(180deg, #f6e1a2 0%, #e2c272 45%, #b88b33 58%, #d9b763 100%);
+  --foil-depth: drop-shadow(0 1px 1px rgb(0 0 0 / 0.5)) drop-shadow(0 0 22px rgb(222 188 104 / 0.16));
+}
+
+/* Real gold foil type: metal banding + brushed grain + a light sweep that catches now and then */
+.gold-text {
+  background-image: var(--foil-sheen), var(--foil-brush), var(--foil);
+  background-size:
+    340% 100%,
+    360px 140px,
+    100% 100%;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position:
+    140% 0,
+    0 0,
+    0 0;
+  background-blend-mode: screen, soft-light, normal;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  /* room for italic overhangs & descenders so the foil never clips a glyph */
+  padding: 0.08em 0.1em;
+  margin: -0.08em -0.1em;
+  filter: var(--foil-depth);
+  animation: foil-sweep 11s var(--ease-in-out) infinite;
+}
+.gold-text--shine {
+  animation-duration: 7s;
+}
+@keyframes foil-sweep {
+  0%,
+  62% {
+    background-position:
+      140% 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      -40% 0,
+      0 0,
+      0 0;
+  }
+}
+
+/* The "— RESERVED FOR THE EXCEPTIONAL —" lock-up */
+.lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.lockup::before,
+.lockup::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+/* line ◆ line divider from the labels & cards */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 0 1 64px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.8;
+}
+.divider i {
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  --h: 54px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: var(--h);
+  padding: 0 28px;
+  font-family: var(--font-sans);
+  font-size: 0.71875rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: var(--radius);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    color 0.5s var(--ease-out),
+    background-color 0.5s var(--ease-out),
+    border-color 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out),
+    opacity 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn[disabled] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.btn--gold {
+  color: var(--gold-ink);
+  /* a struck-metal bar: bright top edge, warm body, darker lip */
+  background-image:
+    var(--foil-sheen),
+    var(--foil-brush),
+    linear-gradient(180deg, #f8e7b0 0%, #e8c97b 22%, #d1a752 52%, #b4872f 80%, #c9a253 100%);
+  background-size:
+    340% 100%,
+    360px 140px,
+    100% 100%;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position:
+    140% 0,
+    0 0,
+    0 0;
+  background-blend-mode: screen, soft-light, normal;
+  text-shadow: 0 1px 0 rgb(255 246 214 / 0.5);
+  box-shadow:
+    inset 0 1px 0 rgb(255 252 236 / 0.8),
+    inset 0 -1px 0 rgb(110 74 14 / 0.45),
+    inset 0 0 0 1px rgb(150 108 36 / 0.35),
+    0 1px 2px rgb(60 40 5 / 0.2),
+    0 16px 34px -18px rgb(110 75 10 / 0.65);
+  transition:
+    background-position 1.2s var(--ease-out),
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out);
+}
+@media (hover: hover) {
+  .btn--gold:hover {
+    background-position:
+      -40% 0,
+      0 0,
+      0 0;
+    box-shadow:
+      inset 0 1px 0 rgb(255 252 236 / 0.9),
+      inset 0 -1px 0 rgb(110 74 14 / 0.45),
+      inset 0 0 0 1px rgb(150 108 36 / 0.4),
+      0 1px 2px rgb(60 40 5 / 0.2),
+      0 22px 40px -18px rgb(110 75 10 / 0.75);
+  }
+}
+.btn--ink {
+  color: var(--ivory);
+  background: var(--ink);
+}
+@media (hover: hover) {
+  .btn--ink:hover {
+    background: var(--espresso-2);
+  }
+}
+.btn--line {
+  color: currentColor;
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+}
+.btn--line::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: currentColor;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.6s var(--ease-out);
+}
+@media (hover: hover) {
+  .btn--line:hover {
+    border-color: currentColor;
+  }
+}
+.btn--block {
+  width: 100%;
+}
+.btn .arrow {
+  width: 18px;
+  transition: transform 0.6s var(--ease-out);
+}
+@media (hover: hover) {
+  .btn:hover .arrow {
+    transform: translateX(4px);
+  }
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.71875rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding-block: 8px;
+}
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(1);
+  transition: transform 0.7s var(--ease-out);
+  opacity: 0.6;
+}
+@media (hover: hover) {
+  .link:hover::after {
+    transform-origin: left;
+    animation: underline 0.9s var(--ease-out);
+  }
+}
+@keyframes underline {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  45% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  46% {
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* ---------- motion primitives ---------- */
+/* Elements with [data-reveal] fade up when they enter the viewport (see Reveal.tsx) */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 1.2s var(--ease-out),
+    transform 1.4s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+html.no-js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+/* mask-up line reveals */
+.mask {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+.mask > span {
+  display: block;
+  will-change: transform;
+}
+
+/* ---------- grain ---------- */
+.grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 900;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+/* ---------- forms ---------- */
+.field {
+  position: relative;
+  display: grid;
+  gap: 8px;
+}
+.field label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+.input {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 16px; /* prevents iOS zoom */
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--umber) 22%, transparent);
+  border-radius: var(--radius);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+textarea.input {
+  height: auto;
+  min-height: 108px;
+  padding: 14px 16px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--gold-mid);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent);
+}
+.input[aria-invalid='true'] {
+  border-color: #a5442b;
+}
+.field .err {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #a5442b;
+}
+select.input {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23271D0C' stroke-width='1.2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- heritage frame ----------
+   A double gilt rule with diamond corners, as on an engraved invitation or a brass plaque.
+   Add <Corners /> inside for the diamonds. */
+.heritage {
+  position: relative;
+  border: 1px solid rgb(222 188 104 / 0.42);
+}
+.heritage::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgb(222 188 104 / 0.2);
+  pointer-events: none;
+}
+.heritage__c {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: var(--gold-a);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.heritage__c:nth-child(1) {
+  top: -4px;
+  left: -4px;
+}
+.heritage__c:nth-child(2) {
+  top: -4px;
+  right: -4px;
+}
+.heritage__c:nth-child(3) {
+  bottom: -4px;
+  left: -4px;
+}
+.heritage__c:nth-child(4) {
+  bottom: -4px;
+  right: -4px;
+}
+
+/* frosted glass over a photograph, warm and dark */
+.glass {
+  background: linear-gradient(180deg, rgb(42 31 21 / 0.5), rgb(22 16 11 / 0.62));
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
+  backdrop-filter: blur(20px) saturate(1.25);
+  box-shadow:
+    inset 0 1px 0 rgb(255 238 196 / 0.08),
+    0 50px 90px -50px rgb(0 0 0 / 0.75);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: rgb(30 22 15 / 0.92);
+  }
+}
+
+/* honeypot field: off-screen for people, still in the form for bots */
+.hp {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
