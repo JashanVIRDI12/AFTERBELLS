@@ -112,7 +112,7 @@ export default function WaitlistForm() {
         <p className={styles.doneTitle}>
           <Check size={18} strokeWidth={1.8} aria-hidden /> You are on the list.
         </p>
-        <p className={styles.doneBody}>One more thing, if you like: which hour calls to you?</p>
+        <p className={styles.doneBody}>If you wish, tell us which perfume you are drawn to.</p>
         <div className={styles.chips}>
           {HOURS.map((h) => (
             <button
