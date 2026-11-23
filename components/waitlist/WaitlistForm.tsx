@@ -91,7 +91,7 @@ export default function WaitlistForm() {
   }
 
   if (step === 'done') {
-    const share = `I have joined the waitlist for After Bells: perfumes finished with 24k gold, made in India. ${site.url}/waitlist`
+    const share = `I have joined the waitlist for After Bells: perfumes made in India, with flakes of gold drifting in every bottle. ${site.url}/waitlist`
     return (
       <div className={styles.done} role="status">
         <span className={styles.doneMark} aria-hidden>
@@ -178,6 +178,7 @@ export default function WaitlistForm() {
             autoComplete={via === 'whatsapp' ? 'tel-national' : 'email'}
             placeholder={via === 'whatsapp' ? 'Your WhatsApp number' : 'Your email address'}
             maxLength={via === 'whatsapp' ? 14 : 120}
+            enterKeyHint="go"
             value={value}
             onChange={(e) => setValue(e.target.value)}
             aria-invalid={!!error}

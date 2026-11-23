@@ -57,7 +57,7 @@ export default async function OrderPage(props: PageProps<'/order/[id]'>) {
             </h1>
             <p className={styles.sub}>
               {order.status === 'dispatched'
-                ? `${first}, your order has left the house, sealed in gold.`
+                ? `${first}, your order has left the house, sealed and on its way.`
                 : order.status === 'delivered'
                   ? `${first}, your After Bells has arrived. We hope it finds its hour.`
                   : `${first}, your order from the ${site.edition.name} is confirmed.`}
@@ -176,7 +176,7 @@ export default async function OrderPage(props: PageProps<'/order/[id]'>) {
               Add to this parcel on WhatsApp
             </a>
             <a
-              href={`https://wa.me/?text=${encodeURIComponent(`I have just ordered from After Bells: perfumes finished with 24k gold, made in India. ${site.url}`)}`}
+              href={`https://wa.me/?text=${encodeURIComponent(`I have just ordered from After Bells: perfumes made in India, with flakes of gold drifting in every bottle. ${site.url}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.shareLink}

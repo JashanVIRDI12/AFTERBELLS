@@ -7,7 +7,7 @@ export const site = {
   name: 'After Bells',
   tagline: 'Reserved for the Exceptional',
   description:
-    'After Bells is a maison de parfum composing for the hour after the bells. The First Edition — Amber Hour, Open Sky and Iron Crown — is finished with 24k gold flakes and available now.',
+    'After Bells is a maison de parfum composing for the hour after the bells. The First Edition — Amber Hour, Open Sky and Iron Crown — carries 24k gold flakes in every bottle and is available now.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   instagram: 'afterbells',
   /**

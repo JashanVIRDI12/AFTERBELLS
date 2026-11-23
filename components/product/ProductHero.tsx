@@ -95,7 +95,8 @@ export default function ProductHero({ product: f, media }: { product: Fragrance;
   }
 
   const concierge = site.concierge[0]
-  const finish = f.format === 'travel' ? '24k gold flakes · glossy gold cap · gold lettering' : '24k gold flakes · engraved gold cap · gold metal label'
+  const finish =
+    f.format === 'travel' ? '24k gold flakes · glossy gold-tone cap · gold-tone lettering' : '24k gold flakes · engraved zamac cap · gold-tone metal label'
   const wear = (label: string) => f.wear.find((w) => w.label === label)?.value
 
   const sections = [

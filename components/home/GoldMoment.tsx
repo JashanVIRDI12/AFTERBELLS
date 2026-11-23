@@ -18,9 +18,9 @@ export default function GoldMoment({ media }: { media: ResolvedMedia }) {
 
       <div className={styles.words}>
         <h2 id="gold-title" className={`t-title ${styles.title}`} data-reveal>
-          Pure gold,
+          Real gold,
           <br />
-          <span className="gold-text">and nothing less.</span>
+          <span className="gold-text">in every bottle.</span>
         </h2>
         <dl className={styles.facts}>
           {FACTS.map((f, i) => (

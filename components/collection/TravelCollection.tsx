@@ -20,7 +20,7 @@ export function GiftSetFeature({ standalone = false }: { standalone?: boolean })
       </div>
       <div className={styles.giftCopy}>
         <Heading className={`t-title ${styles.giftTitle}`}>{standalone ? 'The 15 ml Gift Set' : 'Three hours. One gift.'}</Heading>
-        <p className={styles.body}>Amber Hour, Open Sky and Iron Crown. One 15 ml bottle of each, with the house’s gold flakes and polished gold finish.</p>
+        <p className={styles.body}>Amber Hour, Open Sky and Iron Crown. One 15 ml bottle of each, with 24k gold flakes and a polished gold-tone cap.</p>
         <ul className={styles.contents} aria-label="Gift set contents">
           {travelFragrances.map((f) => (
             <li key={f.slug}><Link href={`/fragrances/${f.slug}`}>{f.name}</Link><span>15 ml</span></li>

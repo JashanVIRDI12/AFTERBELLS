@@ -30,13 +30,13 @@ const fragranceSlots = (slug: string, name: string, mood: string): Record<string
     kind: 'image',
     ratio: '4:5',
     brief: `${name} — front-facing bottle isolated on a transparent background`,
-    alt: `${name} by After Bells, with its engraved gold cap and gold front label`,
+    alt: `${name} by After Bells, with its engraved zamac cap and gold-tone front label`,
   },
   [`${slug}-bottle`]: {
     kind: 'image',
     ratio: '4:5',
     brief: `${name} — hero bottle shot, front-on, label visible`,
-    alt: `${name} by After Bells, bottle with gold label`,
+    alt: `${name} by After Bells, bottle with gold-tone label`,
   },
   [`${slug}-detail`]: {
     kind: 'image',
@@ -53,8 +53,8 @@ const fragranceSlots = (slug: string, name: string, mood: string): Record<string
   [`${slug}-cap`]: {
     kind: 'image',
     ratio: '16:9',
-    brief: `${name} — close-up of the engraved gold cap above the glass shoulder`,
-    alt: `The engraved gold cap of ${name}`,
+    brief: `${name} — close-up of the engraved zamac cap above the glass shoulder`,
+    alt: `The engraved zamac cap of ${name}`,
     fallback: 'maison-atelier',
   },
 })
@@ -64,8 +64,8 @@ const travelSlots = (slug: string, name: string): Record<string, SlotDef> => ({
     kind: 'image', ratio: '4:5',
     // a slim, tall bottle: when a frame crops it, keep the cap and trim the base
     focus: '50% 6%',
-    brief: `${name} — 15 ml bottle with glossy gold cap and sideways gold After Bells wordmark`,
-    alt: `${name} in a slim 15 ml glass bottle with a small glossy gold cap, gold After Bells lettering and natural gold flakes`,
+    brief: `${name} — 15 ml bottle with glossy gold-tone cap and sideways gold After Bells wordmark`,
+    alt: `${name} in a slim 15 ml glass bottle with a small glossy gold-tone cap, gold After Bells lettering and natural gold flakes`,
   },
   [`${slug}-15ml-scene`]: {
     kind: 'image', ratio: '4:5',
@@ -80,13 +80,13 @@ const travelSlots = (slug: string, name: string): Record<string, SlotDef> => ({
   [`${slug}-15ml-cutout`]: {
     kind: 'image', ratio: '4:5',
     brief: `${name} — 15 ml product photograph`,
-    alt: `${name} 15 ml with its small gold cap`,
+    alt: `${name} 15 ml with its small gold-tone cap`,
     fallback: `${slug}-15ml-bottle`,
   },
   [`${slug}-15ml-cap`]: {
     kind: 'image', ratio: '4:5',
-    brief: `${name} — 15 ml glossy gold cap and collar`,
-    alt: `${name} 15 ml bottle with a small removable glossy gold cap`,
+    brief: `${name} — 15 ml glossy gold-tone cap and collar`,
+    alt: `${name} 15 ml bottle with a small removable glossy gold-tone cap`,
     fallback: `${slug}-15ml-bottle`,
   },
 })
@@ -145,8 +145,8 @@ export const slots: Record<string, SlotDef> = {
   'amber-hour-cap': {
     kind: 'image',
     ratio: '16:9',
-    brief: 'Amber Hour — close-up of the engraved gold cap above the glass shoulder',
-    alt: 'The engraved square gold cap of Amber Hour, close up, above the faceted glass shoulder',
+    brief: 'Amber Hour — close-up of the engraved zamac cap above the glass shoulder',
+    alt: 'The engraved square zamac cap of Amber Hour, close up, above the faceted glass shoulder',
     fallback: 'maison-atelier',
   },
   'collection-trio': {
@@ -164,8 +164,8 @@ export const slots: Record<string, SlotDef> = {
   'maison-atelier': {
     kind: 'image',
     ratio: '3:4',
-    brief: 'The finishing — engraved gold cap and faceted glass',
-    alt: 'Close-up of the ornate engraved gold cap on a limestone surface',
+    brief: 'The finishing — engraved zamac cap and faceted glass',
+    alt: 'Close-up of the ornate engraved zamac cap on a limestone surface',
   },
   'maison-materials': {
     kind: 'image',
@@ -191,7 +191,7 @@ export const slots: Record<string, SlotDef> = {
     kind: 'image',
     ratio: '3:2',
     brief: 'The House — Amber Hour on warm-grey limestone, with dark space for the opening words',
-    alt: 'Amber Hour on limestone, its engraved gold cap lit by a narrow shaft of evening light',
+    alt: 'Amber Hour on limestone, its engraved zamac cap lit by a narrow shaft of evening light',
     fallback: 'hero-poster',
   },
   'house-gold-editorial': {
@@ -203,8 +203,8 @@ export const slots: Record<string, SlotDef> = {
   'house-cap': {
     kind: 'image',
     ratio: '2:3',
-    brief: 'The cap — the detached engraved gold cap photographed as a sculpture on limestone',
-    alt: 'An engraved square gold cap with a symmetrical scroll motif, resting on limestone',
+    brief: 'The cap — the detached engraved zamac cap photographed as a sculpture on limestone',
+    alt: 'An engraved square zamac cap with a symmetrical scroll motif, resting on limestone',
   },
   'house-edition': {
     kind: 'image',
@@ -222,8 +222,8 @@ export const slots: Record<string, SlotDef> = {
   'house-label': {
     kind: 'image',
     ratio: '4:5',
-    brief: 'Macro — the gold metal front label on the glass',
-    alt: 'The gold metal label on an After Bells bottle',
+    brief: 'Macro — the gold-tone metal front label on the glass',
+    alt: 'The gold-tone metal label on an After Bells bottle',
     fallback: 'iron-crown-bottle',
   },
   'house-composition': {
@@ -235,6 +235,21 @@ export const slots: Record<string, SlotDef> = {
   },
 
   /* ---- Waitlist ---- */
+  'preorder-cloche-amber-hour-16x9-4k': {
+    kind: 'image',
+    ratio: '16:9',
+    brief: 'Amber Hour cloche reveal — a silver tray, natural hands and warm linen curtains, with space at left for the invitation',
+    alt: 'Amber Hour revealed beneath a lifted silver cloche on a serving tray, against warm linen curtains',
+    focus: '65% 50%',
+    fallback: 'waitlist-backdrop-desktop',
+  },
+  'preorder-cloche-amber-hour-portrait': {
+    kind: 'image',
+    ratio: '4:5',
+    brief: 'Phone cloche reveal — Amber Hour, the lifted silver lid and both hands in a portrait photograph',
+    alt: 'Hands lifting a silver cloche to reveal Amber Hour on an antique serving tray',
+    fallback: 'preorder-cloche-amber-hour-16x9-4k',
+  },
   'waitlist-backdrop-desktop': {
     kind: 'image',
     ratio: '8:5',

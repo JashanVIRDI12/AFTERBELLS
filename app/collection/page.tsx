@@ -11,7 +11,7 @@ import TravelCollection from '@/components/collection/TravelCollection'
 
 export const metadata: Metadata = {
   title: 'The Collection',
-  description: `Amber Hour, Open Sky and Iron Crown — universal perfumes at ${signature.strengthLabel}, finished with 24k gold flakes. The ${site.edition.name} is available now.`,
+  description: `Amber Hour, Open Sky and Iron Crown — universal perfumes at ${signature.strengthLabel}, with 24k gold flakes in every bottle. The ${site.edition.name} is available now.`,
   alternates: { canonical: '/collection' },
 }
 

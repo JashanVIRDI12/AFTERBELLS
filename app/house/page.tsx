@@ -41,7 +41,7 @@ export default function HousePage() {
     {
       no: 'III',
       title: 'The cap',
-      body: 'Each bottle is crowned with an engraved square cap in gold.',
+      body: 'Each bottle is crowned with an engraved square cap of zamac, finished in gold tone.',
       media: media['house-cap'],
     },
   ]

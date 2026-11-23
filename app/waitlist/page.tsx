@@ -12,7 +12,7 @@ import styles from './Waitlist.module.css'
 
 export const metadata: Metadata = {
   title: 'Join the waitlist',
-  description: 'The First Edition of After Bells opens soon: three perfumes at 20% perfume oil, finished with 24k gold. Join the waitlist to be first.',
+  description: 'The First Edition of After Bells opens soon: three perfumes at 20% perfume oil, with flakes of 24k gold drifting in every bottle. Join the waitlist to be first.',
   alternates: { canonical: '/waitlist' },
 }
 
@@ -26,8 +26,8 @@ const PERKS = [
 export default async function WaitlistPage(props: PageProps<'/waitlist'>) {
   const sp = await props.searchParams
   const owner = typeof sp.owner === 'string' ? sp.owner : ''
-  const photo = getMedia('waitlist-backdrop-desktop')
-  const mobilePhoto = getMedia('waitlist-backdrop-mobile')
+  const photo = getMedia('preorder-cloche-amber-hour-16x9-4k')
+  const mobilePhoto = getMedia('preorder-cloche-amber-hour-portrait')
   const common = { alt: '', fill: true, sizes: '100vw', quality: 85 } as const
   const desktop = photo.src ? getImageProps({ ...common, src: photo.src }).props : null
   const mobile = mobilePhoto.src ? getImageProps({ ...common, src: mobilePhoto.src }).props : null
@@ -37,7 +37,7 @@ export default async function WaitlistPage(props: PageProps<'/waitlist'>) {
       <div className={styles.backdrop} aria-hidden>
         {desktop && (
           <picture className={styles.scene}>
-            {mobile && <source media="(max-width: 959px)" srcSet={mobile.srcSet} sizes={mobile.sizes} />}
+            {mobile && <source media="(max-width: 559px)" srcSet={mobile.srcSet} sizes={mobile.sizes} />}
             <img {...desktop} alt="" loading="eager" fetchPriority="high" className={styles.photo} />
           </picture>
         )}
@@ -54,7 +54,7 @@ export default async function WaitlistPage(props: PageProps<'/waitlist'>) {
         <h1 className={styles.title}>
           Be first through <span className="gold-text">the doors.</span>
         </h1>
-        <p className={styles.lede}>Three perfumes finished with 24k gold. Join the list and hear the moment we open.</p>
+        <p className={styles.lede}>Three perfumes, with flakes of 24k gold drifting in every bottle. Join the list and hear the moment we open.</p>
 
         <div className={styles.formWrap}>
           <WaitlistForm />

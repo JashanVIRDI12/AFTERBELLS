@@ -1,0 +1,70 @@
+{
+  "generator": "built-in image_gen",
+  "use_case": "product-mockup",
+  "brief": "After Bells Amber Hour preorder campaign photo inspired by the user's cloche reveal photograph.",
+  "references": [
+    {
+      "role": "Composition, gesture, curtain backdrop and light",
+      "source": "User-attached cloche perfume campaign photograph"
+    },
+    {
+      "role": "Exact product identity",
+      "source": "public/media/amber-hour-bottle.webp"
+    }
+  ],
+  "prompt": "Use case: product-mockup.\nAsset type: a finished photographic campaign image for AFTER BELLS perfume preorders.\nOutput: 4K-resolution portrait photograph, exact 3072 x 3840 pixels, 4:5 aspect ratio, maximum available native detail. No graphic layout or lettering outside the physical product label.\n\nREFERENCES:\nImage 1 (user's silver-cloche perfume photograph) is the composition, gesture, lighting and styling reference. Create a new photograph with its intimate, tangible atmosphere.\nImage 2 (AFTER BELLS AMBER HOUR bottle) is the EXACT product identity reference. Replace the reference's small dropper bottle with this actual After Bells perfume bottle; keep the After Bells bottle's shape and cap rather than the original dropper.\n\nSCENE:\nHeavy oatmeal-champagne linen curtains fill the entire background, vertical folds with irregular depth, visibly woven real cloth. Late-afternoon window light enters from camera left. An adult woman's two hands enter from the right: the lower hand supports an oval antique silver serving tray from underneath, with credible weight-bearing fingers; the upper hand lifts the round polished silver cloche by its knob to reveal the perfume. Only hands and forearms, no face or body. Match the reference's natural effortless gesture and framing, a moment caught mid-reveal.\n\nPRODUCT:\nOne AMBER HOUR perfume bottle centered on the tray, facing camera. Exact reference silhouette: squat heavy rectangular faceted crystal glass body with broad chamfered corners, thick clear base, bevelled shoulders, amber liquid, a small realistic amount of irregular 24k gold leaf settled naturally inside the bottom. Large square engraved gold cap with the reference's intricate symmetrical scrolling four-petal relief and square border. Brushed-gold rectangular plaque with thin double black border. Legible label, EXACT text: \"AFTER BELLS\", a fine line-diamond-line divider, \"AMBER HOUR\". No additional words, no invented edition numbers. Keep the reference's real bottle proportions and believable approximately palm-sized scale. The cap is fitted to the perfume bottle. Do not remove the cap or replace it with a dropper.\n\nCOMPOSITION:\n4:5 portrait like image 1. Lid and lifting hand dominate the upper half. The tilted lid exposes its darker interior and is clearly separate from the bottle, with a visible clearance above the ornate cap. The silver tray forms a horizontal oval across the lower-middle, approximately y=72%, supported from below. The bottle is prominent but physically plausible, about 29% of the image height, its base planted on the tray with a proper contact shadow and subdued imperfect reflection. Cropped forearms continue naturally beyond the right edge. Lower curtain area has quiet breathing room for a future preorder caption; DO NOT generate the caption. Keep styling sparse: no fruit, food, liquid spill, extra products, loose glitter or flowers.\n\nPHOTOGRAPHIC REALISM:\nMake this look like a real high-end editorial photograph photographed on a medium-format film camera with an 80mm normal lens at f/5.6, 1/125 second. Bottle plaque and front glass facets in crisp optical focus; curtain texture and the far rim of the lid gently recede with natural depth of field. One broad directional window through diffusion at camera left, with restrained white bounce from the right; all highlights and cast shadows obey that one setup. Silver remains neutral silver with warm room reflections, never gold chrome. Show a plausible reflection of the same curtained room and window on the curved lid, subtle swirl marks and fine hairline scratches in the silver, modest tarnish at the engraved rim, not pristine CGI chrome. No impossible reflected extra hands or extra bottles.\nHands: natural medium warm brown skin, subtle pores, fine vellus hair, knuckle folds, cuticles, slightly different nail shapes, short unpainted nails, realistic tendons and pressure where fingers touch metal. At most one delicate plain gold ring, as in the reference. Anatomically correct hands, five digits each with natural occlusion, no fused fingers or duplicated joints. No beauty airbrushing or oily plastic skin.\n\nFILM FINISH:\nTasteful Kodak Portra 160-inspired medium-format negative scan: very fine low-amplitude irregular dye-cloud grain integrated into image tones, slightly variable granule sizes, extremely subtle chromaticity, discernible at 100% in curtain midtones but unobtrusive at normal viewing distance. Fine detail remains optically credible. Warmth comes from the light and amber liquid, not a global orange color wash; natural skin, neutral silver highlights, muted champagne curtains, warm brown shadows. Soft natural highlight roll-off, believable rich shadow detail, restrained saturation. Minimal halation only at the tiny brightest metal speculars, no obvious bloom. No digital sharpening halos, crunchy clarity, flat monochrome noise sheet, dust overlay, fake film damage, orange-teal LUT, symmetrical studio reflections, cinematic fog or oversmoothed surfaces. Real luxury product photography with observable materials and human imperfection.\n\nConstraints: only the finished photographic image; no border, no watermark, no floating logos, no slogans, no \"served fresh\" text, no preorder button. Preserve the supplied brand and product.",
+  "original": {
+    "path": "output/imagegen/preorder/amber-hour-cloche-original.png",
+    "width": 1122,
+    "height": 1402
+  },
+  "export": {
+    "png": "output/imagegen/preorder/amber-hour-cloche-4k-upscaled.png",
+    "jpeg": "public/media/preorder-cloche-amber-hour-4k.jpg",
+    "width": 3072,
+    "height": 3840,
+    "aspect_ratio": "4:5",
+    "native_4k": false,
+    "method": "High-resolution resampled export using macOS sips. Does not add native photographic detail. Original retained."
+  },
+  "finish": {
+    "chosen_look": "Kodak Portra 160-inspired medium-format color negative scan",
+    "rationale": "Fine grain suits the bright controlled scene, preserves the product label and gives natural skin rendering. This is an artistic choice informed by Kodak technical data, not an objectively best filter.",
+    "application": "Synthesized in the imagegen photograph. No actual Kodak film, Dehancer plugin or Lightroom preset was applied.",
+    "grain": "Fine, low-amplitude, irregular grain, restrained chromaticity and subtle visibility in curtain tones.",
+    "tone": "Natural skin, gently compressed highlights, neutral silver reflecting the warm room; warmth comes from the light and amber liquid.",
+    "realism_direction": "Consistent broad window lighting, plausible curved-metal reflections, natural hand anatomy and skin texture, physical tray contact, restrained optical sharpening."
+  },
+  "research": [
+    {
+      "title": "Kodak Portra 160 technical data, E-4051",
+      "url": "https://kodakprofessional.com/sites/default/files/2025-07/e4051.pdf",
+      "used_for": "Fine grain, natural skin color, suitability for commercial photography, and scan/enlargement behavior."
+    },
+    {
+      "title": "Kodak Portra 400 technical data, E-4050",
+      "url": "https://www.kodakprofessional.com/sites/default/files/2025-07/e4050.pdf",
+      "used_for": "Comparison of grain index with Portra 160; the chosen finish favors finer texture."
+    },
+    {
+      "title": "Dehancer Desktop Manual — Film Grain",
+      "url": "https://www.dehancer.com/learn/article/desktop-manual#film-grain",
+      "used_for": "Grain integrated with local color and tone; scale and density should support image detail. Used as conceptual guidance, not an applied plugin."
+    },
+    {
+      "title": "Adobe Lightroom — Edit photos",
+      "url": "https://helpx.adobe.com/lightroom/desktop/edit-photos/edit-photos.html",
+      "used_for": "Distinguishing grain amount, particle size, roughness, glow and sharpening."
+    },
+    {
+      "title": "Carmencita Film Lab — An Introduction to the Portra family",
+      "url": "https://carmencitafilmlab.com/blog/introduction-portra-family/",
+      "used_for": "Working lab observations on Portra 160 in well-lit scenes and its fine grain."
+    },
+    {
+      "title": "Broncolor — Splash!",
+      "url": "https://broncolor.swiss/news/nils-wilbert-splash",
+      "used_for": "Diffusion and bounce guidance for believable perfume glass highlights."
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-/* The waitlist: a centred invitation framed by its own campaign photography. */
+/* The waitlist: an invitation beside the cloche reveal, with a restrained film grade. */
 .page {
   --soft: color-mix(in srgb, var(--ivory) 70%, transparent);
   --line: color-mix(in srgb, var(--ivory) 24%, transparent);
@@ -22,30 +22,41 @@
 }
 .photo {
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 65% 50%;
+  filter: saturate(0.82) brightness(0.94) contrast(1.035);
 }
 .veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(24 17 13 / 0.18) 0%, rgb(24 17 13 / 0.08) 38%, rgb(24 17 13 / 0.14) 76%, rgb(24 17 13 / 0.72) 100%);
+  background:
+    linear-gradient(90deg, #18110d 0%, rgb(24 17 13 / 0.96) 18%, rgb(24 17 13 / 0.87) 34%, rgb(24 17 13 / 0.62) 45%, rgb(24 17 13 / 0.14) 61%, rgb(24 17 13 / 0.05) 100%),
+    linear-gradient(180deg, rgb(24 17 13 / 0.24) 0%, transparent 25%, transparent 72%, rgb(24 17 13 / 0.9) 100%);
 }
+/* Phones and tablets: the cloche opens the page. The photograph fills the top of the screen and fades
+   into the dark, and the invitation and form rise out of it, so the first screen holds the picture,
+   the promise and the button together. */
 @media (max-width: 959px) {
-  .scene {
-    inset: auto auto 60px 50%;
-    width: clamp(349px, 64.7vw, 507px);
-    height: clamp(620px, 115vw, 900px);
-    transform: translateX(-50%);
-    mask-image:
-      linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%),
-      linear-gradient(180deg, transparent 40%, #000 66%, #000 88%, transparent 100%);
-    mask-composite: intersect;
+  .backdrop {
+    bottom: auto;
+    height: var(--photo-h);
+  }
+  .page {
+    --photo-h: clamp(300px, 52svh, 620px);
   }
   .photo {
-    object-fit: contain;
-    object-position: 50% 50%;
+    object-position: 50% 42%;
   }
   .veil {
-    background: linear-gradient(180deg, transparent 70%, rgb(24 17 13 / 0.08) 82%, rgb(24 17 13 / 0.66) 100%);
+    background:
+      linear-gradient(180deg, rgb(24 17 13 / 0.6) 0%, rgb(24 17 13 / 0) 20%, rgb(24 17 13 / 0) 46%, rgb(24 17 13 / 0.86) 72%, #18110d 92%);
+  }
+}
+@media (max-width: 559px) {
+  .page {
+    --photo-h: clamp(290px, 50svh, 470px);
+  }
+  .photo {
+    object-position: 50% 46%;
   }
 }
 .flakes {
@@ -55,6 +66,7 @@
 }
 
 .top {
+  grid-row: 1;
   display: flex;
   justify-content: center;
   padding: calc(24px + var(--safe-t)) var(--gutter) 0;
@@ -67,19 +79,63 @@
 
 /* ---------- the column ---------- */
 .center {
+  grid-row: 2;
   display: grid;
   justify-items: center;
   align-content: center;
   gap: 18px;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: min(620px, 56vw);
+  margin: 0 auto 0 clamp(16px, 3vw, 64px);
   padding: 40px var(--gutter) 48px;
   text-align: center;
 }
 @media (max-width: 959px) {
   .center {
-    padding-bottom: clamp(210px, 34vw, 280px);
+    max-width: 600px;
+    margin-inline: auto;
+    align-content: start;
+    /* begin over the lower part of the photograph, where it has faded */
+    padding-top: calc(var(--photo-h) - 150px);
+    padding-bottom: 28px;
+  }
+}
+@media (max-width: 559px) {
+  .center {
+    gap: 14px;
+    padding-top: calc(var(--photo-h) - 128px);
+  }
+  /* "Be first through / the doors." — never a lone word on the second line */
+  .title :global(.gold-text) {
+    display: block;
+  }
+  .eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.24em;
+  }
+  .title {
+    font-size: clamp(2.125rem, 10.4vw, 2.75rem);
+    line-height: 1.06;
+  }
+  .lede {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+  .formWrap {
+    margin-top: 6px;
+  }
+  .switch button {
+    min-height: 36px;
+    padding: 0 18px;
+  }
+  .perks {
+    gap: 8px 16px;
+    margin-top: 6px;
+    font-size: 0.75rem;
+  }
+  .word {
+    width: 150px;
+    filter: drop-shadow(0 1px 8px rgb(0 0 0 / 0.5));
   }
 }
 .eyebrow {
@@ -100,6 +156,7 @@
 .lede {
   max-width: 38ch;
   margin: 0;
+  text-wrap: balance;
   font-size: 1rem;
   line-height: 1.65;
   color: var(--soft);
@@ -187,7 +244,7 @@
   padding-left: 8px;
 }
 .input::placeholder {
-  color: color-mix(in srgb, var(--ivory) 45%, transparent);
+  color: color-mix(in srgb, var(--ivory) 66%, transparent);
 }
 .input:focus {
   outline: none;
@@ -204,6 +261,22 @@
   --h: 58px;
   flex: none;
   padding-inline: 26px;
+}
+@media (min-width: 960px) and (max-width: 1199px) {
+  .veil {
+    background:
+      linear-gradient(90deg, #18110d 0%, rgb(24 17 13 / 0.96) 28%, rgb(24 17 13 / 0.88) 48%, rgb(24 17 13 / 0.6) 58%, rgb(24 17 13 / 0.18) 78%, rgb(24 17 13 / 0.08) 100%),
+      linear-gradient(180deg, rgb(24 17 13 / 0.24) 0%, transparent 25%, transparent 72%, rgb(24 17 13 / 0.9) 100%);
+  }
+  .row {
+    flex-direction: column;
+  }
+  .row > * {
+    flex: none;
+  }
+  .go {
+    width: 100%;
+  }
 }
 .note {
   margin: 0;
@@ -336,6 +409,7 @@
 
 /* ---------- foot: help, and the owner's way in ---------- */
 .foot {
+  grid-row: 3;
   display: grid;
   justify-items: center;
   gap: 6px;
@@ -344,6 +418,7 @@
   text-align: center;
   color: var(--soft);
 }
+
 .foot a {
   color: var(--ivory);
   text-decoration: underline;

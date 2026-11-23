@@ -1,0 +1,20 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "precise-object-edit",
+  "reference": "output/imagegen/preorder/amber-hour-cloche-original.png",
+  "prompt": "Use case: precise-object-edit.\nEdit target: the supplied existing After Bells Amber Hour cloche reveal photograph.\nRequested change: turn this exact portrait photograph into a WIDE 16:9 LANDSCAPE photograph by expanding/outpainting the scene horizontally. Target 3840 x 2160 pixels at the highest available native detail.\nPreserve the existing scene: the SAME real-looking warm brown hands, same lifted antique silver cloche, same silver tray supported from underneath, same After Bells Amber Hour perfume bottle, same ornate engraved square gold cap, same champagne woven linen curtain, same directional window illumination and subtle Portra 160-inspired fine film grain. Keep the photograph's physical details, natural skin pores and creases, silver patina and hairline scratches, and believable reflected curtained room.\nComposition: fit the complete cloche, bottle and serving tray comfortably within the landscape frame without cutting off the cap or tray, and preserve the upper hand's grip and lower hand's support. Place the bottle at approximately 60% of the frame width. Extend the linen curtain naturally to the left and right with varied folds, coherent shadows and consistent woven texture; softly continue forearms to the right edge. The left third should be spacious curtain for potential future live text. Keep the object scales consistent relative to one another, with the same elegant reveal gesture and optical perspective. No stretching or flattening of the bottle, cloche, hands or curtain.\nProduct invariants: the exact heavy faceted rectangular clear glass bottle, amber perfume, settled irregular small gold flakes, fitted square scrolling relief gold cap, brushed-gold double-bordered front plaque. Preserve exact legible black label text \"AFTER BELLS\" and \"AMBER HOUR\" with its small line-diamond-line divider. No invented lettering.\nColor and finish invariants: warm natural window light from the left, neutral silver carrying warm room reflections, natural skin color, gently rolled highlights, authentic glass refraction, restrained fine integrated irregular grain. Maintain the original photographic finish, no additional filter intensity.\nChange only canvas orientation and the surrounding framing needed to make 16:9 work. No new people, props, fruit, flowers, extra hands, extra bottles, mist or floating gold. No text overlays, headlines, buttons, watermarks, borders, graphic backgrounds or logos outside the existing product plaque. Deliver the finished 16:9 photograph only.",
+  "original": "output/imagegen/preorder/amber-hour-cloche-16x9-original.png",
+  "native_dimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "png": "output/imagegen/preorder/amber-hour-cloche-16x9-4k-upscaled.png",
+  "jpeg": "public/media/preorder-cloche-amber-hour-16x9-4k.jpg",
+  "export_dimensions": {
+    "width": 3840,
+    "height": 2160,
+    "aspect_ratio": "16:9"
+  },
+  "native_4k": false,
+  "preparation": "Expanded landscape composition generated with image_gen, followed by a 3840 x 2160 resampled export using macOS sips. Original retained."
+}

@@ -105,7 +105,7 @@ export async function sendDispatchEmail(o: Order) {
       `Your After Bells is on its way · ${o.number}`,
       layout(
         'On its way',
-        `<p style="margin:14px 0 24px;font-size:14px;line-height:1.7">${first(o)}, your order <b>${o.number}</b> has left the house, sealed in gold.</p>
+        `<p style="margin:14px 0 24px;font-size:14px;line-height:1.7">${first(o)}, your order <b>${o.number}</b> has left the house, sealed and on its way.</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
 <tr><td style="padding:10px 0;border-bottom:1px solid #eadfcd;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:left;color:#6a5c48">Courier</td><td style="padding:10px 0;border-bottom:1px solid #eadfcd;text-align:right;font-size:13px">${esc(f.courier ?? '')}</td></tr>
 <tr><td style="padding:10px 0;border-bottom:1px solid #eadfcd;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:left;color:#6a5c48">Tracking</td><td style="padding:10px 0;border-bottom:1px solid #eadfcd;text-align:right;font-size:13px">${esc(f.tracking ?? '')}</td></tr>

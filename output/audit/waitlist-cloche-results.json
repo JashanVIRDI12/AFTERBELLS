@@ -1,0 +1,386 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=1920&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
+      "bottom": 900
+    },
+    "headline": {
+      "x": 103.65625,
+      "y": 211.859375,
+      "width": 499.0625,
+      "height": 141.4375,
+      "bottom": 353.296875
+    },
+    "form": {
+      "x": 103.65625,
+      "y": 452.078125,
+      "width": 499.0625,
+      "height": 146.59375,
+      "bottom": 598.671875
+    },
+    "perks": {
+      "x": 103.65625,
+      "y": 626.671875,
+      "width": 499.0625,
+      "height": 53.5,
+      "bottom": 680.171875
+    },
+    "footer": {
+      "x": 0,
+      "y": 820,
+      "width": 1440,
+      "height": 80,
+      "bottom": 900
+    },
+    "pageHeight": 900,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=1920&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-1440.png",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-portrait.jpg%3Fv%3Dmwtcpyfj&w=640&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 633.75,
+      "width": 390,
+      "height": 487.5,
+      "bottom": 1121.25
+    },
+    "headline": {
+      "x": 16.375,
+      "y": 115.09375,
+      "width": 357.25,
+      "height": 83.1875,
+      "bottom": 198.28125
+    },
+    "form": {
+      "x": 16.375,
+      "y": 297.0625,
+      "width": 357.25,
+      "height": 231.1875,
+      "bottom": 528.25
+    },
+    "perks": {
+      "x": 16.375,
+      "y": 556.25,
+      "width": 357.25,
+      "height": 53.5,
+      "bottom": 609.75
+    },
+    "footer": {
+      "x": 0,
+      "y": 1121.25,
+      "width": 390,
+      "height": 128,
+      "bottom": 1249.25
+    },
+    "pageHeight": 1249,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-portrait.jpg%3Fv%3Dmwtcpyfj&w=640&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-390.png",
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=828&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 593.75,
+      "width": 768,
+      "height": 432,
+      "bottom": 1025.75
+    },
+    "headline": {
+      "x": 116.25,
+      "y": 115.09375,
+      "width": 535.5,
+      "height": 127.78125,
+      "bottom": 242.875
+    },
+    "form": {
+      "x": 116.25,
+      "y": 341.65625,
+      "width": 535.5,
+      "height": 146.59375,
+      "bottom": 488.25
+    },
+    "perks": {
+      "x": 116.25,
+      "y": 516.25,
+      "width": 535.5,
+      "height": 53.5,
+      "bottom": 569.75
+    },
+    "footer": {
+      "x": 0,
+      "y": 1025.75,
+      "width": 768,
+      "height": 107,
+      "bottom": 1132.75
+    },
+    "pageHeight": 1133,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=828&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-768.png",
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=1080&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 768,
+      "bottom": 768
+    },
+    "headline": {
+      "x": 73.71875,
+      "y": 143.546875,
+      "width": 487.4375,
+      "height": 141.4375,
+      "bottom": 284.984375
+    },
+    "form": {
+      "x": 73.71875,
+      "y": 383.765625,
+      "width": 487.4375,
+      "height": 146.59375,
+      "bottom": 530.359375
+    },
+    "perks": {
+      "x": 73.71875,
+      "y": 558.359375,
+      "width": 487.4375,
+      "height": 53.5,
+      "bottom": 611.859375
+    },
+    "footer": {
+      "x": 0,
+      "y": 688,
+      "width": 1024,
+      "height": 80,
+      "bottom": 768
+    },
+    "pageHeight": 768,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=1080&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-1024.png",
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-portrait.jpg%3Fv%3Dmwtcpyfj&w=640&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 713.640625,
+      "width": 320,
+      "height": 400,
+      "bottom": 1113.640625
+    },
+    "headline": {
+      "x": 16,
+      "y": 115.09375,
+      "width": 288,
+      "height": 83.1875,
+      "bottom": 198.28125
+    },
+    "form": {
+      "x": 16,
+      "y": 323.453125,
+      "width": 288,
+      "height": 231.1875,
+      "bottom": 554.640625
+    },
+    "perks": {
+      "x": 16,
+      "y": 582.640625,
+      "width": 288,
+      "height": 107,
+      "bottom": 689.640625
+    },
+    "footer": {
+      "x": 0,
+      "y": 1113.640625,
+      "width": 320,
+      "height": 128,
+      "bottom": 1241.640625
+    },
+    "pageHeight": 1242,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-portrait.jpg%3Fv%3Dmwtcpyfj&w=640&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-320.png",
+    "errors": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=1920&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "bottom": 1080
+    },
+    "headline": {
+      "x": 121.59375,
+      "y": 301.859375,
+      "width": 492,
+      "height": 141.4375,
+      "bottom": 443.296875
+    },
+    "form": {
+      "x": 121.59375,
+      "y": 542.078125,
+      "width": 492,
+      "height": 146.59375,
+      "bottom": 688.671875
+    },
+    "perks": {
+      "x": 121.59375,
+      "y": 716.671875,
+      "width": 492,
+      "height": 53.5,
+      "bottom": 770.171875
+    },
+    "footer": {
+      "x": 0,
+      "y": 1000,
+      "width": 1920,
+      "height": 80,
+      "bottom": 1080
+    },
+    "pageHeight": 1080,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=1920&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-1920.png",
+    "errors": []
+  },
+  {
+    "width": 559,
+    "height": 900,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-portrait.jpg%3Fv%3Dmwtcpyfj&w=640&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 578.46875,
+      "width": 559,
+      "height": 698.75,
+      "bottom": 1277.21875
+    },
+    "headline": {
+      "x": 38.09375,
+      "y": 115.09375,
+      "width": 482.8125,
+      "height": 46.5,
+      "bottom": 161.59375
+    },
+    "form": {
+      "x": 23.46875,
+      "y": 260.375,
+      "width": 512.0625,
+      "height": 212.59375,
+      "bottom": 472.96875
+    },
+    "perks": {
+      "x": 23.46875,
+      "y": 500.96875,
+      "width": 512.0625,
+      "height": 53.5,
+      "bottom": 554.46875
+    },
+    "footer": {
+      "x": 0,
+      "y": 1277.21875,
+      "width": 559,
+      "height": 107,
+      "bottom": 1384.21875
+    },
+    "pageHeight": 1384,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-portrait.jpg%3Fv%3Dmwtcpyfj&w=640&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-559.png",
+    "errors": []
+  },
+  {
+    "width": 560,
+    "height": 900,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=640&q=85",
+    "filter": "saturate(0.82) brightness(0.94) contrast(1.035)",
+    "photo": {
+      "x": 0,
+      "y": 512.546875,
+      "width": 560,
+      "height": 315,
+      "bottom": 827.546875
+    },
+    "headline": {
+      "x": 38.15625,
+      "y": 115.09375,
+      "width": 483.671875,
+      "height": 46.578125,
+      "bottom": 161.671875
+    },
+    "form": {
+      "x": 23.515625,
+      "y": 260.453125,
+      "width": 512.96875,
+      "height": 146.59375,
+      "bottom": 407.046875
+    },
+    "perks": {
+      "x": 23.515625,
+      "y": 435.046875,
+      "width": 512.96875,
+      "height": 53.5,
+      "bottom": 488.546875
+    },
+    "footer": {
+      "x": 0,
+      "y": 827.546875,
+      "width": 560,
+      "height": 107,
+      "bottom": 934.546875
+    },
+    "pageHeight": 935,
+    "requests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fpreorder-cloche-amber-hour-16x9-4k.jpg%3Fv%3Dmwtclsnu&w=640&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-cloche-560.png",
+    "errors": []
+  }
+]

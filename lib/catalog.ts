@@ -70,7 +70,7 @@ export type Fragrance = {
 /** Shared by every bottle */
 export const signature = {
   gold: '24k gold flakes suspended in every bottle',
-  label: 'Gold metal front label',
+  label: 'Gold-tone metal front label',
   /** Perfume-oil concentration, shared by every fragrance */
   strength: '20%',
   strengthLabel: '20% perfume oil',
