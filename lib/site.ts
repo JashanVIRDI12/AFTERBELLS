@@ -8,7 +8,8 @@ export const site = {
   tagline: 'Reserved for the Exceptional',
   description:
     'After Bells is a maison de parfum composing for the hour after the bells. The First Edition — Amber Hour, Open Sky and Iron Crown — carries 24k gold flakes in every bottle and is available now.',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  /** The live address. Used in share links, emails, the sitemap and link previews, so it must never be localhost. */
+  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://theafterbells.com').replace(/\/+$/, ''),
   instagram: 'afterbells',
   /**
    * The concierge: one number, shown everywhere the house can be reached.

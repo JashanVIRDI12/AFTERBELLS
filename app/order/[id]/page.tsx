@@ -176,7 +176,7 @@ export default async function OrderPage(props: PageProps<'/order/[id]'>) {
               Add to this parcel on WhatsApp
             </a>
             <a
-              href={`https://wa.me/?text=${encodeURIComponent(`I have just ordered from After Bells: perfumes made in India, with flakes of gold drifting in every bottle. ${site.url}`)}`}
+              href={`https://wa.me/?text=${encodeURIComponent(`I have just ordered from After Bells, perfumes made in India with flakes of 24k gold drifting in every bottle: ${site.url}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.shareLink}

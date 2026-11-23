@@ -91,7 +91,7 @@ export default function WaitlistForm() {
   }
 
   if (step === 'done') {
-    const share = `I have joined the waitlist for After Bells: perfumes made in India, with flakes of gold drifting in every bottle. ${site.url}/waitlist`
+    const share = `I have joined the waitlist for After Bells, perfumes made in India with flakes of 24k gold drifting in every bottle. The First Edition opens soon: ${site.url}/waitlist`
     return (
       <div className={styles.done} role="status">
         <span className={styles.doneMark} aria-hidden>
