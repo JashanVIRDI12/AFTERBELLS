@@ -4,19 +4,8 @@
  * First-party, anonymous visit measurement. A random visitor id lives in this browser only;
  * no names, emails or IP addresses are sent. Respects Do Not Track / Global Privacy Control.
  */
-export type TrackName =
-  | 'page_view'
-  | 'product_view'
-  | 'add_to_bag'
-  | 'checkout_view'
-  | 'payment_start'
-  | 'concierge_call'
-  | 'concierge_whatsapp'
-  | 'discovery_waitlist'
-  | 'instagram_click'
-  | 'salon_join'
-  | 'film_play'
-  | 'track_lookup'
+import type { TrackName } from './track-names'
+export type { TrackName }
 
 const rid = () => Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 10)
 

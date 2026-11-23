@@ -2,7 +2,7 @@ import 'server-only'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { CODE_ATTEMPTS, summarise, tallyReserved, type Profile, type Feedback, type InventoryLog, type InventoryRow, type Order, type Store, type Subscriber, type TrackEvent } from './types'
+import { CODE_ATTEMPTS, leadKey, mergeLead, summarise, tallyReserved, type Lead, type Profile, type Feedback, type InventoryLog, type InventoryRow, type Order, type Store, type Subscriber, type TrackEvent } from './types'
 
 /**
  * Local store: JSON files in /.data. For development, or a single long-running server with a
@@ -139,6 +139,53 @@ export const fileStore: Store = {
       const next = list.filter((f) => (f.id ?? f.at) !== id)
       if (next.length === list.length) return false
       await write('feedback', next)
+      return true
+    })
+  },
+  publishFeedback(id, on) {
+    return locked(async () => {
+      const list = await read<Feedback>('feedback')
+      const f = list.find((x) => (x.id ?? x.at) === id)
+      if (!f || (on && !f.consent)) return false
+      f.published = on
+      await write('feedback', list)
+      return true
+    })
+  },
+
+  saveLead(input) {
+    return locked(async () => {
+      const list = await read<Lead>('leads')
+      const key = leadKey(input)
+      const i = list.findIndex((l) => leadKey(l) === key)
+      const lead = mergeLead(list[i], input, new Date().toISOString(), crypto.randomBytes(8).toString('hex'))
+      if (i === -1) list.push(lead)
+      else list[i] = lead
+      // the file store is for development: keep the newest 5,000
+      await write('leads', list.slice(-5000))
+      return lead
+    })
+  },
+  async listLeads() {
+    return (await read<Lead>('leads')).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+  },
+  setLeadStatus(id, status) {
+    return locked(async () => {
+      const list = await read<Lead>('leads')
+      const l = list.find((x) => x.id === id)
+      if (!l) return false
+      l.status = status
+      l.updatedAt = new Date().toISOString()
+      await write('leads', list)
+      return true
+    })
+  },
+  removeLead(id) {
+    return locked(async () => {
+      const list = await read<Lead>('leads')
+      const next = list.filter((l) => l.id !== id)
+      if (next.length === list.length) return false
+      await write('leads', next)
       return true
     })
   },

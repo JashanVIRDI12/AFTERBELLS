@@ -14,7 +14,7 @@ type Props = {
 
 /**
  * Edition status in words, never in numbers: "First Edition · Available".
- * Live order data still drives it: "Few remaining" near the end, "Sold out" at the end.
+ * Live order data still drives it: "Few remaining" near the end, "Fully reserved" at the end.
  */
 export default function EditionMeter({ variantId, className = '', compact, quiet }: Props) {
   const s = useStock(variantId)
@@ -22,7 +22,7 @@ export default function EditionMeter({ variantId, className = '', compact, quiet
   const soldOut = s?.remaining === 0
   const low = Boolean(s) && !soldOut && share <= site.edition.lowStockShare
 
-  const status = soldOut ? 'Sold out' : low ? 'Few remaining' : 'Available'
+  const status = soldOut ? 'Fully reserved' : low ? 'Few remaining' : 'Available'
   if (quiet && !low && !soldOut) return null
 
   return (

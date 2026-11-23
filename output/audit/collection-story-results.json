@@ -1,0 +1,95 @@
+[
+  {
+    "width": 1470,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=1920&q=85",
+    "imageHeight": 527,
+    "copyBelowImage": false,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 1440,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=1920&q=85",
+    "imageHeight": 527,
+    "copyBelowImage": false,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 1024,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=1920&q=85",
+    "imageHeight": 527,
+    "copyBelowImage": false,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 901,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=1920&q=85",
+    "imageHeight": 523.265625,
+    "copyBelowImage": false,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 900,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=1920&q=85",
+    "imageHeight": 480,
+    "copyBelowImage": true,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 768,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=1920&q=85",
+    "imageHeight": 480,
+    "copyBelowImage": true,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=750&q=85",
+    "imageHeight": 288.59375,
+    "copyBelowImage": true,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "width": 320,
+    "status": 200,
+    "errors": [],
+    "imageLoaded": true,
+    "src": "http://localhost:3123/_next/image?url=%2Fmedia%2Fcollection-hero.webp%3Fv%3Dmwqti3z2&w=640&q=85",
+    "imageHeight": 236.796875,
+    "copyBelowImage": true,
+    "overflow": false,
+    "headingFits": true
+  },
+  {
+    "mode": "normal motion",
+    "headingVisible": true,
+    "errors": []
+  }
+]

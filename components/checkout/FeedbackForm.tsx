@@ -20,6 +20,7 @@ export default function FeedbackForm() {
   const [comments, setComments] = useState('')
   const [name, setName] = useState('')
   const [orderNumber, setOrderNumber] = useState('')
+  const [consent, setConsent] = useState(false)
   const [state, setState] = useState<'idle' | 'sending' | 'done'>('idle')
   const [error, setError] = useState('')
 
@@ -36,7 +37,7 @@ export default function FeedbackForm() {
     const res = await fetch('/api/feedback', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ fragrance: picked, ...rating, comments, name, orderNumber, website }),
+      body: JSON.stringify({ fragrance: picked, ...rating, comments, name, orderNumber, consent, website }),
     })
     if (res.ok) {
       setState('done')
@@ -138,6 +139,11 @@ export default function FeedbackForm() {
                 <input id="fb-order" className="input" placeholder="AB-1001" value={orderNumber} onChange={(e) => setOrderNumber(e.target.value)} />
               </div>
             </div>
+
+            <label className={styles.consent}>
+              <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+              <span>The house may share my words on its website, with my first name and initial only.</span>
+            </label>
 
             {error && (
               <p className={styles.error} role="alert">

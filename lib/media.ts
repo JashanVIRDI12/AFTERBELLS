@@ -18,6 +18,11 @@ export type SlotDef = {
   alt: string
   /** Until this slot's own file arrives, borrow another slot's photograph */
   fallback?: string
+  /**
+   * Where the subject sits in the photograph (CSS object-position), so a frame of another shape
+   * crops around it instead of through it, e.g. '72% 50%' for a bottle right of centre.
+   */
+  focus?: string
 }
 
 const fragranceSlots = (slug: string, name: string, mood: string): Record<string, SlotDef> => ({
@@ -57,6 +62,8 @@ const fragranceSlots = (slug: string, name: string, mood: string): Record<string
 const travelSlots = (slug: string, name: string): Record<string, SlotDef> => ({
   [`${slug}-15ml-bottle`]: {
     kind: 'image', ratio: '4:5',
+    // a slim, tall bottle: when a frame crops it, keep the cap and trim the base
+    focus: '50% 6%',
     brief: `${name} — 15 ml bottle with glossy gold cap and sideways gold After Bells wordmark`,
     alt: `${name} in a slim 15 ml glass bottle with a small glossy gold cap, gold After Bells lettering and natural gold flakes`,
   },
@@ -121,12 +128,16 @@ export const slots: Record<string, SlotDef> = {
   'amber-hour-scene': {
     kind: 'image',
     ratio: '16:9',
+    // the bottle stands right of centre: keep it whole in portrait frames
+    focus: '71% 50%',
     brief: 'Amber Hour — wide still life on a wooden table in low sun, with open space at left for the film button',
     alt: 'Amber Hour on a dark wooden table in low sunlight beside a linen curtain, its shadow glowing amber',
   },
   'iron-crown-scene': {
     kind: 'image',
     ratio: '16:9',
+    // the bottle stands right of centre: keep it whole in portrait frames
+    focus: '71% 50%',
     brief: 'Iron Crown — wide still life on dark stone under arches, a shaft of light, open space at left',
     alt: 'Iron Crown on dark stone beneath stone arches, a shaft of evening light behind it and gold flakes in the glass',
   },
@@ -223,12 +234,27 @@ export const slots: Record<string, SlotDef> = {
     fallback: 'maison-materials',
   },
 
+  /* ---- Waitlist ---- */
+  'waitlist-backdrop-desktop': {
+    kind: 'image',
+    ratio: '8:5',
+    brief: 'Waitlist — three bottles frame a dark central doorway, with gold grazing light at the outer edges and space for the invitation',
+    alt: '',
+    fallback: 'collection-hero',
+  },
+  'waitlist-backdrop-mobile': {
+    kind: 'image',
+    ratio: '9:16',
+    brief: 'Phone waitlist — a dark doorway with the three bottles on a low walnut ledge beneath open space for the invitation',
+    alt: '',
+    fallback: 'waitlist-backdrop-desktop',
+  },
   /* ---- Collection page ---- */
   'collection-hero': {
     kind: 'image',
     ratio: '12:5',
-    brief: 'The collection campaign — three front-facing bottles on dark limestone, with copy space at left',
-    alt: 'Amber Hour, Open Sky and Iron Crown on sculpted dark limestone in warm studio light',
+    brief: 'The Golden Hour Collection — three bottles on a wooden table in warm evening sunlight, beside a linen curtain, with copy space at left',
+    alt: 'Amber Hour, Open Sky and Iron Crown on a wooden table in golden-hour sunlight, beside a linen curtain and small white flowers',
     fallback: 'collection-trio',
   },
 }
@@ -242,4 +268,5 @@ export type ResolvedMedia = {
   brief: string
   ratio: string
   alt: string
+  focus?: string
 }

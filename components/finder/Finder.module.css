@@ -1,0 +1,230 @@
+.finder {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+[data-step-title]:focus {
+  outline: none;
+}
+
+/* the pop-up's invitation */
+.intro {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+.title {
+  margin: 0;
+  font-size: clamp(1.875rem, 7vw, 2.5rem);
+  line-height: 1.06;
+}
+.lede {
+  margin: 0 0 10px;
+  max-width: 34ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--umber-2);
+}
+.later {
+  justify-self: center;
+  min-height: 44px;
+  padding: 0 12px;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* a question */
+.question {
+  animation: step 0.5s var(--ease-out) both;
+}
+.progress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.progress span {
+  height: 2px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  transition: background 0.4s;
+}
+.progress .lit {
+  background: var(--gold);
+}
+.count {
+  margin: 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-b);
+}
+.count span {
+  color: var(--umber-2);
+}
+.q {
+  margin: 10px 0 20px;
+  font-size: clamp(1.5rem, 5.6vw, 2rem);
+  line-height: 1.15;
+}
+.answers {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.answer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 60px;
+  padding: 14px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.answer svg {
+  flex: 0 0 auto;
+  color: var(--gold-b);
+  transition: transform 0.4s var(--ease-out);
+}
+.answer:active {
+  background: color-mix(in srgb, var(--gold-a) 14%, var(--paper));
+}
+@media (hover: hover) {
+  .answer:hover {
+    border-color: var(--gold);
+  }
+  .answer:hover svg {
+    transform: translateX(3px);
+  }
+}
+.picked {
+  border-color: var(--gold);
+}
+.back {
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* the match */
+.result {
+  display: grid;
+  grid-template-columns: minmax(104px, 34%) 1fr;
+  gap: 18px 20px;
+  align-items: center;
+  animation: step 0.6s var(--ease-out) both;
+}
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--bg), var(--bg2));
+}
+.photo img {
+  object-fit: cover;
+}
+.copy {
+  display: grid;
+  gap: 6px;
+}
+.name {
+  margin: 0;
+  font-size: clamp(1.75rem, 6.4vw, 2.5rem);
+  line-height: 1.05;
+}
+.why {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--umber-2);
+}
+.notes {
+  margin: 4px 0 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--gold-b);
+}
+.buy {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+}
+.alt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
+  margin: 0;
+}
+.alt a,
+.alt button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gold) 70%, transparent);
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.keep {
+  grid-column: 1 / -1;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.keepTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+@media (min-width: 700px) {
+  .result {
+    gap: 22px 32px;
+  }
+  .inDialog .result {
+    grid-template-columns: 150px 1fr;
+  }
+}
+
+@keyframes step {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}

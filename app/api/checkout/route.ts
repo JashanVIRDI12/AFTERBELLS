@@ -3,6 +3,7 @@ import { checkoutSchema } from '@/lib/checkout-schema'
 import { priceLines } from '@/lib/pricing'
 import { stockFrom } from '@/lib/stock'
 import { getInventory } from '@/lib/inventory'
+import { isFullSize } from '@/lib/catalog'
 import { createOrder, markFailed, setRazorpayOrder } from '@/lib/orders'
 import { storageDurable } from '@/lib/db'
 import { createRazorpayOrder, demoPaymentsEnabled, razorpayEnabled, razorpayKeyId } from '@/lib/razorpay'
@@ -55,6 +56,7 @@ export async function POST(req: Request) {
       customer: { ...input.customer, email: input.customer.email.trim().toLowerCase() },
       gift: input.gift?.message ? { message: input.gift.message } : undefined,
       whatsappUpdates: input.whatsappUpdates || undefined,
+      video: input.video && totals.lines.some((l) => isFullSize(l.variantId)) ? true : undefined,
       origin: input.origin && (input.origin.source || input.origin.campaign) ? input.origin : undefined,
       payment: { provider: razorpayEnabled() ? 'razorpay' : 'demo' },
     },
@@ -68,7 +70,7 @@ export async function POST(req: Request) {
               remaining === 0
                 ? stock[l.variantId]?.paused
                   ? `${l.name} is not available just now. Please contact the concierge.`
-                  : `${l.name} has sold out.`
+                  : `${l.name} is now fully reserved.`
                 : `Only a few ${l.name} bottles remain. Please reduce the quantity and try again.`,
             variantId: l.variantId,
             remaining,

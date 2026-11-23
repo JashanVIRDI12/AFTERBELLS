@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { fragrances } from '@/lib/catalog'
-import { getStore } from '@/lib/db'
+import { getStore, storageDurable, storageUnavailable } from '@/lib/db'
 import { rateLimit, tooMany } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -30,6 +30,7 @@ export async function POST(req: Request) {
   }
   const { website, ...feedback } = parsed.data
   if (website) return NextResponse.json({ ok: true })
+  if (!storageDurable()) return storageUnavailable('Feedback')
   await (await getStore()).addFeedback(feedback)
   return NextResponse.json({ ok: true })
 }

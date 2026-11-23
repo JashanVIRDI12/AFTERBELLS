@@ -1,7 +1,7 @@
 import 'server-only'
 import crypto from 'node:crypto'
 import postgres from 'postgres'
-import { CODE_ATTEMPTS, HOLD_MS, RESERVING, type CodeCheck, type Profile, type CreateResult, type EventStats, type Feedback, type InventoryLog, type InventoryRow, type NewOrder, type Order, type Reserved, type Store, type Subscriber, type TrackEvent } from './types'
+import { CODE_ATTEMPTS, HOLD_MS, RESERVING, leadKey, mergeLead, type Lead, type CodeCheck, type Profile, type CreateResult, type EventStats, type Feedback, type InventoryLog, type InventoryRow, type NewOrder, type Order, type Reserved, type Store, type Subscriber, type TrackEvent } from './types'
 
 /**
  * Production store: any Postgres (Neon, Supabase, Railway, RDS…) via DATABASE_URL.
@@ -106,6 +106,15 @@ create table if not exists ab_profiles (
   updated_at timestamptz not null default now(),
   data       jsonb not null
 );
+create table if not exists ab_leads (
+  id         text primary key,
+  key        text not null unique,
+  kind       text not null,
+  status     text not null,
+  updated_at timestamptz not null default now(),
+  data       jsonb not null
+);
+create index if not exists ab_leads_updated_idx on ab_leads (updated_at desc);
 create table if not exists ab_login_codes (
   email      text primary key,
   hash       text not null,
@@ -254,6 +263,48 @@ export const pgStore: Store = {
     const rows = await db()`delete from ab_feedback where id = ${id} returning id`
     return rows.length > 0
   },
+  async publishFeedback(id, on) {
+    await migrate()
+    if (!/^\d+$/.test(id)) return false
+    const rows = on
+      ? await db()`update ab_feedback set data = data || '{"published":true}'::jsonb where id = ${id} and (data->>'consent')::boolean is true returning id`
+      : await db()`update ab_feedback set data = data || '{"published":false}'::jsonb where id = ${id} returning id`
+    return rows.length > 0
+  },
+
+  async saveLead(input) {
+    await migrate()
+    const key = leadKey(input)
+    return db().begin(async (tx) => {
+      const [row] = await tx<{ data: Lead }[]>`select data from ab_leads where key = ${key} for update`
+      const lead = mergeLead(row?.data, input, new Date().toISOString(), crypto.randomBytes(8).toString('hex'))
+      await tx`
+        insert into ab_leads (id, key, kind, status, updated_at, data)
+        values (${lead.id}, ${key}, ${lead.kind}, ${lead.status}, ${lead.updatedAt}, ${json(tx, lead)})
+        on conflict (key) do update set status = excluded.status, updated_at = excluded.updated_at, data = excluded.data`
+      return lead
+    }) as Promise<Lead>
+  },
+  async listLeads() {
+    await migrate()
+    const rows = await db()<{ data: Lead }[]>`select data from ab_leads order by updated_at desc limit 2000`
+    return rows.map((r) => r.data)
+  },
+  async setLeadStatus(id, status) {
+    await migrate()
+    const now = new Date().toISOString()
+    const rows = await db()`
+      update ab_leads set status = ${status}, updated_at = ${now},
+        data = data || ${json(db(), { status, updatedAt: now })}
+      where id = ${id} returning id`
+    return rows.length > 0
+  },
+  async removeLead(id) {
+    await migrate()
+    const rows = await db()`delete from ab_leads where id = ${id} returning id`
+    return rows.length > 0
+  },
+
   async removeSubscriber(email) {
     await migrate()
     const rows = await db()`delete from ab_subscribers where email = ${email} returning email`

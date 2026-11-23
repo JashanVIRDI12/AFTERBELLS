@@ -1,0 +1,117 @@
+/* A house pop-up: a bottom sheet on phones, a framed card on larger screens. */
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: rgb(20 15 10 / 0.58);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: fade 0.45s var(--ease-out) both;
+}
+.sheet {
+  position: relative;
+  width: 100%;
+  max-height: calc(100dvh - 24px - var(--safe-t));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: var(--ink);
+  background: var(--paper);
+  border-top: 1px solid var(--gold);
+  box-shadow: 0 -24px 60px rgb(20 15 10 / 0.28);
+  animation: rise 0.6s var(--ease-out) both;
+}
+.sheet:focus {
+  outline: none;
+}
+/* a gilt hairline inset, as on the house's printed cards */
+.sheet::before {
+  content: '';
+  position: absolute;
+  inset: 8px 8px 0;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-bottom: 0;
+  pointer-events: none;
+}
+.body {
+  position: relative;
+  padding: 36px 24px calc(28px + var(--safe-b));
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--umber-2);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .close:hover {
+    color: var(--ink);
+  }
+}
+.title:focus {
+  outline: none;
+}
+.title {
+  margin: 10px 0 0;
+  font-size: clamp(1.75rem, 6vw, 2.25rem);
+  line-height: 1.08;
+}
+.lede {
+  margin: 12px 0 22px;
+  max-width: 34ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--umber-2);
+}
+
+@media (min-width: 700px) {
+  .wrap {
+    align-items: center;
+    padding: 24px;
+  }
+  .sheet {
+    width: min(520px, 100%);
+    max-height: calc(100dvh - 48px);
+    border: 1px solid var(--gold);
+    box-shadow: 0 30px 80px rgb(20 15 10 / 0.35);
+    animation-name: appear;
+  }
+  .sheet::before {
+    inset: 8px;
+    border-bottom: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  }
+  .body {
+    padding: 48px 44px 40px;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes rise {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}

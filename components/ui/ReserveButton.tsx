@@ -6,6 +6,7 @@ import { formatINR } from '@/lib/pricing'
 import { useStock } from '@/lib/useStock'
 import { track } from '@/lib/track'
 import { getVariant } from '@/lib/catalog'
+import NotifyDialog from '@/components/lead/NotifyDialog'
 
 type Props = {
   variantId: string
@@ -15,6 +16,10 @@ type Props = {
   variant?: 'gold' | 'line' | 'ink'
   block?: boolean
   openBag?: boolean
+  /** after adding (e.g. a pop-up closes itself before the bag opens) */
+  onAdded?: () => void
+  /** how many to add (the product page's quantity control) */
+  qty?: number
 }
 
 export default function ReserveButton({
@@ -25,15 +30,25 @@ export default function ReserveButton({
   variant = 'gold',
   block,
   openBag = true,
+  onAdded,
+  qty = 1,
 }: Props) {
   const add = useCart((s) => s.add)
   const set = useUI((s) => s.set)
   const stock = useStock(variantId)
   const soldOut = stock?.remaining === 0
   const [added, setAdded] = useState(false)
+  const [notify, setNotify] = useState(false)
 
   const onClick = () => {
-    add(variantId)
+    // fully reserved: never a dead end, the guest can ask to hear first
+    if (soldOut) {
+      setNotify(true)
+      track('notify_request', { slug: getVariant(variantId)?.product.slug })
+      return
+    }
+    onAdded?.()
+    add(variantId, qty)
     track('add_to_bag', { slug: getVariant(variantId)?.product.slug })
     setAdded(true)
     window.setTimeout(() => setAdded(false), 1600)
@@ -41,15 +56,15 @@ export default function ReserveButton({
   }
 
   return (
+    <>
     <button
       type="button"
       className={`btn btn--${variant} ${block ? 'btn--block' : ''} ${className}`}
       onClick={onClick}
-      disabled={soldOut}
       aria-live="polite"
     >
       {soldOut ? (
-        'Sold out'
+        'Fully reserved · Notify me'
       ) : added ? (
         <>
           <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden>
@@ -65,5 +80,9 @@ export default function ReserveButton({
         </>
       )}
     </button>
+    {soldOut && (
+      <NotifyDialog open={notify} onClose={() => setNotify(false)} variantId={variantId} name={getVariant(variantId)?.product.name ?? 'This fragrance'} />
+    )}
+    </>
   )
 }

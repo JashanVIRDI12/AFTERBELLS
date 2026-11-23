@@ -2,7 +2,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 100svh;
+  min-height: calc(100svh - var(--bar-h));
   display: grid;
   align-items: center;
   padding-top: calc(var(--header-h) + var(--safe-t) + clamp(40px, 4vw, 64px));

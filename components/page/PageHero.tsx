@@ -56,7 +56,15 @@ export default function PageHero({ eyebrow, title, lede, media, mediaMotion = tr
     >
       {dark && media?.src && (
         <div className={styles.media} aria-hidden>
-          <Image src={media.src} alt="" fill sizes="100vw" preload quality={85} className={styles.img} />
+          <Image
+            src={media.src}
+            alt=""
+            fill
+            sizes={media.slot === 'collection-hero' ? '(max-width: 1100px) 178vw, 100vw' : '100vw'}
+            preload
+            quality={85}
+            className={styles.img}
+          />
           <span className={styles.shade} />
         </div>
       )}

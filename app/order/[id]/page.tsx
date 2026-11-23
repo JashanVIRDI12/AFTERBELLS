@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { getOrder } from '@/lib/orders'
 import { formatINR } from '@/lib/pricing'
 import { nextSteps } from '@/lib/content'
-import { site, isFastPin } from '@/lib/site'
+import { site, isFastPin, whatsappLink } from '@/lib/site'
 import { emailEnabled } from '@/lib/email'
 import { Emblem, Divider } from '@/components/brand/Brand'
 import ClearBag from '@/components/checkout/ClearBag'
@@ -130,6 +130,12 @@ export default async function OrderPage(props: PageProps<'/order/[id]'>) {
         {order.totals.balance > 0 && (
           <p className={styles.balance}>Balance of {formatINR(order.totals.balance)} due before dispatch.</p>
         )}
+        {order.video && (
+          <p className={styles.videoNote}>
+            <span className="t-eyebrow">Your personalised video</span>
+            Filmed for you by the house and sent on WhatsApp to +91 {order.customer.phone} as your bottle leaves.
+          </p>
+        )}
         {order.gift?.message && (
           <blockquote className={styles.gift}>
             <span className="t-eyebrow">Your gift message</span>“{order.gift.message}”
@@ -155,6 +161,29 @@ export default async function OrderPage(props: PageProps<'/order/[id]'>) {
               </li>
             ))}
           </ol>
+          <div className={styles.extras}>
+            <p className="t-eyebrow">Before it leaves the house</p>
+            <p>
+              Something to add, a 15 ml to carry or a bottle to give? Tell the concierge before dispatch and it travels in the same parcel,
+              with complimentary delivery.
+            </p>
+            <a
+              href={whatsappLink(`Hello After Bells, I would like to add to my order ${order.number}.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--line"
+            >
+              Add to this parcel on WhatsApp
+            </a>
+            <a
+              href={`https://wa.me/?text=${encodeURIComponent(`I have just ordered from After Bells: perfumes finished with 24k gold, made in India. ${site.url}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.shareLink}
+            >
+              Tell a friend on WhatsApp
+            </a>
+          </div>
           <p className={styles.share}>
             Share your moment and tag us on Instagram{' '}
             <a href={`https://instagram.com/${site.instagram}`} target="_blank" rel="noreferrer">

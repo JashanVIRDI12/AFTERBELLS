@@ -8,12 +8,16 @@ import Composition from '@/components/product/Composition'
 import Story from '@/components/product/Story'
 import Finishing from '@/components/product/Finishing'
 import OtherHours from '@/components/product/OtherHours'
+import Reviews from '@/components/reviews/Reviews'
+import { getReviews, ratingSummary } from '@/lib/reviews'
 
 export function generateStaticParams() {
   return allFragrances.map((f) => ({ slug: f.slug }))
 }
 
 export const dynamicParams = false
+/** clients' published words reach the page within the hour (and at once when the house publishes them) */
+export const revalidate = 3600
 
 export async function generateMetadata(props: PageProps<'/fragrances/[slug]'>): Promise<Metadata> {
   const { slug } = await props.params
@@ -45,9 +49,24 @@ export default async function FragrancePage(props: PageProps<'/fragrances/[slug]
     ...others.map((o) => o.media[0]),
   ])
 
+  const reviews = await getReviews(f.parentSlug ?? f.slug)
+  const rating = ratingSummary(reviews)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    ...(rating
+      ? {
+          aggregateRating: { '@type': 'AggregateRating', ...rating, bestRating: 5, worstRating: 1 },
+          review: reviews.map((r) => ({
+            '@type': 'Review',
+            author: { '@type': 'Person', name: r.name },
+            datePublished: r.at.slice(0, 10),
+            reviewBody: r.comments,
+            reviewRating: { '@type': 'Rating', ratingValue: r.scent, bestRating: 5 },
+          })),
+        }
+      : {}),
     name: f.name,
     brand: { '@type': 'Brand', name: site.name },
     description: f.description,
@@ -70,6 +89,7 @@ export default async function FragrancePage(props: PageProps<'/fragrances/[slug]
       <ProductHero product={f} media={f.media.map((m) => media[m])} />
       <Story product={f} />
       <Composition product={f} cutout={media[`${f.slug}-cutout`]} />
+      <Reviews reviews={reviews} />
       <Finishing product={f} media={media[`${f.slug}-cap`]} />
       <OtherHours products={others} media={media} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

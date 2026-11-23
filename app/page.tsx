@@ -6,12 +6,18 @@ import Collection from '@/components/home/Collection'
 import House from '@/components/home/House'
 import GoldMoment from '@/components/home/GoldMoment'
 import Compliments from '@/components/home/Compliments'
-import SceneBand from '@/components/home/SceneBand'
 import Faq from '@/components/home/Faq'
 import ReserveDock from '@/components/home/ReserveDock'
 import TravelCollection from '@/components/collection/TravelCollection'
+import Reviews from '@/components/reviews/Reviews'
+import { getReviews } from '@/lib/reviews'
+import FinderSection from '@/components/finder/FinderSection'
 
-export default function HomePage() {
+/** clients' published words reach the home page within the hour (and at once when the house publishes them) */
+export const revalidate = 3600
+
+export default async function HomePage() {
+  const reviews = await getReviews(undefined, 6)
   const media = getMediaMap([
     'hero-film',
     'hero-poster',
@@ -23,10 +29,7 @@ export default function HomePage() {
     'maison-materials',
     'amber-hour-mood',
     'house-gold',
-    'amber-hour-scene',
   ])
-
-  const amberHour = fragrances.find((f) => f.slug === 'amber-hour')
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -72,11 +75,12 @@ export default function HomePage() {
         posterMobile={media['hero-poster-mobile']}
       />
       <Collection media={media} />
+      <FinderSection />
       <TravelCollection media={media} />
       <GoldMoment media={media['house-gold']} />
-      {amberHour && <SceneBand product={amberHour} media={media['amber-hour-scene']} />}
       <House media={media} />
       <Compliments backdrop={media['amber-hour-mood']} />
+      <Reviews reviews={reviews} showFragrance />
       <Faq limit={4} />
       <ReserveDock />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

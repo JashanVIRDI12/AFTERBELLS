@@ -27,7 +27,9 @@ export function useDialogFocus(open: boolean, root: RefObject<HTMLElement | null
       'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), video[controls], [tabindex="0"]',
     )).filter((el) => !el.closest('[inert]') && el.getClientRects().length > 0)
     const first = () => focusable()[0] ?? dialog
-    first().focus({ preventScroll: true })
+    // a dialog may name where focus starts (e.g. its heading, so a pop-up does not open with a ring on its close button)
+    const start = dialog.querySelector<HTMLElement>('[data-autofocus]') ?? first()
+    start.focus({ preventScroll: true })
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {

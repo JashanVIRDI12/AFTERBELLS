@@ -7,7 +7,6 @@ import type { ResolvedMedia } from '@/lib/media'
 import { formatINR } from '@/lib/pricing'
 import { gsap, ScrollTrigger, prefersReducedMotion } from '@/lib/gsap'
 import MediaSlot from '@/components/media/MediaSlot'
-import HourDial from '@/components/ui/HourDial'
 import ReserveButton from '@/components/ui/ReserveButton'
 import EditionMeter from '@/components/ui/EditionMeter'
 import styles from './Collection.module.css'
@@ -102,10 +101,6 @@ export default function Collection({ media }: { media: Record<string, ResolvedMe
             <div className={styles.inner}>
               <div className={styles.meta} data-cr>
                 <span className={styles.no}>No. {f.no}</span>
-                <span className={styles.hour}>
-                  <HourDial time={f.hour} />
-                  <b>{f.hour}</b>
-                </span>
               </div>
 
               <Link href={`/fragrances/${f.slug}`} className={styles.visual} aria-label={`Discover ${f.name}`}>

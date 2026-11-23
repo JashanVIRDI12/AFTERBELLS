@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: 'How After Bells orders, delivery, returns and privacy work.',
 }
 
+/** 14 → "2 pm", 12 → "noon", 10 → "10 am" */
+const hourLabel = (h: number) => (h === 12 ? 'noon' : h > 12 ? `${h - 12} pm` : `${h} am`)
+
 /**
  * PLACEHOLDER — sensible starting terms for an Indian D2C brand.
  * Have them reviewed (consumer protection / e-commerce rules) before launch.
@@ -44,8 +47,10 @@ export default function PoliciesPage() {
         <article id="shipping" className={styles.block}>
           <h2>Delivery &amp; returns</h2>
           <p>
-            {site.shipping.note}. {d.fast}; {d.standard} elsewhere. Every parcel is tracked: you will receive tracking details by email and SMS on
-            dispatch.
+            {site.shipping.note}. {d.fast}; {d.standard} elsewhere. Orders paid before {hourLabel(d.cutoffHour)}{' '}
+            India time, Monday to Saturday, leave the house the same day; delivery dates shown on the site are estimates worked out from
+            this. Every parcel is tracked: you will receive tracking details by email on dispatch, and on WhatsApp if you asked for it at
+            checkout.
           </p>
           <p>
             For reasons of hygiene, opened fragrances cannot be returned. If your bottle arrives damaged, photograph the parcel and the bottle and
@@ -71,13 +76,27 @@ export default function PoliciesPage() {
             deliver and support your order. Payments are handled by Razorpay; we never see or store your card details.
           </p>
           <p>
-            If you join the Salon or the discovery set waitlist, we will email you no more than once a month, and you can unsubscribe at any time.
-            If you ask for order updates on WhatsApp, we use your mobile number only for those messages. We never sell or share your information.
+            If you join the Salon (by email or WhatsApp) or the discovery set waitlist, we will write to you no more than once a month, and you
+            can leave at any time. If you ask for order updates on WhatsApp, we use your mobile number only for those messages. We never sell or share your information.
             To access or delete your data, call or message our concierge on <ConciergePhones />.
           </p>
           <p>
-            At checkout, the PIN code you type is looked up in a public postal directory to fill in your city and state. Only the PIN code is
-            sent.
+            At checkout, your contact details and bag are saved as you type, so that if your order does not go through our concierge can
+            contact you once to help. They are also kept in this browser, so a closed tab loses nothing. If you leave your email or mobile
+            number to keep a fragrance match, or to hear when a fragrance returns, we use it for that and nothing else. Ask our concierge and
+            we will delete any of it.
+          </p>
+          <p>
+            If you join the waitlist, we keep your name, your email or WhatsApp number and the perfumes you chose, to tell you when we open
+            and nothing else. They are kept in our own records, which may include a spreadsheet only the house can open.
+          </p>
+          <p>
+            If you agree on the feedback card that we may share your words, we may show them on this website with your first name and the
+            initial of your surname only.
+          </p>
+          <p>
+            When you check a delivery date or check out, the PIN code you type is looked up in a public postal directory to find your city
+            and state. Only the PIN code is sent. It is remembered in this browser so you need not type it twice.
           </p>
           <p>
             To understand how the site is used, we count visits anonymously: a random identifier kept in your browser, the pages you view, the

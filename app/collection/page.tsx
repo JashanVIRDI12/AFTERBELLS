@@ -4,7 +4,7 @@ import { getMediaMap } from '@/lib/media.server'
 import { site } from '@/lib/site'
 import PageHero from '@/components/page/PageHero'
 import ProductGrid from '@/components/collection/ProductGrid'
-import FindYourHour from '@/components/collection/FindYourHour'
+import FinderSection from '@/components/finder/FinderSection'
 import Signature from '@/components/collection/Signature'
 import DiscoveryWaitlist from '@/components/collection/DiscoveryWaitlist'
 import TravelCollection from '@/components/collection/TravelCollection'
@@ -27,6 +27,7 @@ export default function CollectionPage() {
     <>
       <PageHero
         media={media['collection-hero']}
+        mediaMotion={false}
         size="short"
         eyebrow={`The ${site.edition.name}`}
         title={
@@ -37,8 +38,8 @@ export default function CollectionPage() {
         lede={`Three universal perfumes at ${signature.strengthLabel}. Each made once, in limited number.`}
       />
       <ProductGrid media={media} />
+      <FinderSection />
       <TravelCollection media={media} />
-      <FindYourHour media={media} />
       <DiscoveryWaitlist />
       <Signature media={media['house-gold']} />
     </>

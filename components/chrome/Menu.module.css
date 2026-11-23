@@ -68,7 +68,7 @@
 
 .pLink {
   display: grid;
-  grid-template-columns: 2.6em 1fr auto;
+  grid-template-columns: 2.6em 1fr;
   align-items: baseline;
   gap: 12px;
   padding-block: 10px;
@@ -90,13 +90,6 @@
   transition:
     letter-spacing 0.8s var(--ease-out),
     color 0.5s;
-}
-.hour {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  opacity: 0.6;
-  font-variant-numeric: tabular-nums;
 }
 @media (hover: hover) {
   .pLink:hover .name {

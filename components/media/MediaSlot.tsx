@@ -17,6 +17,8 @@ type Props = {
   className?: string
   sizes?: string
   quality?: 75 | 85 | 92
+  /** Keep the complete photograph visible in a product gallery. */
+  fit?: 'cover' | 'contain'
   priority?: boolean
   /** Subtle vertical drift of the image inside its frame while scrolling */
   parallax?: boolean
@@ -45,6 +47,7 @@ export default function MediaSlot({
   className = '',
   sizes = '100vw',
   quality = 85,
+  fit,
   priority,
   parallax,
   reveal = true,
@@ -116,11 +119,13 @@ export default function MediaSlot({
             preload={priority}
             quality={quality}
             className={styles.img}
+            style={{ objectFit: fit, ...(media.focus ? { objectPosition: media.focus } : {}) }}
           />
         )}
         {media.src && media.kind === 'video' && (
           <video
             className={styles.img}
+            style={{ objectFit: fit, ...(media.focus ? { objectPosition: media.focus } : {}) }}
             src={media.src}
             poster={poster ?? undefined}
             muted

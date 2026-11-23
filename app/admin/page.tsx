@@ -12,6 +12,7 @@ import Customers from './_sections/Customers'
 import Insights from './_sections/Insights'
 import Salon from './_sections/Salon'
 import FeedbackList from './_sections/Feedback'
+import Leads from './_sections/Leads'
 import styles from './Admin.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -20,6 +21,7 @@ export const metadata: Metadata = { title: 'House admin', robots: { index: false
 const TABS = [
   { key: 'overview', label: 'Overview' },
   { key: 'orders', label: 'Orders' },
+  { key: 'leads', label: 'Leads' },
   { key: 'inventory', label: 'Inventory' },
   { key: 'customers', label: 'Customers' },
   { key: 'insights', label: 'Insights' },
@@ -68,6 +70,7 @@ export default async function AdminPage(props: PageProps<'/admin'>) {
 
       {tab === 'overview' && <Overview store={store} />}
       {tab === 'orders' && <Orders store={store} view={str('view')} q={str('q')} />}
+      {tab === 'leads' && <Leads store={store} view={str('view')} />}
       {tab === 'inventory' && <Inventory store={store} />}
       {tab === 'customers' && <Customers store={store} />}
       {tab === 'insights' && <Insights store={store} days={Number(str('days')) || 30} />}

@@ -20,15 +20,23 @@ export default function Header() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
   const [hidden, setHidden] = useState(false)
   const [solid, setSolid] = useState(false)
+  // how much of the service bar (ServiceBar.tsx) is still on screen; the header sits just below it
+  const [barOff, setBarOff] = useState(0)
   const last = useRef(0)
   const checkout = pathname.startsWith('/checkout')
+  const productPage = pathname.startsWith('/fragrances/') || pathname === '/gift-set'
+
+  const root = useRef<HTMLElement>(null)
 
   useEffect(() => {
     let raf = 0
     const probe = () => {
       raf = 0
       const y = window.scrollY
-      const probeY = 34
+      const bar = document.getElementById('service-bar')
+      const off = bar ? Math.max(0, Math.round(bar.getBoundingClientRect().bottom)) : 0
+      setBarOff(off)
+      const probeY = off + 34
       let t: 'light' | 'dark' = 'light'
       const sections = document.querySelectorAll<HTMLElement>('[data-header]')
       for (const s of sections) {
@@ -39,6 +47,9 @@ export default function Header() {
       }
       setTheme(t)
       setSolid(y > 40)
+      // how far down the page, for the gold hairline on the floating glass
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      root.current?.style.setProperty('--progress', max > 0 ? Math.min(1, y / max).toFixed(4) : '0')
       const delta = y - last.current
       if (Math.abs(delta) > 6) {
         setHidden(delta > 0 && y > 240)
@@ -56,16 +67,22 @@ export default function Header() {
       window.removeEventListener('resize', onScroll)
       cancelAnimationFrame(raf)
     }
-  }, [pathname])
+  }, [pathname, productPage])
 
-  const effectiveTheme = menuOpen ? 'dark' : theme
+  // product pages sit under a light bar (the page itself is ivory and white); the open menu is always dark
+  // at rest a product page sits under its own ivory row; once floating, the glass follows the section beneath
+  const effectiveTheme = menuOpen ? 'dark' : productPage && !solid ? 'light' : theme
+  const floating = solid && !menuOpen
 
   return (
     <>
       <header
-        className={`${styles.header} ${hidden && !menuOpen && !cartOpen ? styles.hidden : ''} ${solid && !menuOpen ? styles.solid : ''}`}
+        ref={root}
+        className={`${styles.header} ${productPage ? styles.productHeader : ''} ${productPage && !floating ? styles.restSolid : ''} ${floating ? styles.float : ''} ${hidden && !menuOpen && !cartOpen ? styles.hidden : ''}`}
+        style={barOff && !menuOpen ? { top: barOff } : undefined}
         data-theme={effectiveTheme}
       >
+        <span className={styles.progress} aria-hidden />
         <div className={styles.inner}>
           <div className={styles.left}>
             {!checkout && (
@@ -83,7 +100,15 @@ export default function Header() {
                 <span className={styles.menuLabel}>{menuOpen ? 'Close' : 'Menu'}</span>
               </button>
             )}
-            {!checkout && (
+            {productPage && (
+              <Link href="/collection" className={`${styles.back} ${styles.collectionBack}`}>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden>
+                  <path d="m10 5-7 7 7 7M3 12h18" />
+                </svg>
+                Back to collection
+              </Link>
+            )}
+            {!checkout && !productPage && (
               <nav className={styles.nav} aria-label="Primary">
                 {NAV.map((n) => (
                   <Link key={n.href} href={n.href} className={styles.navLink}>
@@ -118,6 +143,12 @@ export default function Header() {
               </span>
             ) : (
               <>
+                {productPage && (
+                  <nav className={styles.productNav} aria-label="Primary">
+                    <Link href="/house" className={styles.navLink}>The House</Link>
+                    <Link href="/client-care" className={styles.navLink}>Client care</Link>
+                  </nav>
+                )}
                 <Link href="/account" className={styles.account} aria-label="Your account">
                   <svg className={styles.accountIcon} viewBox="0 0 24 24" width="20" height="20" aria-hidden>
                     <path

@@ -1,0 +1,90 @@
+[
+  {
+    "width": 1470,
+    "height": 834,
+    "errors": [],
+    "heroHeight": 632,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 72
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "errors": [],
+    "heroHeight": 826,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 94
+  },
+  {
+    "width": 1024,
+    "height": 850,
+    "errors": [],
+    "heroHeight": 460,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 53
+  },
+  {
+    "width": 901,
+    "height": 850,
+    "errors": [],
+    "heroHeight": 460,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 53
+  },
+  {
+    "width": 813,
+    "height": 515,
+    "errors": [],
+    "heroHeight": 794,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 55
+  },
+  {
+    "width": 768,
+    "height": 844,
+    "errors": [],
+    "heroHeight": 794,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 55
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "heroHeight": 570,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 33
+  },
+  {
+    "width": 320,
+    "height": 700,
+    "errors": [],
+    "heroHeight": 546,
+    "bottlesFit": true,
+    "headingClear": true,
+    "overflow": false,
+    "transform": "none",
+    "bottomClearance": 27
+  }
+]

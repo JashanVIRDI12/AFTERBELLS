@@ -8,7 +8,7 @@ import styles from './ProductDetails.module.css'
  * (net quantity, MRP, origin, who made and sold it, customer care).
  * Seller fields stay hidden until they are filled in lib/site.ts.
  */
-export default function ProductDetails({ product: f }: { product: Fragrance }) {
+export function detailRows(f: Fragrance): [string, string][] {
   const v = f.variants[0]
   const { legal } = site
   const c = site.concierge[0]
@@ -21,7 +21,11 @@ export default function ProductDetails({ product: f }: { product: Fragrance }) {
   if (legal.manufacturer) rows.push(['Manufactured by', legal.manufacturer])
   if (legal.entity) rows.push(['Marketed by', legal.address ? `${legal.entity}, ${legal.address}` : legal.entity])
   rows.push(['Customer care', `${c.display} (call or WhatsApp)${site.emailLive ? ` · ${site.email}` : ''}`])
+  return rows
+}
 
+export default function ProductDetails({ product: f }: { product: Fragrance }) {
+  const rows = detailRows(f)
   return (
     <details className={styles.details}>
       <summary>Product details</summary>

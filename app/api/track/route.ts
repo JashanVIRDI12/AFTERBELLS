@@ -1,16 +1,18 @@
 import { z } from 'zod'
-import { fragrances } from '@/lib/catalog'
+import { products } from '@/lib/catalog'
+import { TRACK_NAMES } from '@/lib/track-names'
 import { getStore } from '@/lib/db'
 import { rateLimit } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
-const slugs = fragrances.map((f) => f.slug) as [string, ...string[]]
+// every product, so adds of the 15 ml bottles and the gift set are counted too
+const slugs = products.map((p) => p.slug) as [string, ...string[]]
 const id = z.string().regex(/^[a-z0-9]{8,32}$/i)
 const text = z.string().trim().max(80).optional()
 
 const Body = z.object({
-  name: z.enum(['page_view', 'product_view', 'add_to_bag', 'checkout_view', 'payment_start', 'concierge_call', 'concierge_whatsapp', 'discovery_waitlist', 'instagram_click', 'salon_join', 'film_play', 'track_lookup']),
+  name: z.enum(TRACK_NAMES),
   vid: id,
   sid: id,
   path: z.string().max(200).startsWith('/'),

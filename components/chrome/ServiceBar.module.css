@@ -1,0 +1,83 @@
+.bar {
+  position: relative;
+  height: calc(var(--bar-h) + var(--safe-t));
+  padding-top: var(--safe-t);
+  background: var(--espresso);
+  color: color-mix(in srgb, var(--ivory) 84%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold-a) 20%, transparent);
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* phones: one promise at a time, each held for four seconds */
+.list {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0 var(--gutter);
+  list-style: none;
+}
+.list li {
+  grid-area: 1 / 1;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  animation: promise 12s var(--ease-out) infinite;
+  animation-delay: calc(var(--i) * 4s);
+}
+@keyframes promise {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  4%,
+  29% {
+    opacity: 1;
+    transform: none;
+  }
+  33%,
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list li {
+    animation: none;
+  }
+  .list li:first-child {
+    opacity: 1;
+  }
+}
+
+/* wide screens: all three in a row, parted by gold diamonds */
+@media (min-width: 900px) {
+  .bar {
+    letter-spacing: 0.22em;
+  }
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .list li {
+    opacity: 1;
+    animation: none;
+  }
+  .list li + li::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 24px;
+    vertical-align: 2px;
+    transform: rotate(45deg);
+    background: var(--gold-a);
+  }
+}

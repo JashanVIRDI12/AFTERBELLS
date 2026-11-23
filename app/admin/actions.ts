@@ -227,3 +227,30 @@ export async function removeFeedbackAction(fd: FormData) {
   const removed = await (await getStore()).removeFeedback(String(fd.get('feedbackId') ?? ''))
   back(fd, removed ? 'Feedback removed' : 'Not found', removed ? 'ok' : 'err')
 }
+
+export async function publishFeedbackAction(fd: FormData) {
+  await guard()
+  const on = fd.get('on') === '1'
+  const ok = await (await getStore()).publishFeedback(String(fd.get('feedbackId') ?? ''), on)
+  if (ok) {
+    revalidatePath('/')
+    revalidatePath('/fragrances/[slug]', 'page')
+  }
+  back(fd, ok ? (on ? 'Shown on the site' : 'Taken off the site') : 'Only feedback the client agreed to share can be shown', ok ? 'ok' : 'err')
+}
+
+/* ---------------- leads ---------------- */
+
+export async function leadStatusAction(fd: FormData) {
+  await guard()
+  const status = z.enum(['open', 'contacted', 'closed']).safeParse(fd.get('status'))
+  if (!status.success) back(fd, 'Unknown status', 'err')
+  const ok = await (await getStore()).setLeadStatus(String(fd.get('leadId') ?? ''), status.data)
+  back(fd, ok ? (status.data === 'contacted' ? 'Marked as contacted' : 'Reopened') : 'Not found', ok ? 'ok' : 'err')
+}
+
+export async function removeLeadAction(fd: FormData) {
+  await guard()
+  const ok = await (await getStore()).removeLead(String(fd.get('leadId') ?? ''))
+  back(fd, ok ? 'Lead removed' : 'Not found', ok ? 'ok' : 'err')
+}

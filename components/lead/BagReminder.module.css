@@ -1,0 +1,76 @@
+.toast {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + var(--safe-b));
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 10px 6px 10px 18px;
+  color: var(--ivory);
+  background: color-mix(in srgb, var(--espresso) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 50%, transparent);
+  box-shadow: 0 18px 40px rgb(20 15 10 / 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: in 0.6s var(--ease-out) both;
+}
+.toast p {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  min-width: 0;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.eyebrow {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-a);
+}
+.view {
+  min-height: 44px;
+  padding: 0 14px;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  background: var(--gold-a);
+  border: 0;
+  cursor: pointer;
+}
+.x {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 44px;
+  color: color-mix(in srgb, var(--ivory) 70%, transparent);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+/* larger screens: a small card in the corner, clear of the page's own buttons */
+@media (min-width: 700px) {
+  .toast {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    width: 400px;
+    margin: 0;
+  }
+}

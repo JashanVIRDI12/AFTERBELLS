@@ -36,7 +36,7 @@ export const discovery = {
 /** What happens after an order, on the confirmation page */
 export const nextSteps = [
   { no: 'I', title: 'Packed', body: 'Your bottle is sealed and packed with our thank-you card and three 2 ml vials.' },
-  { no: 'II', title: 'Dispatched', body: 'Tracking details reach you by email and SMS the day it leaves the house.' },
+  { no: 'II', title: 'Dispatched', body: 'Tracking details reach you by email the day it leaves the house, and on WhatsApp if you asked for it.' },
   { no: 'III', title: 'Delivered', body: `${site.delivery.fast}; ${site.delivery.standard} elsewhere.` },
 ]
 
@@ -46,27 +46,31 @@ export const deliveryNote = `${site.delivery.fast} · ${site.delivery.standard}`
 export const faqs: { q: string; a: string }[] = [
   {
     q: 'When will my order arrive?',
-    a: `${site.delivery.fast}; ${site.delivery.standard} elsewhere. Delivery is complimentary, and you will receive tracking details by email and SMS the day your bottle leaves us.`,
+    a: `${site.delivery.fast}; ${site.delivery.standard} elsewhere. Enter your PIN code on any fragrance page to see your date. Delivery is complimentary, and tracking details reach you by email (and WhatsApp, if you ask at checkout) the day your bottle leaves us.`,
   },
   {
-    q: 'Who are the perfumes for?',
-    a: 'Everyone. Every After Bells perfume is universal, composed to be worn by anyone, at any age, by day or by night.',
+    q: 'Can I try them before a full bottle?',
+    a: 'Yes. Each hour also comes in a 15 ml bottle at ₹799, and every order carries three 2 ml vials so you can meet the other hours. A discovery set of all three in 2 ml vials is coming soon.',
   },
   {
     q: 'How strong are they?',
     a: 'Each perfume is made at 20% perfume oil concentration, available in 60 ml and 15 ml bottles, for a rich trail and long wear on skin.',
   },
   {
-    q: 'What comes with every order?',
-    a: `Three 2 ml vials of the First Edition, complimentary insured delivery, and priority concierge on ${conciergeLine}, by call or WhatsApp.`,
-  },
-  {
-    q: 'Can I try them before a full bottle?',
-    a: 'A discovery set of all three hours in 2 ml vials is coming soon; leave your email on the Collection page and we will tell you first. Every order also carries three 2 ml vials, so you can meet the other hours.',
-  },
-  {
     q: 'How is it priced so fairly for a fragrance of this quality?',
     a: 'We sell only from this house, with no shops or agents in between. So the price pays for the perfume.',
+  },
+  {
+    q: 'Which one should I choose?',
+    a: `Answer three questions under Find your hour on the Collection page and we will match you to one. Or tell our concierge on ${conciergeLine} what you wear now, and we will suggest the hour for you.`,
+  },
+  {
+    q: 'Who are the perfumes for?',
+    a: 'Everyone. Every After Bells perfume is universal, composed to be worn by anyone, at any age, by day or by night.',
+  },
+  {
+    q: 'What comes with every order?',
+    a: `Three 2 ml vials of the First Edition, complimentary insured delivery, and priority concierge on ${conciergeLine}, by call or WhatsApp.`,
   },
   {
     q: 'Will the First Edition be made again?',
@@ -83,6 +87,22 @@ export const faqs: { q: string; a: string }[] = [
   {
     q: 'Can I change or cancel my order?',
     a: `Yes, until it is dispatched. Call or WhatsApp our concierge on ${conciergeLine} with your order number and we will amend it or refund it in full.`,
+  },
+  {
+    q: 'Can I order on WhatsApp?',
+    a: `Yes. Message or call our concierge on ${conciergeLine} with the fragrances you would like. We take the order, send you payment details and arrange delivery, with the same vials and complimentary delivery as online.`,
+  },
+  {
+    q: 'Do you offer cash on delivery?',
+    a: 'Not at present. Orders are paid securely online through Razorpay, by UPI, card, net banking or wallet, and you can cancel free of charge until dispatch.',
+  },
+  {
+    q: 'How do I track my order?',
+    a: 'Use the tracking link in your dispatch email, or enter your order number and email under Track your order on the Client care page. If you have an account, every order is in it.',
+  },
+  {
+    q: 'What if my parcel arrives damaged?',
+    a: 'Photograph the parcel and the bottle and send the photographs to our concierge on WhatsApp within 48 hours of delivery. We will replace it. For reasons of hygiene, opened bottles cannot be returned.',
   },
   {
     // PLACEHOLDER policy

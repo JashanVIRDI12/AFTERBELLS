@@ -1,0 +1,137 @@
+/* The photograph as the room; one even overlay (no gradient fade); a framed glass card beside the bottle. */
+.band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: min(56.25vw, 100svh);
+  padding-block: clamp(72px, 8vw, 120px);
+  background: #1c140d;
+  color: var(--ivory);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.img {
+  object-fit: cover;
+  object-position: 72% 50%;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(22 15 10 / 0.38);
+}
+
+.stage {
+  display: grid;
+  justify-items: start;
+}
+.card {
+  width: min(440px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: clamp(36px, 4vw, 52px) clamp(28px, 3.4vw, 44px);
+  text-align: center;
+}
+.kicker {
+  color: var(--gold-a);
+}
+.title {
+  font-size: clamp(2.4rem, 3.6vw, 3.4rem);
+  line-height: 1.04;
+}
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  color: rgb(246 238 228 / 0.82);
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(220px, 70%);
+  margin-block: 4px;
+  color: var(--gold-a);
+}
+.ornament span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.ornament span:last-child {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+.ornament i {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.notes {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  color: rgb(246 238 228 / 0.7);
+}
+.price {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+.ctas {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 8px;
+}
+.size {
+  color: rgb(246 238 228 / 0.66);
+  font-size: 0.875rem;
+}
+.note {
+  margin-top: -4px;
+  color: var(--ivory);
+}
+.more {
+  color: rgb(246 238 228 / 0.86);
+}
+
+/* phones: a 4:5 photograph with the whole bottle, the card resting on the table below it */
+@media (max-width: 767px) {
+  .band {
+    min-height: 0;
+    align-items: end;
+    padding-block: calc(125vw - 64px) 40px;
+  }
+  .bg {
+    inset: 0 0 auto;
+    height: 125vw;
+  }
+  .img {
+    object-position: 80% 50%;
+  }
+  /* only the photograph's lower edge meets the dark, so no hard line shows beside the card */
+  .bg::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 -1px;
+    height: 22%;
+    background: linear-gradient(0deg, #1c140d, rgb(28 20 13 / 0));
+  }
+  .stage {
+    justify-items: stretch;
+  }
+  .card {
+    width: 100%;
+  }
+}

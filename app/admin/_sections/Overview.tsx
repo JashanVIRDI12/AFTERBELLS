@@ -9,14 +9,17 @@ import styles from '../Admin.module.css'
 
 export default async function Overview({ store }: { store: Store }) {
   const since7 = new Date(Date.now() - 7 * 864e5)
-  const [orders, subscribers, feedback, reserved, inventory, stats] = await Promise.all([
+  const [orders, subscribers, feedback, reserved, inventory, stats, allLeads] = await Promise.all([
     store.listOrders(),
     store.listSubscribers(),
     store.listFeedback(),
     store.reservedByVariant(),
     getInventory(),
     store.eventStats(since7),
+    store.listLeads(),
   ])
+  const openLeads = allLeads.filter((l) => l.status === 'open' && l.kind !== 'waitlist').length
+  const waitlist = allLeads.filter((l) => l.kind === 'waitlist').length
   const stock = stockFrom(reserved, inventory)
   const taken = orders.filter((o) => o.status === 'paid' || o.status === 'dispatched' || o.status === 'delivered')
   const collected = taken.reduce((s, o) => s + o.totals.dueNow, 0)
@@ -60,6 +63,10 @@ export default async function Overview({ store }: { store: Store }) {
           <b>{stats.visitors}</b>
         </div>
         <div>
+          <span>Waitlist</span>
+          <b>{waitlist}</b>
+        </div>
+        <div>
           <span>Salon members</span>
           <b>{subscribers.length}</b>
         </div>
@@ -71,7 +78,7 @@ export default async function Overview({ store }: { store: Store }) {
         </div>
       </div>
 
-      {(alerts.length > 0 || toDispatch.length > 0 || leads.length > 0) && (
+      {(alerts.length > 0 || toDispatch.length > 0 || leads.length > 0 || openLeads > 0) && (
         <ul className={styles.attention}>
           {toDispatch.length > 0 && (
             <li>
@@ -84,6 +91,13 @@ export default async function Overview({ store }: { store: Store }) {
             <li>
               <a href="/admin?tab=customers#leads">
                 {leads.length} unfinished checkout{leads.length === 1 ? '' : 's'} to follow up →
+              </a>
+            </li>
+          )}
+          {openLeads > 0 && (
+            <li>
+              <a href="/admin?tab=leads">
+                {openLeads} lead{openLeads === 1 ? '' : 's'} left a number or email without ordering →
               </a>
             </li>
           )}

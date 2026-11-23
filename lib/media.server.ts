@@ -27,7 +27,7 @@ export function getMedia(slot: string): ResolvedMedia {
   const borrowed = !own && def.fallback ? find(def.fallback, def.kind) : null
   // a borrowed photograph keeps its own description
   const alt = borrowed && def.fallback ? (slots[def.fallback]?.alt ?? def.alt) : def.alt
-  return { slot, kind: def.kind, src: own ?? borrowed, brief: def.brief, ratio: def.ratio, alt }
+  return { slot, kind: def.kind, src: own ?? borrowed, brief: def.brief, ratio: def.ratio, alt, ...(own && def.focus ? { focus: def.focus } : {}) }
 }
 
 export function getMediaMap(names: string[]): Record<string, ResolvedMedia> {

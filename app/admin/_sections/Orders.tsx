@@ -202,6 +202,12 @@ export default async function Orders({ store, view: viewKey, q }: { store: Store
                       {o.customer.city}, {o.customer.state} {o.customer.pin}
                     </dd>
                   </div>
+                  {o.video && (
+                    <div>
+                      <dt>Video</dt>
+                      <dd>Personalised video: film it and send on WhatsApp (+91 {o.customer.phone}) at dispatch</dd>
+                    </div>
+                  )}
                   {o.gift?.message && (
                     <div>
                       <dt>Gift card</dt>

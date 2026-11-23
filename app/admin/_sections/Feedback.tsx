@@ -1,6 +1,6 @@
 import type { Store } from '@/lib/db'
 import { fragrances } from '@/lib/catalog'
-import { removeFeedbackAction } from '../actions'
+import { publishFeedbackAction, removeFeedbackAction } from '../actions'
 import { Back, fmtDate } from './shared'
 import styles from '../Admin.module.css'
 
@@ -30,7 +30,8 @@ export default async function FeedbackList({ store }: { store: Store }) {
         </div>
       </div>
       <p className={styles.hint}>
-        From the feedback card&apos;s QR code (/feedback). <a href="/api/admin/export?type=feedback">Export (CSV)</a>
+        From the feedback card&apos;s QR code (/feedback). Feedback the client agreed to share can be shown on the product pages and the home
+        page, with their first name and initial. <a href="/api/admin/export?type=feedback">Export (CSV)</a>
       </p>
       <ul className={styles.feedback}>
         {feedback.map((f) => (
@@ -40,10 +41,18 @@ export default async function FeedbackList({ store }: { store: Store }) {
               <small>
                 {' '}
                 — {f.name || 'Anonymous'} {f.orderNumber && `(${f.orderNumber})`} · {fmtDate(f.at)}
-                {f.consent ? ' · may quote' : ''}
+                {f.consent ? (f.published ? ' · shown on the site' : ' · may be shared') : ''}
               </small>
             </p>
             {f.comments && <blockquote>{f.comments}</blockquote>}
+            {f.consent && f.comments && (
+              <form action={publishFeedbackAction}>
+                <Back q="tab=feedback" />
+                <input type="hidden" name="feedbackId" value={f.id} />
+                <input type="hidden" name="on" value={f.published ? '0' : '1'} />
+                <button className={styles.textBtn}>{f.published ? 'Take off the site' : 'Show on the site'}</button>
+              </form>
+            )}
             <form action={removeFeedbackAction}>
               <Back q="tab=feedback" />
               <input type="hidden" name="feedbackId" value={f.id} />

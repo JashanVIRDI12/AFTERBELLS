@@ -1,0 +1,151 @@
+.form {
+  --line: color-mix(in srgb, var(--ink) 24%, transparent);
+  --soft: var(--umber-2);
+  container-type: inline-size;
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+.dark {
+  --line: color-mix(in srgb, var(--ivory) 30%, transparent);
+  --soft: color-mix(in srgb, var(--ivory) 70%, transparent);
+  color: var(--ivory);
+}
+
+/* WhatsApp | Email */
+.switch {
+  display: flex;
+  gap: 22px;
+}
+.switch button {
+  position: relative;
+  min-height: 44px;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.switch button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-out);
+}
+.switch .on {
+  color: inherit;
+}
+.switch .on::after {
+  transform: scaleX(1);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+}
+.prefix {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2px 0 4px;
+  font-size: 16px;
+  color: var(--soft);
+}
+.input {
+  flex: 1 1 160px;
+  min-width: 0;
+  height: 52px;
+  padding: 0 4px;
+  font-family: var(--font-sans);
+  font-size: 16px; /* no zoom on iOS */
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  transition: border-color 0.3s;
+}
+.input::placeholder {
+  color: var(--soft);
+  opacity: 0.8;
+}
+.input:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+.input[aria-invalid='true'] {
+  border-bottom-color: #a5442b;
+}
+.go {
+  --h: 52px;
+  flex: 0 0 auto;
+  padding: 0 22px;
+}
+/* a narrow form (phones, pop-ups): the field takes the whole line and the button sits under it, full width */
+@container (max-width: 420px) {
+  .go {
+    flex-basis: 100%;
+  }
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 44px;
+  padding-top: 4px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--soft);
+  cursor: pointer;
+}
+.check input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--gold-b);
+}
+
+.note {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--soft);
+}
+.err {
+  color: #a5442b;
+}
+.dark .err {
+  color: #e6a089;
+}
+
+.done {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.done svg {
+  flex: 0 0 auto;
+  color: var(--gold-b);
+}
+.done.dark {
+  color: var(--ivory);
+}
+.done.dark svg {
+  color: var(--gold-a);
+}

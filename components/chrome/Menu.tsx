@@ -12,10 +12,12 @@ import styles from './Menu.module.css'
 
 const SECONDARY = [
   { href: '/collection', label: 'The Collection' },
+  { href: '/collection#15ml', label: '15 ml & the gift set' },
+  { href: '/collection#find-your-hour', label: 'Find your hour' },
   { href: '/house', label: 'The House' },
   { href: '/account', label: 'Your account' },
+  { href: '/client-care#track', label: 'Track your order' },
   { href: '/client-care', label: 'Client care' },
-  { href: '/feedback', label: 'Share feedback' },
 ]
 
 export default function Menu() {
@@ -49,7 +51,6 @@ export default function Menu() {
               <Link href={`/fragrances/${f.slug}`} onClick={close} className={styles.pLink}>
                 <span className={styles.no}>{f.no}</span>
                 <span className={`t-name ${styles.name}`}>{f.name}</span>
-                <span className={styles.hour}>{f.hour}</span>
               </Link>
             </li>
           ))}

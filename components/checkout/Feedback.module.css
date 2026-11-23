@@ -153,6 +153,23 @@
   display: grid;
   gap: 16px;
 }
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 44px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--umber-2);
+  cursor: pointer;
+}
+.consent input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--gold-b);
+}
 .error {
   font-size: 0.8125rem;
   color: #7d2f1b;

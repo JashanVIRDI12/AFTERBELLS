@@ -4,9 +4,13 @@ import { Poppins } from 'next/font/google'
 import { site } from '@/lib/site'
 import Providers from '@/components/chrome/Providers'
 import Header from '@/components/chrome/Header'
+import ServiceBar from '@/components/chrome/ServiceBar'
 import Footer from '@/components/chrome/Footer'
+import HideOn from '@/components/chrome/HideOn'
 import Preloader from '@/components/chrome/Preloader'
 import CartDrawer from '@/components/cart/CartDrawer'
+import LeadPopup from '@/components/lead/LeadPopup'
+import BagReminder from '@/components/lead/BagReminder'
 import './globals.css'
 
 /**
@@ -51,8 +55,9 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 }
 
-// Runs before paint: skip the intro curtain on repeat visits / reduced motion.
-const introScript = `try{var d=document.documentElement;d.classList.remove('no-js');var r=matchMedia('(prefers-reduced-motion: reduce)').matches;if(r)d.classList.add('ab-reduced');if(r||sessionStorage.getItem('ab-intro')){d.classList.add('ab-skip-intro')}}catch(e){}`
+// Runs before paint: the intro curtain plays only for a first visit that lands on the home page.
+// Guests arriving on a fragrance, the collection or checkout (ads, shared links) see the page at once.
+const introScript = `try{var d=document.documentElement;d.classList.remove('no-js');var r=matchMedia('(prefers-reduced-motion: reduce)').matches;if(r)d.classList.add('ab-reduced');if(r||location.pathname!=='/'||sessionStorage.getItem('ab-intro')){d.classList.add('ab-skip-intro')}}catch(e){}`
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -65,11 +70,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Providers>
-          <Preloader />
-          <Header />
+          {/* the waitlist stands alone: no shop chrome around it */}
+          <HideOn prefix="/waitlist">
+            <Preloader />
+            <ServiceBar />
+            <Header />
+          </HideOn>
           <main id="main">{children}</main>
-          <Footer />
-          <CartDrawer />
+          <HideOn prefix="/waitlist">
+            <Footer />
+            <CartDrawer />
+            <LeadPopup />
+            <BagReminder />
+          </HideOn>
         </Providers>
         <div className="grain" aria-hidden />
       </body>

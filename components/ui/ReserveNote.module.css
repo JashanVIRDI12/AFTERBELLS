@@ -6,10 +6,118 @@
   font-size: 0.6875rem;
   line-height: 1.6;
   letter-spacing: 0.06em;
-  opacity: 0.74;
   text-wrap: balance;
+}
+.line {
+  margin: 0;
+  opacity: 0.74;
+}
+/* the date itself reads first */
+.when {
+  font-weight: 500;
+  opacity: 1;
+}
+.line:has(.when) {
+  opacity: 0.9;
 }
 .pay {
   letter-spacing: 0.1em;
-  opacity: 0.8;
+  opacity: 0.6;
+}
+
+/* "Check your date" / "Change": a quiet underlined word with a full-size touch target */
+.change {
+  margin-left: 0.7em;
+  padding-block: 12px;
+  margin-block: -12px;
+  font: inherit;
+  letter-spacing: 0.08em;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.change:hover {
+  text-decoration-color: currentColor;
+}
+
+.form {
+  display: grid;
+  gap: 6px;
+}
+.label {
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.field {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  max-width: 320px;
+}
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem; /* 16px stops iOS zooming into the field */
+  letter-spacing: 0.18em;
+}
+.input::placeholder {
+  color: inherit;
+  opacity: 0.35;
+}
+.input:focus-visible {
+  outline: none;
+  border-bottom-color: var(--accent, var(--gold-b));
+}
+.input[aria-invalid='true'] {
+  border-bottom-color: #a5442b;
+}
+.go {
+  height: 44px;
+  padding-inline: 18px;
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  color: inherit;
+  font: inherit;
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.go:hover {
+  border-color: currentColor;
+}
+.go:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.cancel {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.err {
+  color: #a5442b;
+  letter-spacing: 0.04em;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

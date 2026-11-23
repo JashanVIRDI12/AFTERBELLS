@@ -60,10 +60,39 @@ export async function GET(req: Request) {
       ['date', 'fragrance', 'scent', 'longevity', 'packaging', 'comments', 'name', 'order', 'may quote'],
       ...fb.map((f) => [f.at, f.fragrance.join('; '), f.scent, f.longevity, f.packaging, f.comments, f.name, f.orderNumber, f.consent ? 'yes' : 'no']),
     ])
+  } else if (type === 'waitlist') {
+    const HOUR: Record<string, string> = { 'amber-hour': 'Amber Hour', 'open-sky': 'Open Sky', 'iron-crown': 'Iron Crown', undecided: 'Not sure yet' }
+    const list = (await store.listLeads()).filter((l) => l.kind === 'waitlist').reverse()
+    body = csv([
+      ['joined', 'name', 'email', 'whatsapp', 'drawn to', 'source', 'campaign'],
+      ...list.map((l) => [l.createdAt, l.name ?? '', l.email ?? '', l.phone ? `+91 ${l.phone}` : '', (l.interests ?? []).map((i) => HOUR[i] ?? i).join(', '), l.origin?.source ?? '', l.origin?.campaign ?? '']),
+    ])
+  } else if (type === 'leads') {
+    const leads = await store.listLeads()
+    body = csv([
+      ['updated', 'first seen', 'kind', 'status', 'name', 'phone', 'email', 'city', 'pin', 'bag', 'bag value', 'about', 'page', 'source'],
+      ...leads.map((l) => [
+        l.updatedAt,
+        l.createdAt,
+        l.kind,
+        l.status,
+        l.name ?? '',
+        l.phone ?? '',
+        l.email ?? '',
+        l.city ?? '',
+        l.pin ?? '',
+        (l.lines ?? []).map((x) => `${x.variantId} x${x.qty}`).join('; '),
+        l.total ?? '',
+        l.about ?? '',
+        l.path ?? '',
+        l.origin?.source ?? '',
+      ]),
+    ])
   } else {
     return new Response('Unknown export', { status: 400 })
   }
-  return new Response(body, {
+  // a byte-order mark so Excel opens the file as UTF-8 (₹, names in any script)
+  return new Response(`\uFEFF${body}`, {
     headers: {
       'content-type': 'text/csv; charset=utf-8',
       'content-disposition': `attachment; filename="afterbells-${type}-${new Date().toISOString().slice(0, 10)}.csv"`,

@@ -1,0 +1,87 @@
+.option {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 14px;
+  align-items: start;
+  width: 100%;
+  padding: 16px 16px 16px 14px;
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.on {
+  border-color: color-mix(in srgb, var(--gold) 60%, transparent);
+  background: color-mix(in srgb, var(--gold-a) 9%, transparent);
+}
+.option:has(input:focus-visible) {
+  outline: 1.5px solid var(--gold);
+  outline-offset: 2px;
+}
+.box {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  color: transparent;
+  border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+}
+.on .box {
+  color: var(--ivory);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.text {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.icon {
+  flex: none;
+  color: var(--gold-b);
+}
+.text small {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--umber-2);
+}
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-left: auto;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.price s {
+  color: var(--umber-2);
+  font-weight: 400;
+}
+.price b {
+  font-weight: 500;
+  color: #4f7a4a;
+}

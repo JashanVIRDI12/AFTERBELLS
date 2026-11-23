@@ -1,0 +1,330 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=640&q=85",
+    "naturalWidth": 320,
+    "headline": {
+      "x": 16,
+      "y": 115.09375,
+      "width": 288,
+      "height": 83.1875,
+      "bottom": 198.28125
+    },
+    "form": {
+      "x": 16,
+      "y": 323.453125,
+      "width": 288,
+      "height": 231.1875,
+      "bottom": 554.640625
+    },
+    "perks": {
+      "x": 16,
+      "y": 582.640625,
+      "width": 288,
+      "height": 107,
+      "bottom": 689.640625
+    },
+    "footer": {
+      "x": 0,
+      "y": 899.640625,
+      "width": 320,
+      "height": 128,
+      "bottom": 1027.640625
+    },
+    "pageHeight": 1028,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=640&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-320.png",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=828&q=85",
+    "naturalWidth": 390,
+    "headline": {
+      "x": 16.375,
+      "y": 115.09375,
+      "width": 357.25,
+      "height": 83.1875,
+      "bottom": 198.28125
+    },
+    "form": {
+      "x": 16.375,
+      "y": 297.0625,
+      "width": 357.25,
+      "height": 231.1875,
+      "bottom": 528.25
+    },
+    "perks": {
+      "x": 16.375,
+      "y": 556.25,
+      "width": 357.25,
+      "height": 53.5,
+      "bottom": 609.75
+    },
+    "footer": {
+      "x": 0,
+      "y": 819.75,
+      "width": 390,
+      "height": 128,
+      "bottom": 947.75
+    },
+    "pageHeight": 948,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=828&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-390.png",
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=828&q=85",
+    "naturalWidth": 768,
+    "headline": {
+      "x": 116.25,
+      "y": 158.15625,
+      "width": 535.5,
+      "height": 127.78125,
+      "bottom": 285.9375
+    },
+    "form": {
+      "x": 116.25,
+      "y": 384.71875,
+      "width": 535.5,
+      "height": 146.59375,
+      "bottom": 531.3125
+    },
+    "perks": {
+      "x": 116.25,
+      "y": 559.3125,
+      "width": 535.5,
+      "height": 53.5,
+      "bottom": 612.8125
+    },
+    "footer": {
+      "x": 0,
+      "y": 917,
+      "width": 768,
+      "height": 107,
+      "bottom": 1024
+    },
+    "pageHeight": 1024,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=828&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-768.png",
+    "errors": []
+  },
+  {
+    "width": 959,
+    "height": 1024,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=1080&q=85",
+    "naturalWidth": 835,
+    "headline": {
+      "x": 219.765625,
+      "y": 141.890625,
+      "width": 519.46875,
+      "height": 141.4375,
+      "bottom": 283.328125
+    },
+    "form": {
+      "x": 219.765625,
+      "y": 382.109375,
+      "width": 519.46875,
+      "height": 146.59375,
+      "bottom": 528.703125
+    },
+    "perks": {
+      "x": 219.765625,
+      "y": 556.703125,
+      "width": 519.46875,
+      "height": 53.5,
+      "bottom": 610.203125
+    },
+    "footer": {
+      "x": 0,
+      "y": 917,
+      "width": 959,
+      "height": 107,
+      "bottom": 1024
+    },
+    "pageHeight": 1024,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-mobile.jpg%3Fv%3Dmwt7mtuc&w=1080&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-959.png",
+    "errors": []
+  },
+  {
+    "width": 960,
+    "height": 900,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1080&q=85",
+    "naturalWidth": 960,
+    "headline": {
+      "x": 220.3125,
+      "y": 209.390625,
+      "width": 519.375,
+      "height": 141.4375,
+      "bottom": 350.828125
+    },
+    "form": {
+      "x": 220.3125,
+      "y": 449.609375,
+      "width": 519.375,
+      "height": 146.59375,
+      "bottom": 596.203125
+    },
+    "perks": {
+      "x": 220.3125,
+      "y": 624.203125,
+      "width": 519.375,
+      "height": 53.5,
+      "bottom": 677.703125
+    },
+    "footer": {
+      "x": 0,
+      "y": 820,
+      "width": 960,
+      "height": 80,
+      "bottom": 900
+    },
+    "pageHeight": 900,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1080&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-960.png",
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1080&q=85",
+    "naturalWidth": 1024,
+    "headline": {
+      "x": 255,
+      "y": 143.546875,
+      "width": 514,
+      "height": 141.4375,
+      "bottom": 284.984375
+    },
+    "form": {
+      "x": 255,
+      "y": 383.765625,
+      "width": 514,
+      "height": 146.59375,
+      "bottom": 530.359375
+    },
+    "perks": {
+      "x": 255,
+      "y": 558.359375,
+      "width": 514,
+      "height": 53.5,
+      "bottom": 611.859375
+    },
+    "footer": {
+      "x": 0,
+      "y": 688,
+      "width": 1024,
+      "height": 80,
+      "bottom": 768
+    },
+    "pageHeight": 768,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1080&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-1024.png",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1920&q=85",
+    "naturalWidth": 1189,
+    "headline": {
+      "x": 480.46875,
+      "y": 211.859375,
+      "width": 479.0625,
+      "height": 141.4375,
+      "bottom": 353.296875
+    },
+    "form": {
+      "x": 480.46875,
+      "y": 452.078125,
+      "width": 479.0625,
+      "height": 146.59375,
+      "bottom": 598.671875
+    },
+    "perks": {
+      "x": 480.46875,
+      "y": 626.671875,
+      "width": 479.0625,
+      "height": 53.5,
+      "bottom": 680.171875
+    },
+    "footer": {
+      "x": 0,
+      "y": 820,
+      "width": 1440,
+      "height": 80,
+      "bottom": 900
+    },
+    "pageHeight": 900,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1920&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-1440.png",
+    "errors": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "currentSrc": "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1920&q=85",
+    "naturalWidth": 1586,
+    "headline": {
+      "x": 724,
+      "y": 301.859375,
+      "width": 472,
+      "height": 141.4375,
+      "bottom": 443.296875
+    },
+    "form": {
+      "x": 724,
+      "y": 542.078125,
+      "width": 472,
+      "height": 146.59375,
+      "bottom": 688.671875
+    },
+    "perks": {
+      "x": 724,
+      "y": 716.671875,
+      "width": 472,
+      "height": 53.5,
+      "bottom": 770.171875
+    },
+    "footer": {
+      "x": 0,
+      "y": 1000,
+      "width": 1920,
+      "height": 80,
+      "bottom": 1080
+    },
+    "pageHeight": 1080,
+    "imageRequests": [
+      "http://localhost:3123/_next/image?url=%2Fmedia%2Fwaitlist-backdrop-desktop.jpg%3Fv%3Dmwt7mtth&w=1920&q=85"
+    ],
+    "screenshot": "output/audit/waitlist-background-1920.png",
+    "errors": []
+  }
+]

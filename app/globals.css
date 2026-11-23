@@ -90,6 +90,8 @@
   --gutter: clamp(16px, 4.2vw, 64px);
   --max: 1680px;
   --header-h: 68px;
+  /* the service bar above the header (ServiceBar.tsx); full-screen openers subtract it */
+  --bar-h: 32px;
   --radius: 2px;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

@@ -36,6 +36,8 @@ export const checkoutSchema = z.object({
     .optional(),
   acceptTerms: z.literal(true, { message: 'Please accept the terms of sale' }),
   whatsappUpdates: z.boolean().optional().default(false),
+  /** the personalised video (only kept when the bag holds a 60 ml bottle) */
+  video: z.boolean().optional().default(false),
   origin: z
     .object({
       source: z.string().trim().max(80).optional(),

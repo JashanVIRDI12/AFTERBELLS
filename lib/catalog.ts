@@ -125,7 +125,7 @@ export const fragrances: Fragrance[] = [
     label: '/brand/labels/amber-hour.webp',
     image: '/media/amber-hour-bottle.webp',
     theme: { bg: '#2A1509', bg2: '#5B2D0F', ink: '#F7E8D3', accent: '#E3A452', tone: 'dark' },
-    media: ['amber-hour-bottle', 'amber-hour-scene', 'amber-hour-detail', 'amber-hour-mood'],
+    media: ['amber-hour-bottle', 'amber-hour-detail', 'amber-hour-mood'],
     variants: [{ id: 'amber-hour', size: '60 ml', price: 2500 }],
   },
   {
@@ -223,7 +223,7 @@ export const fragrances: Fragrance[] = [
     label: '/brand/labels/iron-crown.webp',
     image: '/media/iron-crown-bottle.webp',
     theme: { bg: '#0E0B08', bg2: '#2A2017', ink: '#F2E8D8', accent: '#D2B26A', tone: 'dark' },
-    media: ['iron-crown-bottle', 'iron-crown-scene', 'iron-crown-detail', 'iron-crown-mood'],
+    media: ['iron-crown-bottle', 'iron-crown-detail', 'iron-crown-mood'],
     variants: [{ id: 'iron-crown', size: '60 ml', price: 2500 }],
   },
 ]
@@ -281,3 +281,6 @@ export function getVariant(variantId: string): { product: Product; variant: Vari
 export function fromPrice(p: Product) {
   return Math.min(...p.variants.map((v) => v.price))
 }
+
+/** The full-size bottles (60 ml): these come with the personalised video. */
+export const isFullSize = (variantId: string) => fragrances.some((f) => f.variants.some((v) => v.id === variantId))

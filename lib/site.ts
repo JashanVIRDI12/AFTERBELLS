@@ -38,6 +38,13 @@ export const site = {
   locale: 'en-IN',
   currency: 'INR',
 
+  /**
+   * Before opening: every page shows the waitlist (/waitlist) except to the owner, who enters with a password.
+   * Open the shop by setting `locked` to false (or SITE_LOCKED=false in the host's settings).
+   * The password is PREVIEW_PASSWORD (or ADMIN_PASSWORD if that is not set).
+   */
+  prelaunch: { locked: true },
+
   /** The First Edition: stock limits (internal only, never shown as numbers). */
   edition: {
     name: 'First Edition',
@@ -65,7 +72,23 @@ export const site = {
     standardShort: 'Arrives in 3–7 working days',
     /** PIN codes that count as Delhi NCR: Delhi, Gurugram, Faridabad, Noida and Greater Noida, Ghaziabad */
     fastPins: ['110', '1220', '1210', '2013', '2010'],
+    /**
+     * Orders paid before this hour (India time), Monday to Saturday, leave the house the same day.
+     * Drives the delivery dates shown on product pages, the bag and checkout (lib/delivery.ts).
+     * PLACEHOLDER — set it to your courier's daily pickup time.
+     */
+    cutoffHour: 14,
+    /** Working days in transit outside Delhi NCR, counted from dispatch. Keep in step with `standard` above. */
+    standardDays: [3, 7],
   },
+
+  /**
+   * Personalised video, offered with every 60 ml bottle (ticked by default): the house films a short message
+   * for the client, by name, and sends it on WhatsApp as the bottle leaves.
+   * `value` is shown struck through beside "Complimentary" while `complimentary` is true.
+   * PLACEHOLDER — confirm the value; charging for it needs a pricing change (lib/pricing.ts), not just this switch.
+   */
+  video: { value: 499, complimentary: true },
 
   shipping: {
     fee: 0,

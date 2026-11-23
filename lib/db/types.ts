@@ -43,6 +43,8 @@ export type Order = {
   gift?: { message: string }
   /** the guest agreed to order updates on WhatsApp */
   whatsappUpdates?: boolean
+  /** the personalised video: film a short message for the client and send it on WhatsApp at dispatch */
+  video?: boolean
   /** where the visit that ended in this order came from (campaign tags or referring site) */
   origin?: { source?: string; medium?: string; campaign?: string }
   payment: {
@@ -76,6 +78,52 @@ export type Reserved = Record<string, number>
 
 export type Subscriber = { email: string; at: string; source?: string }
 
+/**
+ * Someone who left their email or mobile number without (yet) ordering, so the concierge can follow up.
+ *   checkout → typed contact details at checkout, then left before paying
+ *   finder   → took the "which hour is yours" questions and kept the result
+ *   notify   → asked to hear when a fully reserved fragrance returns
+ *   salon    → joined the house letters with a WhatsApp number
+ */
+export type LeadKind = 'checkout' | 'finder' | 'notify' | 'salon' | 'waitlist'
+export type LeadStatus = 'open' | 'contacted' | 'closed'
+
+export type Lead = {
+  id: string
+  kind: LeadKind
+  status: LeadStatus
+  createdAt: string
+  updatedAt: string
+  email?: string
+  /** ten-digit Indian mobile number */
+  phone?: string
+  name?: string
+  pin?: string
+  city?: string
+  /** the bag at the time (checkout leads) */
+  lines?: { variantId: string; qty: number }[]
+  total?: number
+  /** waitlist: the hours they are drawn to */
+  interests?: string[]
+  /** fragrance slug or variant id the lead is about (finder match, notify) */
+  about?: string
+  /** the page it came from */
+  path?: string
+  origin?: { source?: string; medium?: string; campaign?: string }
+}
+
+export type LeadInput = Omit<Lead, 'id' | 'status' | 'createdAt' | 'updatedAt'>
+
+/** One lead per kind and contact: the email when given, otherwise the mobile number. */
+export const leadKey = (l: Pick<Lead, 'kind' | 'email' | 'phone'>) => `${l.kind}:${l.email?.toLowerCase() || l.phone || ''}`
+
+/** Merge a fresh capture into a stored lead: new values win, empty ones never erase. A returning lead reopens. */
+export function mergeLead(prev: Lead | undefined, input: LeadInput, now: string, id: string): Lead {
+  const clean = Object.fromEntries(Object.entries(input).filter(([, v]) => v !== undefined && v !== '')) as LeadInput
+  if (!prev) return { ...clean, id, status: 'open', createdAt: now, updatedAt: now }
+  return { ...prev, ...clean, status: prev.status === 'closed' ? 'open' : prev.status, updatedAt: now }
+}
+
 /** A client's own details, kept so checkout and the account can be filled in for them. */
 export type Profile = {
   email: string
@@ -106,8 +154,13 @@ export type Feedback = {
   name: string
   orderNumber: string
   consent: boolean
+  /** shown on the site (the guest agreed to be quoted, and the house chose it) */
+  published?: boolean
   at: string
 }
+
+/** A client's words as the site shows them. */
+export type Review = { id: string; fragrance: string[]; scent: number; comments: string; name: string; at: string }
 
 /** Per-fragrance stock settings the house controls from /admin. */
 export type InventoryRow = {
@@ -177,6 +230,13 @@ export interface Store {
   addFeedback(f: Omit<Feedback, 'at' | 'id'>): Promise<void>
   listFeedback(): Promise<Feedback[]>
   removeFeedback(id: string): Promise<boolean>
+  /** show or hide a piece of feedback on the site (only feedback the guest agreed to share) */
+  publishFeedback(id: string, on: boolean): Promise<boolean>
+  /** Saves a lead, merging with an earlier one for the same kind and contact. */
+  saveLead(input: LeadInput): Promise<Lead>
+  listLeads(): Promise<Lead[]>
+  setLeadStatus(id: string, status: LeadStatus): Promise<boolean>
+  removeLead(id: string): Promise<boolean>
   /** stored inventory rows (variants without a row use the defaults in lib/site.ts) */
   getInventory(): Promise<Record<string, InventoryRow>>
   setInventory(row: InventoryRow, change: string, note?: string): Promise<void>

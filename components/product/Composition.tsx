@@ -218,7 +218,7 @@ export default function Composition({ product: f, cutout }: { product: Fragrance
               <small>Inclusive of all taxes</small>
             </p>
             <ReserveButton variantId={v.id} block />
-            <ReserveNote />
+            <ReserveNote check />
             <ConciergeButton variant="link" about={f.name} className={styles.ask} />
           </div>
         </aside>

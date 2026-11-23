@@ -1,40 +1,109 @@
+/*
+ * The header has two states.
+ *   rest  — at the top of a page: a full-width row resting over the hero (on product pages, a plain ivory row).
+ *   float — once the page moves: a separate pane of frosted glass, inset from the edges, that slides away
+ *           while you read down and returns the moment you scroll up. A gold hairline along its foot
+ *           shows how far down the page you are.
+ */
 .header {
   --fg: var(--umber);
-  --bg: rgb(246 238 228 / 0.74);
+  --glass: rgb(246 238 228 / 0.66);
+  --edge: rgb(255 255 255 / 0.55);
+  --line: color-mix(in srgb, var(--gold) 34%, transparent);
   position: fixed;
-  inset: 0 0 auto 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 300;
   height: calc(var(--header-h) + var(--safe-t));
   padding-top: var(--safe-t);
   color: var(--fg);
   transition:
-    transform 0.8s var(--ease-out),
+    transform 0.75s var(--ease-out),
+    top 0.6s var(--ease-out),
+    left 0.6s var(--ease-out),
+    right 0.6s var(--ease-out),
+    height 0.6s var(--ease-out),
+    padding 0.6s var(--ease-out),
     color 0.6s var(--ease-out);
 }
 .header[data-theme='dark'] {
   --fg: var(--ivory);
-  --bg: rgb(26 20 15 / 0.58);
+  --glass: rgb(30 23 17 / 0.5);
+  --edge: rgb(255 255 255 / 0.14);
+  --line: color-mix(in srgb, var(--gold-a) 30%, transparent);
 }
+/* the glass itself */
 .header::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--bg);
+  background: var(--glass);
+  border: 1px solid transparent;
+  border-radius: 0;
   opacity: 0;
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border-bottom: 1px solid color-mix(in srgb, var(--fg) 9%, transparent);
-  box-shadow: inset 0 -1px 0 rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(22px) saturate(1.5);
+  -webkit-backdrop-filter: blur(22px) saturate(1.5);
   transition:
     opacity 0.6s var(--ease-out),
-    background-color 0.6s var(--ease-out),
-    border-color 0.6s var(--ease-out);
+    border-radius 0.6s var(--ease-out),
+    border-color 0.6s var(--ease-out),
+    box-shadow 0.6s var(--ease-out),
+    background-color 0.6s var(--ease-out);
 }
-.solid::before {
+
+/* product pages at rest: a plain ivory row, the page's own colour */
+.restSolid::before {
   opacity: 1;
+  background: var(--ivory);
+  border-bottom-color: color-mix(in srgb, var(--ink) 10%, transparent);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.float {
+  top: calc(12px + var(--safe-t));
+  left: max(12px, calc((100vw - 1320px) / 2));
+  right: max(12px, calc((100vw - 1320px) / 2));
+  height: 58px;
+  padding-top: 0;
+}
+.float::before {
+  opacity: 1;
+  border-color: var(--line);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 var(--edge),
+    0 18px 44px -20px rgb(20 14 8 / 0.45);
+}
+.float .inner {
+  padding-inline: clamp(16px, 2vw, 28px);
 }
 .hidden {
-  transform: translateY(-105%);
+  transform: translateY(calc(-100% - 28px));
+}
+
+/* how far down the page: a gold hairline along the glass's foot */
+.progress {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-a) 18%, var(--gold) 82%, transparent);
+  transform: scaleX(var(--progress, 0));
+  transform-origin: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s var(--ease-out);
+}
+.float .progress {
+  opacity: 0.9;
+}
+
+.productHeader .collectionBack,
+.productNav {
+  display: none;
 }
 
 .inner {
@@ -292,5 +361,18 @@
   }
   .nav {
     display: flex;
+  }
+  .productHeader .collectionBack,
+  .productNav {
+    display: flex;
+  }
+  .collectionBack {
+    gap: 12px;
+    letter-spacing: 0.14em;
+  }
+  .productNav {
+    align-items: center;
+    gap: 24px;
+    margin-right: 20px;
   }
 }

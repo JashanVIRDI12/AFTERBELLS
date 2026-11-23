@@ -291,3 +291,48 @@
   text-align: center;
   justify-items: center;
 }
+
+/* what travels with every order, said once in the bag */
+.with {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--gold-b) 28%, transparent);
+  background: color-mix(in srgb, var(--gold-a) 6%, transparent);
+}
+.with :global(.t-eyebrow) {
+  color: var(--umber-2);
+  margin-bottom: 8px;
+}
+.with ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+}
+.with li {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--umber);
+}
+.with svg {
+  flex: none;
+  color: var(--gold-b);
+  transform: translateY(1px);
+}
+@media (max-width: 359px) {
+  .with ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wa {
+  color: var(--umber);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  padding-block: 12px;
+  margin-block: -12px;
+}

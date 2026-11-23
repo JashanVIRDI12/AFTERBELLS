@@ -79,6 +79,16 @@ export default async function Insights({ store, days }: { store: Store; days: nu
     { key: 'Instagram taps', n: stats.events.instagram_click ?? 0 },
     { key: 'Joined the Salon', n: stats.events.salon_join ?? 0 },
     { key: 'Tracked a reservation', n: stats.events.track_lookup ?? 0 },
+    { key: 'Checked a delivery date', n: stats.events.delivery_check ?? 0 },
+    { key: 'Ordered by WhatsApp (from the bag or checkout)', n: stats.events.whatsapp_order ?? 0 },
+    { key: 'Saw the finder pop-up', n: stats.events.popup_view ?? 0 },
+    { key: 'Started the finder', n: stats.events.finder_start ?? 0 },
+    { key: 'Got a finder match', n: stats.events.finder_result ?? 0 },
+    { key: 'Left a number or email (finder, notify, letters)', n: stats.events.lead_capture ?? 0 },
+    { key: 'Asked about a fully reserved fragrance', n: stats.events.notify_request ?? 0 },
+    { key: 'Added a suggestion in the bag', n: stats.events.upsell_add ?? 0 },
+    { key: 'Reminded of a saved bag', n: stats.events.bag_reminder ?? 0 },
+    { key: 'Joined the waitlist', n: stats.events.waitlist_join ?? 0 },
   ]
 
   return (

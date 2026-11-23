@@ -90,7 +90,7 @@ export async function sendOrderEmails(o: Order, opts: { notifyOwner?: boolean } 
       await send(
         owner,
         `New order ${o.number} · ${formatINR(o.totals.dueNow)}`,
-        `<p><b>${o.number}</b> — ${esc(summary)}</p><p>${esc(o.customer.name)} · ${esc(o.customer.email)} · +91 ${esc(o.customer.phone)}</p><p>${esc(o.customer.address1)} ${esc(o.customer.address2 ?? '')}, ${esc(o.customer.city)}, ${esc(o.customer.state)} ${esc(o.customer.pin)}</p>${o.gift ? `<p>Gift message: “${esc(o.gift.message)}”</p>` : ''}`,
+        `<p><b>${o.number}</b> — ${esc(summary)}</p><p>${esc(o.customer.name)} · ${esc(o.customer.email)} · +91 ${esc(o.customer.phone)}</p><p>${esc(o.customer.address1)} ${esc(o.customer.address2 ?? '')}, ${esc(o.customer.city)}, ${esc(o.customer.state)} ${esc(o.customer.pin)}</p>${o.gift ? `<p>Gift message: “${esc(o.gift.message)}”</p>` : ''}${o.video ? '<p><b>Personalised video:</b> film it and send on WhatsApp at dispatch.</p>' : ''}`,
       )
     }
   })
@@ -147,6 +147,24 @@ export async function sendLoginCode(email: string, code: string) {
         `<p style="margin:14px 0 24px;font-size:14px;line-height:1.7">Enter this code to sign in to your After Bells account. It expires in ten minutes.</p>
 <p style="margin:0;font-size:34px;letter-spacing:.42em;color:#271d0c">${esc(code)}</p>
 <p style="margin:26px 0 0;font-size:12px;line-height:1.7;color:#6a5c48">If you did not ask for this code, you can ignore this email. Your account stays closed without it.</p>`,
+      ),
+    ),
+  )
+}
+
+/** The result of "Which hour is yours?", for a guest who asked to keep it. */
+export async function sendMatchEmail(email: string, f: { name: string; slug: string; tagline: string; keyNotes: string[]; price: number }) {
+  const url = `${site.url}/fragrances/${f.slug}`
+  return safely(() =>
+    send(
+      email,
+      `Your hour: ${f.name}`,
+      layout(
+        esc(f.name),
+        `<p style="margin:10px 0 0;font-family:Georgia,serif;font-style:italic;font-size:16px;color:#6a5c48">${esc(f.tagline)}</p>
+<p style="margin:22px 0 0;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6a5c48">${f.keyNotes.map(esc).join(' · ')}</p>
+<p style="margin:22px 0 0;font-size:14px;line-height:1.7">${formatINR(f.price)} · 60 ml, with three 2 ml vials of the other hours and complimentary delivery.</p>
+${button(url, `Discover ${esc(f.name)}`)}`,
       ),
     ),
   )

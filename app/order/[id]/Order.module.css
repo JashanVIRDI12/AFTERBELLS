@@ -225,3 +225,39 @@
 .track {
   margin-top: 18px;
 }
+
+/* after a paid order: add to the same parcel before dispatch, or pass the word on */
+.extras {
+  width: 100%;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  padding: 22px 20px;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  background: color-mix(in srgb, var(--gold-a) 6%, transparent);
+}
+.extras p:not(:global(.t-eyebrow)) {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--umber-2);
+}
+.shareLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
+}
+
+.videoNote {
+  display: grid;
+  gap: 6px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--umber-2);
+}
+.videoNote :global(.t-eyebrow) {
+  color: var(--gold-deep);
+}

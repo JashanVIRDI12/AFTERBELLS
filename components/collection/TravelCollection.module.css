@@ -151,3 +151,47 @@
     min-height: 580px;
   }
 }
+
+/* Phones: the three 15 ml bottles side by side, swiped, instead of three screens of scrolling. */
+@media (max-width: 699px) {
+  .grid {
+    grid-auto-flow: column;
+    grid-auto-columns: 76%;
+    gap: 14px;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    padding-bottom: 6px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+  .item {
+    gap: 14px;
+    scroll-snap-align: start;
+  }
+  .actions {
+    gap: 14px;
+    margin-top: 2px;
+  }
+  .swipe {
+    display: flex;
+  }
+}
+.swipe {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--umber-2);
+}
+.swipe svg {
+  color: var(--gold-b);
+}

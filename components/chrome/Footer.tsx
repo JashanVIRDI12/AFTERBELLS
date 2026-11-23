@@ -55,6 +55,12 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/collection#15ml">15 ml &amp; the gift set</Link>
+            </li>
+            <li>
+              <Link href="/collection#find-your-hour">Find your hour</Link>
+            </li>
           </ul>
         </nav>
         <nav aria-label="The house">
@@ -66,11 +72,17 @@ export default function Footer() {
             <li>
               <Link href="/collection">The collection</Link>
             </li>
+            <li>
+              <Link href="/account">Your account</Link>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Care">
           <p className={styles.h}>Client Care</p>
           <ul>
+            <li>
+              <Link href="/client-care#track">Track your order</Link>
+            </li>
             <li>
               <Link href="/client-care">Questions &amp; contact</Link>
             </li>
@@ -81,7 +93,7 @@ export default function Footer() {
               <Link href="/policies#terms">Terms of sale</Link>
             </li>
             <li>
-              <Link href="/policies#shipping">Shipping &amp; returns</Link>
+              <Link href="/policies#shipping">Delivery &amp; returns</Link>
             </li>
             <li>
               <Link href="/policies#privacy">Privacy</Link>
@@ -121,7 +133,10 @@ export default function Footer() {
       </HideOn>
 
       <div className={`wrap ${styles.bottom}`}>
-        <Wordmark className={styles.word} />
+        {/* checkout stays quiet: no giant wordmark under the Pay button */}
+        <HideOn prefix="/checkout">
+          <Wordmark className={styles.word} />
+        </HideOn>
         <div className={styles.legal}>
           <span>
             © {new Date().getFullYear()} {site.legal.entity || 'After Bells'}

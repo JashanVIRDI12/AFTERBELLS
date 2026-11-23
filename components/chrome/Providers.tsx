@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Lenis from 'lenis'
 import { gsap, ScrollTrigger, prefersReducedMotion } from '@/lib/gsap'
-import { useCart, useUI } from '@/lib/stores'
+import { useCart, usePin, useVideo, useUI } from '@/lib/stores'
 import { track } from '@/lib/track'
 
 const LenisContext = createContext<Lenis | null>(null)
@@ -31,9 +31,11 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  // The persisted bag rehydrates after mount (avoids hydration mismatches).
+  // The persisted bag and delivery PIN rehydrate after mount (avoids hydration mismatches).
   useEffect(() => {
     void useCart.persist.rehydrate()
+    void usePin.persist.rehydrate()
+    void useVideo.persist.rehydrate()
     set({ hydrated: true })
   }, [set])
 

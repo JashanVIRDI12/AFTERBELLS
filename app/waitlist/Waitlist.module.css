@@ -1,0 +1,423 @@
+/* The waitlist: a centred invitation framed by its own campaign photography. */
+.page {
+  --soft: color-mix(in srgb, var(--ivory) 70%, transparent);
+  --line: color-mix(in srgb, var(--ivory) 24%, transparent);
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  color: var(--ivory);
+  background: #18110d;
+  overflow: hidden;
+  isolation: isolate;
+}
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.scene {
+  position: absolute;
+  inset: 0;
+}
+.photo {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(24 17 13 / 0.18) 0%, rgb(24 17 13 / 0.08) 38%, rgb(24 17 13 / 0.14) 76%, rgb(24 17 13 / 0.72) 100%);
+}
+@media (max-width: 959px) {
+  .scene {
+    inset: auto auto 60px 50%;
+    width: clamp(349px, 64.7vw, 507px);
+    height: clamp(620px, 115vw, 900px);
+    transform: translateX(-50%);
+    mask-image:
+      linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%),
+      linear-gradient(180deg, transparent 40%, #000 66%, #000 88%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .photo {
+    object-fit: contain;
+    object-position: 50% 50%;
+  }
+  .veil {
+    background: linear-gradient(180deg, transparent 70%, rgb(24 17 13 / 0.08) 82%, rgb(24 17 13 / 0.66) 100%);
+  }
+}
+.flakes {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  padding: calc(24px + var(--safe-t)) var(--gutter) 0;
+}
+.word {
+  width: clamp(140px, 14vw, 190px);
+  height: auto;
+  color: var(--ivory);
+}
+
+/* ---------- the column ---------- */
+.center {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px var(--gutter) 48px;
+  text-align: center;
+}
+@media (max-width: 959px) {
+  .center {
+    padding-bottom: clamp(210px, 34vw, 280px);
+  }
+}
+.eyebrow {
+  margin: 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-a);
+}
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 8vw, 4.25rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.lede {
+  max-width: 38ch;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--soft);
+}
+.formWrap {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ---------- step one: WhatsApp | Email, one field, one button ---------- */
+.form,
+.more {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+.switch {
+  justify-self: center;
+  display: inline-flex;
+  padding: 3px;
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.switch button {
+  min-height: 38px;
+  padding: 0 20px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+  background: none;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.switch .switchOn {
+  color: var(--gold-ink);
+  background: var(--gold-a);
+}
+.row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.field {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.field:focus-within {
+  border-color: var(--gold-a);
+  background: rgb(255 255 255 / 0.1);
+}
+.prefix {
+  padding-left: 16px;
+  font-size: 16px;
+  color: var(--soft);
+}
+.input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 56px;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 16px; /* no zoom on iOS */
+  color: var(--ivory);
+  background: transparent;
+  border: 0;
+}
+.prefix + .input {
+  padding-left: 8px;
+}
+.input::placeholder {
+  color: color-mix(in srgb, var(--ivory) 45%, transparent);
+}
+.input:focus {
+  outline: none;
+}
+.more .input {
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+.more .input:focus {
+  border-color: var(--gold-a);
+}
+.go {
+  --h: 58px;
+  flex: none;
+  padding-inline: 26px;
+}
+.note {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--soft);
+}
+.noteErr {
+  color: #f0b39f;
+}
+
+/* phones: the button under the field, full width */
+@media (max-width: 559px) {
+  .row {
+    flex-direction: column;
+  }
+  /* stacked, each keeps its own height */
+  .row > * {
+    flex: none;
+  }
+  .go {
+    width: 100%;
+  }
+}
+
+/* ---------- step two: which hour (optional) ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  color: var(--ivory);
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.chip small {
+  font-size: 0.6875rem;
+  color: var(--soft);
+}
+.chip[aria-pressed='true'] {
+  border-color: var(--gold-a);
+  background: color-mix(in srgb, var(--gold-a) 18%, transparent);
+}
+@media (hover: hover) {
+  .chip:hover {
+    border-color: color-mix(in srgb, var(--gold-a) 70%, transparent);
+  }
+}
+
+/* ---------- joined ---------- */
+.done {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+.doneMark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  color: var(--gold-ink);
+  background: var(--foil-diag);
+  border-radius: 50%;
+  animation: pop 0.6s var(--ease-out) both;
+}
+.doneTitle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+}
+.doneTitle svg {
+  color: var(--gold-a);
+}
+.doneBody {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--soft);
+}
+.share {
+  --h: 54px;
+  margin-top: 6px;
+  padding-inline: 28px;
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+/* ---------- what joining brings: one quiet line ---------- */
+.perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+  color: var(--soft);
+}
+.perks li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.perks svg {
+  color: var(--gold-a);
+}
+
+/* ---------- foot: help, and the owner's way in ---------- */
+.foot {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 16px var(--gutter) calc(20px + var(--safe-b));
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--soft);
+}
+.foot a {
+  color: var(--ivory);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ivory) 35%, transparent);
+  text-underline-offset: 3px;
+}
+.ownerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--soft);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .ownerLink:hover {
+    color: var(--ivory);
+  }
+}
+.owner {
+  display: grid;
+  gap: 8px;
+  width: min(360px, 100%);
+  text-align: left;
+}
+.owner label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.ownerRow {
+  display: flex;
+  gap: 8px;
+}
+.ownerRow input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+  font-size: 16px;
+  color: var(--ivory);
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid var(--line);
+}
+.ownerRow input:focus {
+  outline: none;
+  border-color: var(--gold-a);
+}
+.ownerRow button {
+  height: 46px;
+  padding: 0 18px;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  background: var(--gold-a);
+  border: 0;
+  cursor: pointer;
+}
+.owner p {
+  margin: 0;
+  color: #f0b39f;
+}
+
+@media (min-width: 960px) {
+  .foot {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: clamp(24px, 4vw, 64px);
+  }
+}

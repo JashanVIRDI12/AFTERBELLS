@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
-import { getStore } from '@/lib/db'
+import { getStore, storageDurable, storageUnavailable } from '@/lib/db'
 import { rateLimit, tooMany } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -20,6 +20,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: parsed.error.issues[0]?.message ?? 'Invalid email' }, { status: 422 })
   }
   if (parsed.data.website) return NextResponse.json({ ok: true })
+  if (!storageDurable()) return storageUnavailable('Subscribe')
   await (await getStore()).addSubscriber(parsed.data.email.trim().toLowerCase(), parsed.data.list ?? 'salon')
   return NextResponse.json({ ok: true })
 }

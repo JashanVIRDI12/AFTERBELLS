@@ -43,6 +43,44 @@ export const useCart = create<CartState>()(
   ),
 )
 
+/** The personalised video with a 60 ml bottle: on unless the guest turns it off (this browser only). */
+type VideoState = { on: boolean; setOn: (on: boolean) => void }
+export const useVideo = create<VideoState>()(
+  persist((set) => ({ on: true, setOn: (on) => set({ on }) }), {
+    name: 'ab-video',
+    storage: createJSONStorage(() => localStorage),
+    skipHydration: true,
+    version: 1,
+  }),
+)
+
+/** Set by "Make it a gift" on a product page; checkout then opens its gift message box. */
+export const GIFT_KEY = 'ab-gift'
+
+/** The guest's delivery PIN code, remembered from the product page to checkout (this browser only). */
+type PinState = {
+  pin: string
+  /** City from the postal directory, when it answered */
+  place: string
+  setPin: (pin: string, place?: string) => void
+}
+
+export const usePin = create<PinState>()(
+  persist(
+    (set) => ({
+      pin: '',
+      place: '',
+      setPin: (pin, place = '') => set({ pin, place }),
+    }),
+    {
+      name: 'ab-pin',
+      storage: createJSONStorage(() => localStorage),
+      skipHydration: true,
+      version: 1,
+    },
+  ),
+)
+
 type UIState = {
   /** true once the intro curtain has lifted (hero animations wait for this) */
   ready: boolean

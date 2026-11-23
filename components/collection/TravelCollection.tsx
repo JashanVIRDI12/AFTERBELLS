@@ -50,13 +50,19 @@ export default function TravelCollection({ media }: { media: Record<string, Reso
           <h2 id="travel-title" className={`t-title ${styles.title}`}>Your hour, wherever.</h2>
           <p className={styles.intro}>The three house fragrances, now in 15 ml. Carry your favourite, or give all three.</p>
         </header>
-        <ul className={styles.grid}>
+        <p className={styles.swipe} aria-hidden>
+          Swipe for all three
+          <svg viewBox="0 0 24 24" width="16" height="16">
+            <path d="M4 12h15M14 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.2" />
+          </svg>
+        </p>
+        <ul className={styles.grid} aria-label="The 15 ml bottles">
           {travelFragrances.map((f) => {
             const v = f.variants[0]
             return (
               <li key={f.slug} className={styles.item}>
                 <Link href={`/fragrances/${f.slug}`} className={styles.visual} aria-label={`Discover ${f.name} 15 ml`}>
-                  <MediaSlot media={media[f.media[0]]} theme={f.theme} reveal={false} sizes="(min-width: 900px) 30vw, 90vw" className={styles.photo} />
+                  <MediaSlot media={media[f.media[0]]} theme={f.theme} reveal={false} sizes="(min-width: 900px) 30vw, (min-width: 700px) 33vw, 76vw" className={styles.photo} />
                 </Link>
                 <div className={styles.info}>
                   <h3 className={`t-name ${styles.name}`}><Link href={`/fragrances/${f.slug}`}>{f.name}</Link></h3>
