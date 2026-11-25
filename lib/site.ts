@@ -10,7 +10,7 @@ export const site = {
     'After Bells is a maison de parfum composing for the hour after the bells. The First Edition — Amber Hour, Open Sky and Iron Crown — carries 24k gold flakes in every bottle and is available now.',
   /** The live address. Used in share links, emails, the sitemap and link previews, so it must never be localhost. */
   url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://theafterbells.com').replace(/\/+$/, ''),
-  instagram: 'afterbells',
+  instagram: 'theafterbells',
   /**
    * The concierge: one number, shown everywhere the house can be reached.
    * (The second line, +91 77018 79359, is kept off the site so guests see a single house number.)
