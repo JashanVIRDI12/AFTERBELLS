@@ -44,7 +44,7 @@ export const site = {
    * Open the shop by setting `locked` to false (or SITE_LOCKED=false in the host's settings).
    * The password is PREVIEW_PASSWORD (or ADMIN_PASSWORD if that is not set).
    */
-  prelaunch: { locked: true },
+  prelaunch: { locked: false },
 
   /** The First Edition: stock limits (internal only, never shown as numbers). */
   edition: {

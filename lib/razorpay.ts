@@ -35,6 +35,8 @@ const safeEqual = (a: string, b: string) => {
 
 /** Checkout handler signature: HMAC_SHA256(order_id + "|" + payment_id, key_secret) */
 export function verifyPaymentSignature(orderId: string, paymentId: string, signature: string) {
+  // with no secret, an HMAC keyed on '' would be forgeable by anyone
+  if (!KEY_SECRET) return false
   const expected = crypto.createHmac('sha256', KEY_SECRET).update(`${orderId}|${paymentId}`).digest('hex')
   return safeEqual(expected, signature)
 }

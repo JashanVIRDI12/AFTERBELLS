@@ -9,3 +9,4 @@ next-env.d.ts
 # raw brand source archives (kept locally, not deployed)
 *.zip
 _brand-src
+.env

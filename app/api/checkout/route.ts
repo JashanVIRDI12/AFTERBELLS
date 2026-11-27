@@ -45,6 +45,8 @@ export async function POST(req: Request) {
   // Prices always come from the catalogue — never from the browser.
   const totals = priceLines(input.lines, input.plan)
   if (!totals.lines.length) return NextResponse.json({ error: 'Your bag is empty' }, { status: 422 })
+  // Razorpay's minimum is 100 paise (₹1)
+  if (totals.dueNow < 1) return NextResponse.json({ error: 'Please check your bag and try again.' }, { status: 422 })
 
   // Limited stock: the stock check and the order hold happen as one locked step,
   // so two guests can never be sold the same last bottle.
